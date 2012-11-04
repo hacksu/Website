@@ -39,4 +39,3 @@ class Apps(models.Model):
     class Meta:
         verbose_name = 'Apps'
         verbose_name_plural = 'Apps'
-

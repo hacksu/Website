@@ -1,7 +1,8 @@
-from backend.models import News, Link, Leader, Apps
+from backend.models import News, NewsLink, Leader, Apps, AppsLink
 from django.contrib import admin
 
 admin.site.register(News)
-admin.site.register(Link)
+admin.site.register(NewsLink)
 admin.site.register(Leader)
 admin.site.register(Apps)
+admin.site.register(AppsLink)

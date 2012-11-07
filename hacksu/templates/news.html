@@ -9,50 +9,33 @@
         <header>
         	<h1 style="text-align:left;margin-left:50px;font-size:10em;">news.</h1>
         </header>
-        
+
         <!-- Conent -->
         <div id="content_clean">
-        	<!-- PHP will grab all the news articles from the database. 
-        	<?php 
-        		// Go through each row of the news table.
-        		foreach ($dbh->query($news) as $row)
-        		{        			
-        			// Parse the date
-        			$date = date_parse($row['created_at']);        		
-        		
-        			//Print title.
-        			echo '<h2 id="post'.$row['id'].'">'.$row['title'].'</h2>';
-        			        			
-        			// Print the date and description.
-        			echo '<p>['.$date['month'].'.'.$date['day'].'.'.$date['year'].']  '.$row['description'].'</p><br>';
-        			
-        			// Print what topics will be discussed.
-        			echo '<p>Topics will include:</p>';
-        			echo '<ul>';
-        			        			
-        			// Decode the stored json to access the elements
-        			$topics = json_decode($row['topics'])->topics;
-        			        			
-        			foreach($topics as $value){
-        				echo '<li>'.$value.'</li>';
-        			}
-        			
-        			echo '</ul>';
-        			        			
-        			// Print the relevant links.
-        			echo '<p>Relevant Links:</p>';
-        			echo '<ul>';       			
-        			
-        			// Decode the stored json to access the elements
-        			$links = json_decode($row['links'])->links;
-        			        			
-        			foreach($links as $value){
-        				echo '<li><a class="normal" href="'.$value->link.'">'.$value->name.'</a></li>';
-        			}
-        			echo '</ul>';
-        			
-        			echo '<br><br>';
-        		}     		
-        	?> -->
+
+                {% for news in news_list %}
+                        <h2 id="post{{news.id}}">{{news.title}}</h2>
+                        <p>[{{news.date|date:"m.d.Y"}}] {{news.description}}</p><br>
+                        {% if news.topics %}
+                                <p>Topics will include:</p>
+                                <ul>
+                                {% for topic in news.topics.all %}
+        			     <li>{{topic.title}}</li>
+                                {% endfor %}
+                                </ul>
+                        {% endif %}
+
+                        {% if news.links %}
+                                <p>Relevant Links:</p>
+                                <ul>
+                                {% for link in news.links.all %}
+        				<li><a class="normal" href="{{link.url}}">{{link.title}}</a></li>
+        			{% endfor %}
+        			</ul>
+        			<br><br>
+                        {% endif %}
+                {% endfor %}
+
+        	
         </div>
 {% endblock %}

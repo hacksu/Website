@@ -17,7 +17,9 @@ def apps(request):
     return render_to_response('apps.html', RequestContext(request))
 
 def news(request):
-    return render_to_response('news.html', RequestContext(request))
+    news = News.objects.all().order_by('-date')
+    return render_to_response('news.html', {'news_list': news},
+                              RequestContext(request))
 
 def learn(request):
     return render_to_response('learn.html', RequestContext(request))

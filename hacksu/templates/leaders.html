@@ -1,23 +1,13 @@
-{% extends "base.html" %}
+{% extends "base_content.html" %}
 
 {% block title %}hacKSU{% endblock %}
 
-{% block body %}
+{% block breadcrumb %} <a href="/leaders" class="current">leaders</a>{% endblock %}
 
-<!-- Breadcrumb -->
-<div id="breadcrumb">
-	<a href="/" class="past">home</a>
-	<p>
-		>
-	</p><a href="/leaders" class="current">leaders</a>
-</div>
-
-<!-- Header -->
+{% block content %} <!-- Header -->
 <header>
 	<h1 style="text-align:left;margin-left:50px;font-size:10em;">leaders.</h1>
-</header>
-
-<!-- Conent -->
+</header> <!-- Conent -->
 <div id="content_clean">
 
 	<h2>Daniel Gur</h2>
@@ -56,6 +46,4 @@
 	</p>
 	<br>
 	<br>
-</div>
-
-{% endblock %}
+</div> {% endblock %}

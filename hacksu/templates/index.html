@@ -76,11 +76,11 @@
 			news.
                 </p>
                 {% for news in news_list %}
-                	<div class="post">
-                      		<div class="cool_date rounded_corners">{{news.date|date:"M"}}<br><h3>{{news.date|date:"d"}}</h3></div>
-                      		<h4><a class="normal" style="color:black;" href="news.php#post{{news.id}}">{{news.title}}</a></h4>
-                    	</div>
-                  {% endfor %}
+                    <div class="post">
+                        <div class="cool_date rounded_corners">{{news.date|date:"M"}}<br><h3>{{news.date|date:"d"}}</h3></div>
+                      	<h4><a class="normal" style="color:black;" href="news.php#post{{news.id}}">{{news.title}}</a></h4>
+                    </div>
+                {% endfor %}
 	</div>
 	<div id="feed">
 		<p class="background_text">

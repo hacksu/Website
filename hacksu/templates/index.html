@@ -12,13 +12,11 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/fonts.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
-        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.1.min.js"></script>
         
-        <!-- Include the neccessary php files. 
-        <?php include "db/connection.php"; ?> -->
     </head>
     <body>
     
@@ -58,7 +56,7 @@
         	<div id="title">
         		<h1>hacKSU</h1>
         		<p>let the hacking begin.</p>
-        		<img id="logo" src="img/logo.png"/>        		
+        		<img id="logo" src="{{ STATIC_URL }}img/logo.png"/>        		
         	</div>        	
         	<div id="right_nav">
         		<a class="nav" href="learn.php">about</a><br>

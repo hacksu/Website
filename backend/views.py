@@ -14,7 +14,9 @@ def leaders(request):
                               RequestContext(request))
 
 def apps(request):
-    return render_to_response('apps.html', RequestContext(request))
+    apps = Apps.objects.all()
+    return render_to_response('apps.html', {'apps': apps},
+                              RequestContext(request))
 
 def news(request):
     news = News.objects.all().order_by('-date')

@@ -75,15 +75,12 @@
 		<p class="background_text">
 			news.
                 </p>
-                {% if news_list %}
-                  {% for news in news_list %}
-                    <div class="post">
-                      <div class="cool_date rounded_corners">{{news.date|date:"M"}}<br><h3>{{news.date|date:"d"}}</h3></div>
-                      <h4><a class="normal" style="color:black;" href="news.php#post{{news.id}}">{{news.title}}</a></h4>
-                    </div>
+                {% for news in news_list %}
+                	<div class="post">
+                      		<div class="cool_date rounded_corners">{{news.date|date:"M"}}<br><h3>{{news.date|date:"d"}}</h3></div>
+                      		<h4><a class="normal" style="color:black;" href="news.php#post{{news.id}}">{{news.title}}</a></h4>
+                    	</div>
                   {% endfor %}
-                {% endif %}
-
 	</div>
 	<div id="feed">
 		<p class="background_text">
@@ -107,12 +104,10 @@
 			apps.
 		</p>
                 <div class="post">
-                  {% if apps %}
                     {% for app in apps %}
-                      <a href="projects/#post{{ app.id }}"< class="title normal">{{ app.title }}</a>
-                      <p class="summary">{{ app.description }}</p>
+                        <a href="projects/#post{{ app.id }}"< class="title normal">{{ app.title }}</a>
+                        <p class="summary">{{ app.description }}</p>
                     {% endfor %}
-                  {% endif %}
 		</div>
 	</div>
 </div>

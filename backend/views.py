@@ -1,8 +1,12 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response,  get_object_or_404
 from django.template import RequestContext
+from backend.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
 
 def index(request):
-    return render_to_response('index.html', RequestContext(request))
+    apps = Apps.objects.all()
+    news = News.objects.all().order_by('-date')
+    return render_to_response('index.html',{'apps': apps, 'news_list': news},
+                              RequestContext(request))
 
 def leaders(request):
     return render_to_response('leaders.html', RequestContext(request))

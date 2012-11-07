@@ -74,24 +74,16 @@
 	<div id="news">
 		<p class="background_text">
 			news.
-		</p>
-		<!-- PHP will grab all the news articles from the database.
-		<?php
-		// Go through each row of the news table.
-		foreach ($dbh->query($news) as $row)
-		{
-		echo '<div class="post">';
+                </p>
+                {% if news_list %}
+                  {% for news in news_list %}
+                    <div class="post">
+                      <div class="cool_date rounded_corners">{{news.date|date:"M"}}<br><h3>{{news.date|date:"d"}}</h3></div>
+                      <h4><a class="normal" style="color:black;" href="news.php#post{{news.id}}">{{news.title}}</a></h4>
+                    </div>
+                  {% endfor %}
+                {% endif %}
 
-		// Parse the date.
-		$date = date_parse($row['created_at']);
-
-		echo '<div class="cool_date rounded_corners">'.date('M', strtotime($date['month'] . '01')).'<br><h3>'.$date['day'].'</h3></div>';
-
-		echo '<h4><a class="normal" style="color:black;" href="news.php#post'.$row['id'].'">'.$row['title'].'</a></h4>';
-
-		echo '</div>';
-		}
-		?> -->
 	</div>
 	<div id="feed">
 		<p class="background_text">
@@ -114,17 +106,13 @@
 		<p class="background_text">
 			apps.
 		</p>
-		<div class="post">
-			<!-- PHP will grab all the news articles from the database.
-			<?php
-			// Go through each row of the news table.
-			foreach ($dbh->query($projects) as $row)
-			{
-			echo '<a href="projects.php#post'.$row['id'].'" class="title normal">'.$row['title'].'</a>';
-			echo '<p class="summary">'.$row['description'].'</p>';
-			echo '<br>';
-			}
-			?> -->
+                <div class="post">
+                  {% if apps %}
+                    {% for app in apps %}
+                      <a href="projects/#post{{ app.id }}"< class="title normal">{{ app.title }}</a>
+                      <p class="summary">{{ app.description }}</p>
+                    {% endfor %}
+                  {% endif %}
 		</div>
 	</div>
 </div>

@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('backend.views',
     url(r'^$', 'index'),
+    url(r'^leaders$', 'leaders'),
 )
 
 urlpatterns += patterns('',

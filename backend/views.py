@@ -6,3 +6,15 @@ def index(request):
 
 def leaders(request):
     return render_to_response('leaders.html', RequestContext(request))
+
+def leaders(request):
+    return render_to_response('apps.html', RequestContext(request))
+
+def leaders(request):
+    return render_to_response('news.html', RequestContext(request))
+
+def leaders(request):
+    return render_to_response('learn.html', RequestContext(request))
+
+def leaders(request):
+    return render_to_response('contact.html', RequestContext(request))

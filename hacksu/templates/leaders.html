@@ -9,41 +9,12 @@
 	<h1 style="text-align:left;margin-left:50px;font-size:10em;">leaders.</h1>
 </header> <!-- Conent -->
 <div id="content_clean">
-
-	<h2>Daniel Gur</h2>
-	<p>
-		<a class="normal" href="http://www.danielgur.com">Website</a>
-	</p>
-	<p>
-		<a class="normal" href="mailto:dgur@kent.edu">Email</a>
-	</p>
-	<p>
-		I was born and raised in South Africa. I'm a junior majoring in CS and Applied Math. I am currently working for KentWired doing mobile development.
-	</p>
-	<br>
-	<br>
-	<h2>David "Dàwèi" Steinberg</h2>
-	<p>
-		<a class="normal" href="http://davidasteinberg.com">Website</a>
-	</p>
-	<p>
-		<a class="normal" href="mailto:dsteinb3@kent.edu">Email</a>
-	</p>
-	<p>
-		I am majoring in Computer Science and Electronic Media Production and minoring (completely unofficially) in Obsession with Languages. I am currently a tutor and researcher, and I look forward to a career in Academia.
-	</p>
-	<br>
-	<br>
-	<h2>Camden Fullmer</h2>
-	<p>
-		<a class="normal" href="http://www.camdenfullmer.com">Website</a>
-	</p>
-	<p>
-		<a class="normal" href="mailto:cfullmer@kent.edu">Email</a>
-	</p>
-	<p>
-		I am currently in my 3rd year at Kent State University studying Computer Science and Applied Mathematics. Presently I have an intern software engineer position at Kent Displays Inc. where I design mobile applications.
-	</p>
-	<br>
-	<br>
-</div> {% endblock %}
+        {% for leader in leaders %}
+                <h2>{{leader.name}}</h2>
+                <p><a class="normal" href="{{leader.website}}">Website</a></p>
+                <p><a class="normal" href="mailto:{{leader.email}}">Email</a></p>
+                <p>{{leader.description}}</p>
+                </br></br>
+        {% endfor %}
+</div>
+{% endblock %}

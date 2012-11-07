@@ -9,7 +9,9 @@ def index(request):
                               RequestContext(request))
 
 def leaders(request):
-    return render_to_response('leaders.html', RequestContext(request))
+    leaders = Leader.objects.all()
+    return render_to_response('leaders.html', {'leaders': leaders},
+                              RequestContext(request))
 
 def apps(request):
     return render_to_response('apps.html', RequestContext(request))

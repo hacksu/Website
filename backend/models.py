@@ -38,10 +38,23 @@ class NewsLink(models.Model):
         verbose_name_plural = 'News - Links'
 
 
+class NewsTopic(models.Model):
+    title = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'News - Topic'
+        verbose_name_plural = 'News - Topics'
+
+
 class News(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=3000)
+    date = models.DateField()
     links = models.ManyToManyField(NewsLink)
+    topics = models.ManyToManyField(NewsTopic)
 
     def __unicode__(self):
         return self.title

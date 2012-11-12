@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}hacKSU{% endblock %}
+
+{% block body %}
+
+<!-- Facebook -->
+<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+		// init the FB JS SDK
+		FB.init({
+			appId : '437941556240886', // App ID from the App Dashboard
+			channelUrl : 'channel.html', // Channel File for x-domain communication
+			status : true, // check the login status upon init?
+			cookie : true, // set sessions cookies to allow your server to access the session?
+			xfbml : true // parse XFBML tags on this page?
+		});
+
+		// Additional initialization code such as adding Event Listeners goes here
+		//initializeFeed();
+	};
+
+	// Load the SDK's source Asynchronously
+	( function(d) {
+			var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement('script');
+			js.id = id;
+			js.async = true;
+			js.src = "http://connect.facebook.net/en_US/all.js";
+			ref.parentNode.insertBefore(js, ref);
+		}(document)); 
+</script>
+
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+
+<!-- Header -->
+<header>
+	<div id="title">
+		<h1>hacKSU</h1>
+		<p>
+			let the hacking begin.
+		</p>
+		<img id="logo" src="{{ STATIC_URL }}img/logo.png"/>
+	</div>
+	<div id="right_nav">
+		<a class="nav" href="/learn">about</a>
+		<br>
+		<a class="nav" href="/contact">contact us</a>
+		<br>
+		<a class="nav" href="/leaders">leaders</a>
+		<br>
+		<a class="nav" href="/news">news</a>
+	</div>
+</header>
+
+<!-- Picture Content -->
+
+<div id="content_picture">
+	<div id="banner">
+		<p>
+			Become a part of our team.
+		</p><a class="button1 rounded_corners" href="/learn">LEARN MORE</a>
+	</div>
+</div>
+
+<!-- Actual Content -->
+<div id="content_main">
+	<div id="news">
+		<p class="background_text">
+			news.
+                </p>
+                {% for news in news_list %}
+                    <div class="post">
+                        <div class="cool_date rounded_corners">{{news.date|date:"M"}}<br><h3>{{news.date|date:"d"}}</h3></div>
+                      	<h4><a class="normal" style="color:black;" href="news/{{news.id}}">{{news.title}}</a></h4>
+                    </div>
+                {% endfor %}
+	</div>
+	<div id="feed">
+		<p class="background_text">
+			feed.
+		</p>
+		<div class="post">
+			<a class="summary none"></a>
+			<p class="date"></p>
+		</div>
+		<div class="post">
+			<a class="summary none"></a>
+			<p class="date"></p>
+		</div>
+		<div class="post">
+			<a class="summary none"></a>
+			<p class="date"></p>
+		</div>
+	</div>
+	<div id="apps">
+		<p class="background_text">
+			apps.
+		</p>
+                <div class="post">
+                    {% for app in apps %}
+                        <a href="apps/{{ app.id }}" class="title normal">{{ app.title }}</a>
+                        <p class="summary">{{ app.description }}</p>
+                    {% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

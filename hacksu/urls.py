@@ -12,7 +12,7 @@ urlpatterns = patterns('backend.views',
     url(r'^learn$', 'learn'),
     url(r'^news$', 'news'),
     url(r'^news/(?P<news_id>\d+)/$', 'news'),
-
+    url(r'^hackathon$', 'hackathon'),
 )
 
 urlpatterns += patterns('',

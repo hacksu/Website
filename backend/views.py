@@ -38,3 +38,6 @@ def learn(request):
 
 def contact(request):
     return render_to_response('contact.html', RequestContext(request))
+
+def hackathon(request):
+    return render_to_response('hackathon.html', RequestContext(request))

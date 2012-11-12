@@ -146,6 +146,16 @@ h4{
 	opacity: 1;
 }
 
+#alert{
+	text-align: center;
+	padding: 5px;
+	font-size: 1.2em;
+	background: #f9f9f9;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 5px 6px -6px black;
+}
+
 /* Header style */
 header{
 	text-align: center;
@@ -358,6 +368,12 @@ footer span{
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+img.sponsor{
+	max-width: 120px;
+	max-height: 120px;
+	margin: 10px 30px 10px 30px;
+}
 
 .text_center{
 	text-align: center;

@@ -13,7 +13,6 @@
 <!-- Conent -->
 <div id="content_clean">
 
-	{% for news in news_list %}
 	<h2 id="post{{news.id}}">{{news.title}}</h2>
 	<p>
 		[{{news.date|date:"m.d.Y"}}] {{news.description}}
@@ -46,7 +45,6 @@
 	<br>
 	<br>
 	{% endif %}
-	{% endfor %}
 
 </div>
 {% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base_content.html" %}
+
+{% block title %}hacKSU - apps{% endblock %}
+
+{% block breadcrumb %} <a href="/apps" class="current">apps</a>{% endblock %}
+
+{% block content %} <!-- Header -->
+
+<!-- Header -->
+<header>
+	<h1 style="text-align:left;margin-left:50px;font-size:10em;">apps.</h1>
+</header>
+
+<!-- Content -->
+<div id="content_clean">
+	<h2 id="post{{app.id}}">{{app.title}}</h2>
+	<p>
+		{{app.description}}
+	</p>
+	<br>
+	{% if app.links %}
+	<p>
+		Relevant Links:
+	</p>
+	<ul>
+		{% for link in app.links.all %}
+		<li>
+			<a class="normal" href="{{link.url}}">{{link.title}}</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<br>
+	<br>
+	{% endif %}
+</div>
+{% endblock %}

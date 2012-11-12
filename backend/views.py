@@ -3,8 +3,8 @@ from django.template import RequestContext
 from backend.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
 
 def index(request):
-    apps = Apps.objects.all()
-    news = News.objects.all().order_by('-date')
+    apps = Apps.objects.all()[:3]
+    news = News.objects.all().order_by('-date')[:3]
     return render_to_response('index.html', {'apps': apps, 'news_list': news},
                               RequestContext(request))
 

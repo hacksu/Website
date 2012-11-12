@@ -16,11 +16,14 @@ input,
 select,
 textarea {
     color: #222;
+    
 }
 
 body {
     font-size: 1em;
     line-height: 1.4;
+    height: 100%;
+    min-height: 100%;
 }
 
 /*
@@ -222,8 +225,6 @@ img#logo{
 #news{
 	width: 33%;
 	float: left;
-	height: 300px;
-	overflow: scroll;
 }
 
 #news .post{
@@ -236,8 +237,6 @@ img#logo{
 #feed{
 	width: 33%;
 	float: left;
-	height: 300px;
-	overflow: scroll;
 }
 
 #feed .post{
@@ -253,9 +252,8 @@ img#logo{
 /* Project content style */
 
 #apps{
-	width: 33%;
-	height: 300px;
-	overflow: scroll;
+	width: 32%;
+	float: left;
 }
 
 #apps .post{
@@ -348,6 +346,8 @@ footer{
 	color: rgb(100,100,100);
 	padding: 5px 0 0 0;
 	line-height: 1em;
+	   position:relative;
+	   
 }
 
 footer span{

@@ -74,13 +74,17 @@
 	<div id="news">
 		<p class="background_text">
 			news.
-                </p>
-                {% for news in news_list %}
-                    <div class="post">
-                        <div class="cool_date rounded_corners">{{news.date|date:"M"}}<br><h3>{{news.date|date:"d"}}</h3></div>
-                      	<h4><a class="normal" style="color:black;" href="news/{{news.id}}">{{news.title}}</a></h4>
-                    </div>
-                {% endfor %}
+		</p>
+		{% for news in news_list %}
+		<div class="post">
+			<div class="cool_date rounded_corners">
+				{{news.date|date:"M"}}
+				<br>
+				<h3>{{news.date|date:"d"}}</h3>
+			</div>
+			<h4><a class="normal" style="color:black;" href="news/{{news.id}}">{{news.title}}</a></h4>
+		</div>
+		{% endfor %}
 	</div>
 	<div id="feed">
 		<p class="background_text">
@@ -103,12 +107,15 @@
 		<p class="background_text">
 			apps.
 		</p>
-                <div class="post">
-                    {% for app in apps %}
-                        <a href="apps/{{ app.id }}" class="title normal">{{ app.title }}</a>
-                        <p class="summary">{{ app.description }}</p>
-                    {% endfor %}
+		{% for app in apps %}
+
+		<div class="post">
+			<a href="apps/{{ app.id }}" class="title normal">{{ app.title }}</a>
+			<p class="summary">
+				{{ app.description }}
+			</p>
 		</div>
+		{% endfor %}
 	</div>
 </div>
 

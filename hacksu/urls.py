@@ -13,7 +13,7 @@ urlpatterns = patterns('backend.views',
     url(r'^news$', 'news'),
     url(r'^news/(?P<news_id>\d+)/$', 'news'),
     url(r'^hackathon$', 'hackathon'),
-    url(r'^pull/$', 'pull'),
+    url(r'^pull$', 'pull'),
 )
 
 urlpatterns += patterns('',

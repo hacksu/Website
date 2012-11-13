@@ -6,7 +6,17 @@ $(window).load( function(){
 			var item = response["data"][index];
 		
 			// Set the message and link.
-			$(element).children(".summary").text(item.message).attr("href","http://www.facebook.com/"+item.id);
+			var msg="";
+			var msg_limit = 200;
+			if(item.message.length>msg_limit){
+				msg = item.message.substr(0,msg_limit);
+				msg = msg.substr(0,msg.lastIndexOf(" ")) + "....";
+			}
+			else{
+				msg = item.message;
+			}
+				
+			$(element).children(".summary").text(msg).attr("href","http://www.facebook.com/"+item.id);
 			
 			// Get the date.		
 			$(element).children(".date").text($.timeago(String(item.created_time)));

@@ -148,9 +148,9 @@ h4{
 
 #alert{
 	text-align: center;
-	padding: 5px;
-	font-size: 1.2em;
-	background: #f9f9f9;
+	padding: 3px;
+	font-size: 1em;
+	background: red;
 	-webkit-box-shadow: 0 8px 6px -6px black;
 	   -moz-box-shadow: 0 8px 6px -6px black;
 	        box-shadow: 0 5px 6px -6px black;

@@ -1,6 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from backend.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
+from sh import git
 
 def index(request):
     apps = Apps.objects.all()[:3]
@@ -41,3 +43,6 @@ def contact(request):
 
 def hackathon(request):
     return render_to_response('hackathon.html', RequestContext(request))
+
+def pull(request):
+    return HttpResponse(git.pull())

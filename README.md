@@ -11,5 +11,5 @@ python manage.py syncdb
 
 ##Common Problems
 
-**Can not write to a read only database
+**Can not write to a read only database**
   sudo chgrp -R apache www/*

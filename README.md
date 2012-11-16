@@ -32,8 +32,8 @@ Can not write to a read only database
 
 Using [django-evolution](http://code.google.com/p/django-evolution/)
 
-    1. Run python manage.py syncdb
-    2. Make modifications to the model files in your project
-    3. Run ./manage.py evolve --hint --execute
+1. Run python manage.py syncdb
+2. Make modifications to the model files in your project
+3. Run python manage.py evolve --hint --execute
 
 More detailed instructions foind [here](http://django-evolution.googlecode.com/svn/trunk/docs/evolution.txt)

@@ -190,7 +190,7 @@
    box-shadow: 0 0 5px #000;
 }
 
-#wrapper{
+#leader-views{
 	width:100%;
 	margin:auto auto;
 }
@@ -198,4 +198,17 @@
 #content_clean{
 	margin: 0;
 	padding: 0;
+}
+
+#leader-info{
+	margin: 100px;
+}
+
+#leader-info a{
+	font-size: 1.5em;
+	margin: 5px 10px 5px 10px;
+}
+
+#leader-name{
+	display: inline;
 }

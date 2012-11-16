@@ -8,7 +8,7 @@
 {% block content %} <!-- Header -->
 <div id="content_clean">
 
-	<div id="wrapper">
+	<div id="leader-views">
 		{% for leader in leaders %}
 		<div class="view view-sixth">
 			<img src="{% gravatar_url leader.email %}">
@@ -17,11 +17,17 @@
 				<p>
 					Leadership role goes here.
 				</p>
-				<a href="#" class="info" target="_blank">Read More</a>
+				<a leader-id='{{leader.id}}' class="info">Read More</a>
 			</div>
 		</div>
 		{% endfor %}
 		<div style="clear:both;"></div>
+	</div>
+	<div id="leader-info">
+		<h2 id="leader-name"></h2>
+		<a class="normal" id="leader-website"></a>
+		<a class="normal" id="leader-email"></a>
+		<p id="leader-description">Select a leader to view additional information.</p>
 	</div>
 
 	<!--<h2>{{leader.name}}</h2>

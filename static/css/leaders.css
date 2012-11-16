@@ -6,7 +6,7 @@
    transition: all 0.4s ease-in-out 0.5s;
 }
 .view-sixth .mask {
-   background: rgba(146,96,91,0.5);
+   background: rgba(141,198,63,0.5);
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
    filter: alpha(opacity=0);
    opacity: 0;
@@ -140,6 +140,7 @@
    box-shadow: 1px 1px 2px #e6e6e6;
    cursor: default;
    background: #fff no-repeat center center;
+   float:left;
 }
 .view .mask{
    width: 225px;
@@ -190,6 +191,11 @@
 }
 
 #wrapper{
-	width:300px;
-	margin:50px auto;
+	width:100%;
+	margin:auto auto;
+}
+
+#content_clean{
+	margin: 0;
+	padding: 0;
 }

@@ -69,6 +69,7 @@ class Leader(models.Model):
     website = models.CharField(max_length=200, blank=True)
     email = models.EmailField(max_length=200, blank=True)
     description = models.TextField(max_length=1500)
+    position = models.CharField(max_length=100, blank=True)
 
     def __unicode__(self):
         return self.name

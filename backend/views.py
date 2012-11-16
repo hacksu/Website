@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from backend.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
+from django.core import serializers
 from sh import git
 
 def index(request):
@@ -11,9 +12,13 @@ def index(request):
                               RequestContext(request))
 
 def leaders(request):
-    leaders = Leader.objects.all()
+    leaders = Leader.objects.all()      
     return render_to_response('leaders.html', {'leaders': leaders},
                               RequestContext(request))
+        
+def leader(request, id):
+    leader_json = serializers.serialize("json", Leader.objects.filter(id=id))
+    return HttpResponse(leader_json, mimetype="application/json")
 
 def apps(request, app_id=None):
     if not app_id:
@@ -45,4 +50,5 @@ def hackathon(request):
     return render_to_response('hackathon.html', RequestContext(request))
 
 def pull(request):
-    return HttpResponse(git.pull())
+    return HttpResponse(git.pull()) 
+

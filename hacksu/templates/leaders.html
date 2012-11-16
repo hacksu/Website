@@ -1,20 +1,45 @@
 {% extends "base_content.html" %}
+{% load gravatar %}
 
 {% block title %}hacKSU - leaders{% endblock %}
 
 {% block breadcrumb %} <a href="/leaders" class="current">leaders</a>{% endblock %}
 
 {% block content %} <!-- Header -->
-<header>
-	<h1 style="text-align:left;margin-left:50px;font-size:10em;">leaders.</h1>
-</header> <!-- Conent -->
 <div id="content_clean">
-        {% for leader in leaders %}
-                <h2>{{leader.name}}</h2>
-                <p><a class="normal" href="{{leader.website}}">Website</a></p>
-                <p><a class="normal" href="mailto:{{leader.email}}">Email</a></p>
-                <p>{{leader.description}}</p>
-                </br></br>
-        {% endfor %}
+
+	<div id="leader-views">
+		{% for leader in leaders %}
+		<div class="view view-sixth">
+			<img src="{% gravatar_url leader.email %}">
+			<div class="mask">
+				<h6>Hi, my name is {{leader.name}}</h6>
+				<p>
+					Leadership role goes here.
+				</p>
+				<a leader-id='{{leader.id}}' class="info">Read More</a>
+			</div>
+		</div>
+		{% endfor %}
+		<div style="clear:both;"></div>
+	</div>
+	<div id="leader-info">
+		<h2 id="leader-name"></h2>
+		<a class="normal" id="leader-website"></a>
+		<a class="normal" id="leader-email"></a>
+		<p id="leader-description">Select a leader to view additional information.</p>
+	</div>
+
+	<!--<h2>{{leader.name}}</h2>
+	<p>
+	<a class="normal" href="{{leader.website}}">Website</a>
+	</p>
+	<p>
+	<a class="normal" href="mailto:{{leader.email}}">Email</a>
+	</p>
+	<p>
+	{{leader.description}}
+	</p>
+	</br></br>-->
 </div>
 {% endblock %}

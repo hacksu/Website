@@ -1,6 +1,5 @@
 // Change the widths of the content based on the width of the window.
 
-
 $(window).resize(function() {
   if($('#content_main').width() < 900){
 	$('#news').width('100%');

@@ -169,7 +169,7 @@
    font-size: 1em !important;
    position: relative;
    color: #fff;
-   padding: 10px 20px 20px;
+   padding: 10px 20px 20px 5px;
    text-align: center;
 }
 .view a.info {

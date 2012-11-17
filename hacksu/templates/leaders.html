@@ -14,9 +14,7 @@
 			<img src="{% gravatar_url leader.email %}">
 			<div class="mask">
 				<h6>Hi, my name is {{leader.name}}</h6>
-				<p>
-					Leadership role goes here.
-				</p>
+				<p>{{leader.position}}</p>
 				<a leader-id='{{leader.id}}' class="info">Read More</a>
 			</div>
 		</div>

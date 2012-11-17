@@ -15,16 +15,13 @@ Repository that contains code for the website located at http://www.hacksu.cs.ke
 
     sudo /etc/init.d/httpd restart
 
-
-Can not write to a read only database
-
-    sudo chgrp -R apache www/*
-
 ##Common Problems
 
 Can not write to a read only database
 
     sudo chgrp -R apache www/*
+
+    sudo chmod -R 0775 www/*
 
 
 

@@ -110,12 +110,13 @@ h1{
 }
 
 h2{
-	font-size: 2.5em;
+	font-size: 2em;
 	font-family: Nexa_Bold, Arial;
 }
 
 h3{
-	font-size: 2em;
+	font-size: 1.3em;
+	font-family: Nexa_Bold, Arial;
 }
 
 h4{
@@ -206,16 +207,16 @@ img#logo{
 }
 
 #content_picture #banner{
-	background: rgba(206,255,37,0.9);
-	height: 80px;
-	line-height: 80px;
+	background: rgba(206,255,37,0.7);
+	height: 60px;
+	line-height: 60px;
 	width: 100%;
 	text-align: center;
 }
 
 #content_picture p{
 	display: inline;
-	font-size: 1.8em;
+	font-size: 1.3em;
 	margin: 0 20px 0 0;
 	position: relative;
 	top: 5px;
@@ -342,8 +343,8 @@ a.button1{
 }
 
 #content_clean p{
-	font-size: 1.5em;
-	margin-left: 20px;
+	font-size: 1.3em;
+	color: #3f3f3f;
 }
 
 /* Style for footer. */
@@ -383,11 +384,11 @@ img.sponsor{
 
 .cool_date{
 	text-align: center;
-	width: 40px;
+	width: 45px;
 	background: #2f2f2f;
 	color: white;
 	line-height: 1.5em;
-	padding: 0 5px 0 5px;
+	padding: 5px 5px 5px 5px;
 	float:left;
 	margin: 5px 10px 0 0;
 }
@@ -406,7 +407,7 @@ img.sponsor{
  * Rounded corners
  */
  
-.rounded_corners{
+.rounded-corners{
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;

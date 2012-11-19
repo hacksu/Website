@@ -7,6 +7,8 @@ $(document).ready(function() {
 			$('#leader-description').html(leader.description);
 			$('#leader-email').html('email').attr('href','mailto:' + leader.email);	
 			$('#leader-website').html('website').attr('href',leader.website);			
+		}).done(function(){
+			$(window).scrollTop($(document).height(),"fast");
 		});
 	});
 });

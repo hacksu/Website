@@ -41,82 +41,94 @@
 
 <!-- Header -->
 <header>
-	<div id="title">
+        <div id="social" class="container">
+                <ul>
+                        <li><a href="https://www.facebook.com/groups/hacksu/"><img src="{{STATIC_URL}}img/facebook.png"/></a></li>
+                        <li><a href="https://twitter.com/hacKSU1"><img src="{{STATIC_URL}}img/twitter.png"/></a></li>
+                        <li><a href="https://github.com/organizations/hacKSU"><img src="{{STATIC_URL}}img/github.png"/></a></li>
+                </ul>
+        </div>
+        <div id="logo" class="container">
 		<h1>hacKSU</h1>
-		<p>
-			let the hacking begin.
-		</p>
-		<img id="logo" src="{{ STATIC_URL }}img/logo.png"/>
+		<p>where the hacking begins.</p>
 	</div>
-	<div id="right_nav">
-		<a class="nav" href="/learn">about</a>
-		<br>
-		<a class="nav" href="/contact">contact us</a>
-		<br>
-		<a class="nav" href="/leaders">leaders</a>
-		<br>
-		<a class="nav" href="/news">news</a>
-	</div>
+        <nav id="main-menu" class="container">
+                <ul>
+                        <li><a href="/learn">About</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/leaders">Leaders</a></li>
+                        <li><a href="/news">News</a></li>
+                </ul>
+	</nav>
 </header>
 
-<!-- Picture Content -->
+<!-- Baner -->
 
-<div id="content_picture">
-	<div id="banner">
-		<p>
-			Become a part of our team.
-		</p><a class="button1 rounded-corners" href="/learn">LEARN MORE</a>
+<div id="content-banner" class="containter">
+        <div id="image">
+        </div>
+</div>
+
+<!-- 3 Column Content -->
+<div id="content-3col" class="container">
+	<div class="column">
+                <div class="title">
+                        <img src="{{STATIC_URL}}img/spring.png"/>
+                        <p>Learn, Hack, and Build Together</p>
+                </div>
+                <p>Nam non massa et eros tristique consequat. Proin eu imperdiet tellus. Nullam viverra lorem vulputate enim scelerisque volutpat. Aenean imperdiet odio in enim vehicula tincidunt. Phasellus eu laoreet lorem. Morbi in mauris lectus, sit amet vestibulum nisi. Nullam euismod mattis lacinia.</p>
+                <a class="normal" href="#">more info</a>                
+	</div>
+        <div class="column">
+                <div class="title">
+                        <img src="{{STATIC_URL}}img/cloud.png"/>
+                        <p>Bring Your Amazing Idea to Life</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu nibh egestas orci tempor eleifend eu ut elit. Donec urna nibh, congue sit amet tristique id, ullamcorper eu odio. In ut nulla sed urna bibendum congue. Aliquam dictum risus mi, et euismod nulla. In tempor blandit egestas. Praesent non justo nunc. Nam sem est, condimentum sed fermentum ut, mattis ac enim. Ut eleifend dignissim congue. Morbi non nunc augue.</p>
+                <a class="normal" href="#">more info</a>
+        </div>
+        <div class="column">
+                <div class="title">
+                        <img src="{{STATIC_URL}}img/bubble.png"/>
+                        <p>This A Temporary Title to Display Anything</p>
+                </div>
+                <p>Fusce euismod augue est. Ut et ante quis lacus hendrerit tempor in a purus. In tortor lectus, semper eu auctor nec, feugiat sed nunc. Phasellus suscipit velit id tellus vestibulum ornare.</p>
+                <a class="normal" href="#">more info</a>		
 	</div>
 </div>
 
-<!-- Actual Content -->
-<div id="content_main">
-	<div id="news">
-		<p class="background_text">
-			news.
-		</p>
-		{% for news in news_list %}
-		<div class="post">
-			<div class="cool_date rounded_corners">
-				{{news.date|date:"M"}}
-				<br>
-				<h3>{{news.date|date:"d"}}</h3>
-			</div>
-			<h4><a class="normal" style="color:black;" href="news/{{news.id}}">{{news.title}}</a></h4>
-		</div>
-		{% endfor %}
-	</div>
-	<div id="feed">
-		<p class="background_text">
-			feed.
-		</p>
-		<div class="post">
-			<a class="summary none"></a>
-			<p class="date"></p>
-		</div>
-		<div class="post">
-			<a class="summary none"></a>
-			<p class="date"></p>
-		</div>
-		<div class="post">
-			<a class="summary none"></a>
-			<p class="date"></p>
-		</div>
-	</div>
-	<div id="apps">
-		<p class="background_text">
-			apps.
-		</p>
-		{% for app in apps %}
+<!-- Single column content -->
 
-		<div class="post">
-			<a href="apps/{{ app.id }}" class="title normal">{{ app.title }}</a>
-			<p class="summary">
-				{{ app.description }}
-			</p>
+<div id="content-1col" class="container">
+        <div class="title"><h2>News</h2>
+        </div>
+        <hr>
+        {% for news in news_list %}
+	<div>
+	        <div class="cool-date">
+                        <p>{{news.date|date:"M"}} {{news.date|date:"d"}}</p>
 		</div>
-		{% endfor %}
+		<h4><a class="normal" style="color:black;" href="news/{{news.id}}">{{news.title}}</a></h4>
 	</div>
+        {% endfor %}
 </div>
+
+<div id="content-1col" class="container">
+        <div class="title"><h2>Projects</h2>
+        </div>
+        <hr>
+        {% for app in apps %}
+	<div>
+                <a href="apps/{{ app.id }}" class="normal"><h4>{{ app.title }}</h4></a>
+		<p class="summary">
+			{{ app.description }}
+		</p>
+	</div>
+	{% endfor %}
+</div>
+
+
+
+                
 
 {% endblock %}

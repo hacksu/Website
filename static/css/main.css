@@ -35,7 +35,7 @@ body {
     font-size: 1em;
     line-height: 1.4;
     margin: 0 auto 0 auto;
-    background-color: white;
+    background-color: #fbffec;
 }
 
 /*
@@ -166,7 +166,7 @@ h4{
 
 /* Header style */
 header{
-	height: 145px;
+	height: 170px;
 	display: block;
   position: relative;
   border-bottom: thin solid #3d3d3d;
@@ -203,38 +203,46 @@ header{
 #main-menu a{
   text-decoration: none;
   color: #fbffec;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 30px;
+  font-size: 0.9em;
+}
+
+#main-menu a:hover{
+  color: #8da9b4; 
 }
 
 #logo{
-  background-color: #556911;
-  height: 100px;
+  background-color: #285363;
+  height: 125px;
   color: #fbffec;
 }
 
 #logo h1{
-  padding-top: 15px;
+  padding-top: 30px;
   font-size: 2em;
   font-family: 'Lobster', cursive;
+  text-shadow: 1px 1px #000000;
+  color: #fbffec;
 }
 
 #logo p{
   font-size: 0.8em;
-  color: #dfeab7;
+  color: #8da9b4;
 }
 /* Banner content style */
 
 #content-banner{
-  padding-top:20px;
-  padding-bottom:20px;
-  background: #8fac2a;
-  height: 400px;
+  /*background: url(../img/rough_diagonal.png);
+  background-size: 150px 150px;*/
+  background-color: #5d8b9c;
+  height: 350px;
   text-align: center;
   border-bottom: thin solid #3d3d3d;
+  padding: 20px 0;
 }
 
 #content-banner #image{
-  height: 400px;
+  height: 350px;
   background: url(../img/image1.jpg) no-repeat center -100px;
   background-size: 100% auto;
 }
@@ -256,8 +264,8 @@ header{
 
 .column{
   float: left;
-  width: 31.3%;
-  margin: 0 1%;
+  width: 300px;
+  margin: 0 5px;
 }
 
 .column p{
@@ -271,15 +279,15 @@ header{
 
 .column .title{
   width: 100%;
-  background-color: #8fac2a;
+  background-color: #5d8b9c;
+  background-size: 50px 50px;
   color: #fbffec;
   font-size: 1.2em;
 }
 
 .column .title img{
   float:left;
-  padding: 13px;
-  
+  padding: 13px;  
 }
 
 .column .title p{
@@ -346,17 +354,20 @@ a.button1{
 
 /* Style for footer. */
 footer{
-	text-align: center;
+  height: 100px;
 	background-color: #212121;
 	width: 100%;
 	color: rgb(100,100,100);
-	padding: 5px 0 0 0;
-	line-height: 1em;
-	   position:relative;
-	   
+	padding: 20px 0 0 0;
 }
 
-footer span{
+footer a{
+  margin: 0 30px 0 0;
+  color: white;
+}
+
+footer p{
+  margin: 40px 0 0 0;
 	font-size: 0.5em;
 }
 

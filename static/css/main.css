@@ -190,9 +190,10 @@ header{
 
 #main-menu{
   position: absolute;
-  right: 0px;
-  margin: 0 20px 0 0;
-	margin-top: -60px;
+  text-align: right;
+  top: 50%;
+  margin-top: 10px;
+  width: 940px;
 }
 
 #main-menu li{

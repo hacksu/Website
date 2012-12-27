@@ -23,7 +23,39 @@
 		<script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.1.min.js"></script>
 
 	</head>
-	<body>
+  <body>
+
+    <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <!-- Header -->
+    <header>
+      <div id="social">
+        <div class="container">
+          <ul>
+            <li><a href="https://www.facebook.com/groups/hacksu/"><img src="{{STATIC_URL}}img/facebook.png"/></a></li>
+            <li><a href="https://twitter.com/hacKSU1"><img src="{{STATIC_URL}}img/twitter.png"/></a></li>
+            <li><a href="https://github.com/organizations/hacKSU"><img src="{{STATIC_URL}}img/github.png"/></a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="logo">
+        <div class="container">
+          <h1>hacKSU</h1>
+          <p>Hackers that keep it real.</p>
+          <nav id="main-menu">
+            <ul>
+              <li><a href="/learn">About</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="/leaders">Leaders</a></li>
+              <li><a href="/news">News</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
 		{% block body %}{% endblock %}
 
     <footer>

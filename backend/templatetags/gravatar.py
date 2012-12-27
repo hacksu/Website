@@ -24,7 +24,7 @@ class GravatarUrlNode(template.Node):
             return ''
 
         default = "http://example.com/static/images/defaultavatar.jpg"
-        size = 125
+        size = 300
 
         gravatar_url = "http://www.gravatar.com/avatar/" + hashlib.md5(email.lower()).hexdigest() + "?"
         #Use custom default gravatar.

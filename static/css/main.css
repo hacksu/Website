@@ -269,7 +269,6 @@ header{
 /* Style for links and buttons. */
 a.none{
 	text-decoration: none;
-	color:black;
 }
 
 a.nav{
@@ -305,21 +304,16 @@ a.normal:hover{
 a.button1{
 	text-decoration: none;
 	color: white;
-	font-family: 'Actor', sans-serif;
-	background: #8fac2a;
+	background-color: #5d8b9c;
 	padding: 8px 15px 6px 15px;
 	font-size: 0.8em;
+  color: white;
+  text-shadow: 1px 1px #433830;
+  box-shadow: 4px 4px 0px #433830;  
 }
 
-/* Style for clean content. */
-#content_clean{
-	margin: 0 70px 50px 70px;
-	min-height: 100%;
-}
-
-#content_clean p{
-	font-size: 1.3em;
-	color: #3f3f3f;
+a.button1:hover{
+  box-shadow: 8px 8px 0px #433830;
 }
 
 /* Style for footer. */

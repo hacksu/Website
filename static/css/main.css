@@ -139,30 +139,6 @@ h4{
   margin: 0 auto;
 }
 
-/* Breadcrumb style */
-#breadcrumb{
-	margin: 5px 0 0 5px;
-	color: black;
-	font-size: 1em;
-}
-
-#breadcrumb p{
-	display: inline;
-}
-
-#breadcrumb a{
-	text-decoration: none;
-	color: black;
-}
-
-#breadcrumb a.past{
-	opacity: 0.7;
-}
-
-#breadcrumb a.past:hover{
-	opacity: 1;
-}
-
 /* Header style */
 header{
 	height: 170px;

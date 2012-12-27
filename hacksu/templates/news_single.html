@@ -1,23 +1,18 @@
 {% extends "base_content.html" %}
 
-{% block title %}hacKSU - news{% endblock %}
+{% block title %}{{news.title}}{% endblock %}
 
-{% block breadcrumb %} <a href="/news" class="current">news.</a>{% endblock %}
-
-{% block content %} <!-- Header -->
-
-<header>
-	<h1 style="text-align:left;margin-left:50px;font-size:10em;">news.</h1>
-</header>
-
+{% block content %}
 <!-- Conent -->
-<div id="content_clean">
+<div class="container" style="padding: 30px 0 0 0;">
 
-	<h2 id="post{{news.id}}">{{news.title}}</h2>
+        <h2 id="post{{news.id}}">{{news.title}}</h2>
+        <hr>
 	<p>
 		[{{news.date|date:"m.d.Y"}}] {{news.description}}
 	</p>
-	<br>
+        <br>
+        <div class="left-indent">
 	{% if news.topics %}
 	<p>
 		Topics will include:
@@ -44,7 +39,8 @@
 	</ul>
 	<br>
 	<br>
-	{% endif %}
+        {% endif %}
+        </div>
 
 </div>
 {% endblock %}

@@ -1,23 +1,18 @@
 {% extends "base_content.html" %}
 
-{% block title %}hacKSU - apps{% endblock %}
+{% block title %}{{app.title}}{% endblock %}
 
-{% block breadcrumb %} <a href="/apps" class="current">apps</a>{% endblock %}
-
-{% block content %} <!-- Header -->
-
-<!-- Header -->
-<header>
-	<h1 style="text-align:left;margin-left:50px;font-size:10em;">apps.</h1>
-</header>
+{% block content %}
 
 <!-- Content -->
-<div id="content_clean">
-	<h2 id="post{{app.id}}">{{app.title}}</h2>
+<div class="container" style="padding: 30px 0 0 0;">
+        <h2 id="post{{app.id}}">{{app.title}}</h2>
+        <hr>
 	<p>
 		{{app.description}}
 	</p>
-	<br>
+        <br>
+        <div class="left-indent">
 	{% if app.links %}
 	<p>
 		Relevant Links:
@@ -31,6 +26,7 @@
 	</ul>
 	<br>
 	<br>
-	{% endif %}
+        {% endif %}
+        </div>
 </div>
 {% endblock %}

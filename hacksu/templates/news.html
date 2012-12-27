@@ -1,52 +1,49 @@
 {% extends "base_content.html" %}
 
-{% block title %}hacKSU - news{% endblock %}
+{% block title %}Recent news in hacKSU{% endblock %}
 
-{% block breadcrumb %} <a href="/news" class="current">news.</a>{% endblock %}
-
-{% block content %} <!-- Header -->
-
-<header>
-	<h1 style="text-align:left;margin-left:50px;font-size:10em;">news.</h1>
-</header>
-
-<!-- Conent -->
-<div id="content_clean">
-
-	{% for news in news_list %}
-	<h2 id="post{{news.id}}">{{news.title}}</h2>
+{% block content %}
+ <div class="container" style="padding: 30px 0 0 0;">
+        {% for news in news_list %}
+        <div class="cool-date">
+                <p>{{news.date|date:"M"}} {{news.date|date:"d"}}</p>
+        </div>
+        <h2 id="post{{news.id}}">{{news.title}}</h2>
+        <hr>
 	<p>
-		[{{news.date|date:"m.d.Y"}}] {{news.description}}
+		{{news.description}}
 	</p>
 	<br>
-	{% if news.topics %}
-	<p>
-		Topics will include:
-	</p>
-	<ul>
-		{% for topic in news.topics.all %}
-		<li>
-			{{topic.title}}
-		</li>
-		{% endfor %}
-	</ul>
-	{% endif %}
+        <div class="left-indent">
+                {% if news.topics %}
+                <p>
+                        Topics will include:
+                </p>
+                <ul>
+                        {% for topic in news.topics.all %}
+                        <li>
+                                {{topic.title}}
+                        </li>
+                        {% endfor %}
+                </ul>
+                {% endif %}
+                
+                {% if news.links %}
+                <br>
+                <p>Relevant Links:</p>
+                <ul>
+                        {% for link in news.links.all %}
+                        <li>
+                                <a class="normal" href="{{link.url}}">{{link.title}}</a>
+                        </li>
+                        {% endfor %}
+                </ul>
+                <br>
+                <br>
+                {% endif %}
+                </div>
 
-	{% if news.links %}
-	<p>
-		Relevant Links:
-	</p>
-	<ul>
-		{% for link in news.links.all %}
-		<li>
-			<a class="normal" href="{{link.url}}">{{link.title}}</a>
-		</li>
-		{% endfor %}
-	</ul>
-	<br>
-	<br>
-	{% endif %}
-	{% endfor %}
+                {% endfor %}
+        </div>
 
-</div>
 {% endblock %}

@@ -108,9 +108,8 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-/* Elements that will use the Nexa Light font face */
 h1, p, h2, a, span, li, div, h3 {
-	font-family: Nexa_Light, Arial;
+	font-family: 'Actor', sans-serif;
 	font-weight: 100;
 	font-style:	normal;
 	margin: 0;
@@ -127,7 +126,7 @@ h2{
 
 h3{
 	font-size: 1.3em;
-	font-family: Nexa_Bold, Arial;
+	font-family: 'Actor', sans-serif;
 }
 
 h4{
@@ -176,7 +175,7 @@ header{
   padding-top: 10px;
   padding-bottom: 10px;
   height: 25px;
-  background-color: #fbffec;
+  background-color: #feffd4;
 }
 
 #social li{
@@ -281,18 +280,14 @@ header{
   width: 100%;
   background-color: #5d8b9c;
   background-size: 50px 50px;
-  color: #fbffec;
-  font-size: 1.2em;
-}
-
-.column .title img{
-  float:left;
-  padding: 13px;  
 }
 
 .column .title p{
-  font-size: 1em;
-  padding: 13px;
+  font-size: 1.7em;
+  padding: 10px 5px 5px 20px;
+  font-family: 'Lobster';
+  color: #feffd4;
+  text-shadow: 1px 1px #433830;
 }
 
 /* Style for links and buttons. */
@@ -300,7 +295,6 @@ a.none{
 	text-decoration: none;
 	color:black;
 }
-
 
 a.nav{
 	color: #8fac2a;
@@ -335,7 +329,7 @@ a.normal:hover{
 a.button1{
 	text-decoration: none;
 	color: white;
-	font-family: Nexa_Light, Arial;
+	font-family: 'Actor', sans-serif;
 	background: #8fac2a;
 	padding: 8px 15px 6px 15px;
 	font-size: 0.8em;

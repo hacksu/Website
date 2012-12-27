@@ -24,6 +24,7 @@
 
 	</head>
   <body>
+    <div id="container">
 
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -58,6 +59,9 @@
 
 		{% block body %}{% endblock %}
 
+    <div id="spacer">
+    </div>
+
     <footer>
       <div class="container">
         <a class="basic" href="/leaders">Leaders</a><a class="basic" href="/news">News</a><a class="basic" href="/apps">Apps</a><a class="basic" href="/contact">Contact Us</a><a class="basic" href="/learn">About</a>
@@ -84,6 +88,7 @@
 					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
 					s.parentNode.insertBefore(g, s)
 				}(document, 'script'));
-		</script>
+      </script>
+    </div>
 	</body>
 </html>

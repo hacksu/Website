@@ -3,7 +3,6 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from backend.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
 from django.core import serializers
-from sh import git
 
 def index(request):
     apps = Apps.objects.all()[:3]

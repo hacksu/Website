@@ -1,9 +1,8 @@
 from django.conf.urls import patterns, include, url
-
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('backend.views',
+urlpatterns = patterns('hacksu.views',
     url(r'^$', 'index'),
     url(r'^leaders$', 'leaders'),
     url(r'^apps$', 'apps'),

@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from backend.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
+from hacksu.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
 from django.core import serializers
 
 def index(request):

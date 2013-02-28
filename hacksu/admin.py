@@ -1,4 +1,4 @@
-from backend.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
+from hacksu.models import News, NewsLink, Leader, Apps, AppsLink, NewsTopic
 from django.contrib import admin
 
 admin.site.register(News)

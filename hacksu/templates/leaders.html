@@ -4,30 +4,31 @@
 {% block title %}Leaders of hacKSU{% endblock %}
 
 {% block content %} <!-- Header -->
-        <div class = "container">
-        <div id="leaders-grid">
-		{% for leader in leaders %}
-		<div class="view view-sixth" leader-id="{{leader.id}}">
-			<img src="{% gravatar_url leader.email %}">
-			<div class="mask">
-				<h6>{{leader.name}}</h6>
-				<p>{{leader.position}}</p>
-			</div>
-		</div>
-		{% endfor %}
-		<div style="clear:both;"></div>
-        </div>
-        <div id="leaders-placeholder">
-                <p>Select a leader to view additional information.</p>
-        </div>
-        <div id="leaders-info">
-                <img id="leader-img"/>
-                <h2 id="leader-name"></h2>
-		<a class="normal" id="leader-website"></a>
-		<a class="normal" id="leader-email"></a>
-		<p id="leader-description"></p>
-        </div>
-        <div style="clear:both"></div>
+<div class = "container">
+  <div id="leaders-grid">
+    {% for leader in leaders %}
+    <div class="view view-sixth" leader-id="{{leader.id}}">
+      <img src="{% gravatar_url leader.email %}">
+      <div class="mask">
+        <h6>{{leader.name}}</h6>
+        <p>{{leader.position}}</p>
+      </div>
+    </div>
+    {% endfor %}
+    <div style="clear:both;"></div>
+  </div>
+  <div id="leaders-placeholder">
+    <p>Select a leader to view additional information.</p>
+  </div>
+  <div id="leaders-info">
+    <img id="leader-img"/>
+    <h2 id="leader-name"></h2>
+    <a class="normal" id="leader-website"></a>
+    <a class="normal" id="leader-email"></a>
+    <p id="leader-description"></p>
+  </div>
+  <div style="clear:both"></div>
+  <br><br><br>
 </div>
 
 {% endblock %}

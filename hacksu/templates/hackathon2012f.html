@@ -1,150 +1,32 @@
 {% extends "base_content.html" %}
 
-{% block title %}hacKSU - hackathon{% endblock %}
-
-{% block breadcrumb %} <a href="/hackathon" class="current">hackathon</a>{% endblock %}
+{% block title %}Hackathon 2012 Fall{% endblock %}
 
 {% block content %} <!-- Header -->
-<header>
-	<h1 style="text-align:center;font-size:10em;">hackathon</h1>
-</header>
 
-<style>
-	#trophy {
-		position: absolute;
-		background: url(../../static/img/trophy.png) no-repeat center;
-		width: 283px;
-		height: 211px;
-		top: 50px;
-		left: 100px;
-		opacity: 0.05;
-	}
+<!-- Single column content -->
 
-	#content {
-		margin: 0 3% 0 3%;
-	}
-
-	#content p {
-		font-size: 1.2em;
-		color: #3f3f3f;
-	}
-
-	section {
-		width: 100%;
-		height: 100%;
-		margin: 150px 0 150px 0;
-		position: relative;
-	}
-
-	section.img-div img {
-		margin: 0 5% 0 5%;
-		width: 35%;
-		float: left;
-	}
-
-	section.div-img img {
-		margin: 0 5% 0 5%;
-		width: 34%;
-	}
-
-	section.div-img div {
-		float: left;
-		width: 50%;
-		margin: 0 0 0 5%;
-	}
-
-</style>
-
-<!-- Content -->
-<div id="content">
-	<p style="font-size:1.3em;margin:-60px 60px 20px 60px">
-		(n.) an event in which computer programmers and others in the field of software development, like graphic designers, interface designers, project managers and computational philologists, collaborate intensively on software projects.
-		<section class="img-div">
-			<img class="rounded-corners" src="../../static/img/hackathon/hackathon1.jpg"/>
-			<div>
-				<h2>This is only the beginning.</h2>
-				<p>
-					We hosted our first ever hackathon on November the 17th in the Library (3rd Floor) of the Mathematical and Computer Science Building at Kent State University. We had a wide range of sponsors helping us put on the event which can be viewed at the bottom of the page. This hackathon involved many students from the University studying all kinds of majors! Feel free to email <a class="normal" href="mailto:hacksu@cs.kent.edu">hacKSU@cs.kent.edu</a> if you have any questions about the hackathon.
-				</p>
-			</div>
-			<div style="clear:both"></div>
-		</section>
-
-		<section class="div-img">
-			<div>
-				<h2>Great turnout of hackers.</h2>
-				<p>
-					All our fellow hackers showed great enthusiam throughout the 12 hour competition. We yelled, we cheered, we cried, we tried, we succeeded. Hacking like it should be. Learning, laughing, loving it. And leading our teams to the gold. Interdisciplinary teams. From Computer Science to Information Systems to Physics to Psychology to Design and Advertising. Project managers, style slingers, and backend builders all culminated in phenomenal projects.
-				</p>
-			</div>
-			<img class="rounded-corners" src="../../static/img/hackathon/hackathon2.jpg"/>
-			<div style="clear:both"></div>
-		</section>
-		<section>
-			<h2 style="text-align: center">Crazy cool projects.</h2>
-			<div style="margin: 50px 50px 0 50px;">				
-				
-				<div style="width:60%;float:left;">
-					<font style="font-size:2em;color: #8fac2a">1st Place  </font>
-					<h3 style="margin:0 0 0 0;font-size: 1.4em;">Spazacat</h3>
-					<p>
-						Does your cat love to chase a laser pointer? Do you love to make your cat chase a laser pointer? This team constructed a way to remotely control a laser pointer through the web using Node.js and an Arduino. Then in combination with a live streaming video feed one would be able to play with their cat away from home just by using their phone!
-					</p>
-				</div>
-				<img style="margin:10px 10px 60px 10px;float: left;width: 30%;" class="rounded-corners" src="../../static/img/hackathon/winner.jpg"/>
-				
-				<div style="clear:both"></div>
-
-				<div style="width:60%;float:left;">
-					<font style="font-size:2em;color: #8fac2a">2nd Place</font>
-					<h3	 style="margin:0 0 0 0;font-size: 1.4em;">Loop</h3>
-					<p>
-						Allows a user to seamlessly share their contact information with another user by simply “bumping” mobile devices. After “bumping”, the app will then add the new connection to your loop, allowing you to easily access their information at any time. Loop uses the device motion sensor to recognize the bump and geolocation to match users based on position and time. Loop was built using node.js, socket.io, Django, jQuery Mobile and JavaScript.
-					</p>
-				</div>
-				<img style="margin:10px 10px 60px 10px;float: left;width: 30%;" class="rounded-corners" src="../../static/img/hackathon/loop1.jpg"/>
-				<div style="clear:both"></div>
-
-				<div style="width:60%;float:left;">
-					<font style="font-size:2em;color: #8fac2a">3rd Place</font>
-					<h3 style="margin:0 0 0 0;font-size: 1.4em;">Books 4 Kent</h3>
-					<p>
-						Content goes here.
-					</p>
-				</div>
-				<img style="margin:10px;float: left;width: 30%;" class="rounded-corners" src="../../static/img/hackathon/books4kent2.jpg"/>
-				<div style="clear:both"></div>
-				<div style="width:60%;float:left;">
-					<font style="font-size:2em;color: #8fac2a">4th Place</font>
-					<h3 style="margin:0 0 0 0;font-size: 1.4em;">Beer Buddy</h3>
-					<p>
-						The idea behind this project is to have users submit beer prices through an app in return for incentives like badges and experience. With the help of these prices it would offer a catalog for prices between different locations that sell beer.
-					</p>
-				</div>
-				<img style="margin:10px 10px 60px 10px;float: left;width: 30%;" class="rounded-corners" src="../../static/img/hackathon/beerbuddy4.jpg"/>
-				
-				<div style="clear:both"></div>
-
-			</div>
-		</section>
-		<section style="margin:-70px 5% 100px 5%;">
-			<h2>All of our lovely sponsors.</h2>
-			<div>
-				<a href="http://www.kentdisplays.com"><img class="sponsor" src="http://www.kentbiz.com/wp-content/uploads/2010/10/KentDisplaysLogo.jpg"/></a>
-				<a href="https://play.google.com/"><img class="sponsor" src="https://lh4.googleusercontent.com/-IKezweZlcXI/AAAAAAAAAAI/AAAAAAAAKVE/owdEU9vaqYU/s250-c-k/photo.jpg"/></a>
-				<a href="http://www.hyland.com/"><img class="sponsor" src="http://www.facrao.org/images/sponsor_hyland_logo.jpg"/></a>
-				<a href="http://www.chipotle.com/en-US/Default.aspx?type=default"><img class="sponsor" src="http://www.sogoodblog.com/wp-content/uploads/2010/12/Chipotle_Logo.png"/></a>
-				<a href="http://getfresco.com/"><img class="sponsor" src="http://getfresco.com/images/structure/fresco_logo.png"/></a>
-				<a href="http://www.wildgoatscafe.com/"><img class="sponsor" src="https://sphotos-b.xx.fbcdn.net/hphotos-ash3/44498_153366194676416_4217957_n.jpg"/></a>
-				<a href="http://hungryhowies.com/"><img class="sponsor" src="http://gearingpto.com/wp-content/uploads/2011/09/hungry-howies-logo.png"/></a>
-				<a href="http://www.littlecaesars.com/"><img class="sponsor" src="http://images.pubcrawler.com/logosrestaurant/l212427-11102009-new.gif"/></a>
-				<a href="http://www.paninisgrill.com/locations/kent/"><img class="sponsor" src="http://www.paninisgrill.com/wp-content/themes/overstuffed/images/logo-paninis-8.png" /></a>
-				<a href="http://davescosmicsubs.com/Daves_Cosmic_Subs/Home.html"><img class="sponsor" src="http://profile.ak.fbcdn.net/hprofile-ak-prn1/50497_171969392305_4447216_n.jpg"/></a>
-				<a href="http://starbucks.com"><img class="sponsor" src="http://www.blonde20.com/blog/wp-content/uploads/2010/01/starbucks-logo.jpg"/></a>
-				<a href="http://yourlaziza.com"><img class="sponsor" src="https://twimg0-a.akamaihd.net/profile_images/1765464937/LAZIZA.png"/></a>
-				<a href="http://www.rovisys.com/"><img class="sponsor" src="http://www.opcfoundation.org/Image.aspx/CompanyLogo/1577/RoviSys%20Logo.JPG"/></a>
-			</div>
-		</section>
-		<div id="trophy"></div>
+<div id="content-1col" style="margin-top:40px">
+  <div class="container">
+    <div class="title"><h2>Hackathon Fall 2012</h2></div>
+    <p>(n.) an event in which computer programmers and others in the field of software development, like graphic designers, interface designers, project managers and computational philologists, collaborate intensively on software projects.</p>
+    <hr>
+    <p>We hosted our first ever hackathon on November the 17th in the Library (3rd Floor) of the Mathematical and Computer Science Building at Kent State University. We had a wide range of sponsors helping us put on the event which can be viewed at the bottom of the page. This hackathon involved many students from the University studying all kinds of majors! Feel free to email <a class="normal" href="mailto:hacksu@cs.kent.edu">hacKSU@cs.kent.edu</a> if you have any questions about the hackathon.</p>
+    <br><br>
+    <p>All our fellow hackers showed great enthusiam throughout the 12 hour competition. We yelled, we cheered, we cried, we tried, we succeeded. Hacking like it should be. Learning, laughing, loving it. And leading our teams to the gold. Interdisciplinary teams. From Computer Science to Information Systems to Physics to Psychology to Design and Advertising. Project managers, style slingers, and backend builders all culminated in phenomenal projects.</p>
+    <br><br>
+    <h3>Crazy Cool Projects</h3>
+    <strong>Spazacat</strong>
+    <br>
+    <p>Does your cat love to chase a laser pointer? Do you love to make your cat chase a laser pointer? This team constructed a way to remotely control a laser pointer through the web using Node.js and an Arduino. Then in combination with a live streaming video feed one would be able to play with their cat away from home just by using their phone!</p>
+    <br><br>
+    <strong>Loop</strong>
+    <br>
+    <p>Allows a user to seamlessly share their contact information with another user by simply “bumping” mobile devices. After “bumping”, the app will then add the new connection to your loop, allowing you to easily access their information at any time. Loop uses the device motion sensor to recognize the bump and geolocation to match users based on position and time. Loop was built using node.js, socket.io, Django, jQuery Mobile and JavaScript.</p>
+    <br><br>
+    <strong>Beer Buddy</strong>
+    <br>
+    <p>The idea behind this project is to have users submit beer prices through an app in return for incentives like badges and experience. With the help of these prices it would offer a catalog for prices between different locations that sell beer.</p>
+  </div>
 </div>
 {% endblock %}

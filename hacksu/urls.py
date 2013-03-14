@@ -14,6 +14,7 @@ urlpatterns = patterns('hacksu.views',
     url(r'^hackathon2012f/$', 'hackathon2012f'),
     url(r'^hackathon2013s/$', 'hackathon2013s'),
     url(r'^leaders/(\d{1,2})/$', 'leader'),
+    url(r'^opportunities/$', 'opportunities'),
 )
 
 urlpatterns += patterns('',

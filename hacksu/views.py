@@ -51,6 +51,9 @@ def hackathon2012f(request):
 def hackathon2013s(request):
     return render_to_response('hackathon2013s.html', RequestContext(request))
 
+def opportunities(request):
+    return render_to_response('opportunities.html', RequestContext(request))
+
 def pull(request):
     return HttpResponse(git.pull()) 
 

@@ -1,37 +1,8 @@
-<<<<<<< HEAD
-  {% extends "base_content.html" %}
-=======
 {% extends "base_content.html" %}
->>>>>>> develop
 
 {% block title %}Hackathon 2013 Spring{% endblock %}
 
 {% block content %} <!-- Header -->
-<<<<<<< HEAD
-        
-        <!-- Single column content -->
-
-        <div id="content-1col" style="margin-top:40px">
-                <div class="container">
-                        <div class="title"><h2>KENT HACK ENOUGH</h2></div>
-                        <hr>
-			<p>Just email us at <a href="mailto:hacKSU@cs.kent.edu" class="normal">hacKSU@cs.kent.edu</a></p><br>
-			<br><br>
-                        <div class="title"><h2>Social media.</h2></div>
-                        <hr>
-			<p><a href="https://www.facebook.com/groups/414549295277975/" class="normal">Facebook</a></p><br>
-			<p><a href="https://twitter.com/hacKSU1" class="normal">Twitter</a></p><br>
-			<p><a href="https://plus.google.com/100316329407631422164/" class="normal">Google+</a></p><br>
-                        <p><a href="https://github.com/hacKSU" class="normal">Github</a></p><br>
-                        <br><br>
-                        <div class="title"><h2>Kent State CS Department</h2></div>
-                        <hr>
-                        <p>Check out the Kent State University Computer Science Department <a href="http://www.cs.kent.edu" class="normal">here.</a></p><br><br><br>
-        </div>
-                
-=======
-
-<!-- Single column content -->
 
 <div id="content-1col" style="margin-top:40px">
   <div class="container">
@@ -66,6 +37,5 @@
     <br>
   </div>
 </div>
->>>>>>> develop
 {% endblock %}
 

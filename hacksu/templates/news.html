@@ -3,47 +3,45 @@
 {% block title %}Recent news in hacKSU{% endblock %}
 
 {% block content %}
- <div class="container" style="padding: 30px 0 0 0;">
-        {% for news in news_list %}
-        <div class="cool-date">
-                <p>{{news.date|date:"M"}} {{news.date|date:"d"}}</p>
-        </div>
-        <h2 id="post{{news.id}}">{{news.title}}</h2>
-        <hr>
-	<p>
-		{{news.description}}
-	</p>
-	<br>
-        <div class="left-indent">
-                {% if news.topics %}
-                <p>
-                        Topics will include:
-                </p>
-                <ul>
-                        {% for topic in news.topics.all %}
-                        <li>
-                                {{topic.title}}
-                        </li>
-                        {% endfor %}
-                </ul>
-                {% endif %}
-                
-                {% if news.links %}
-                <br>
-                <p>Relevant Links:</p>
-                <ul>
-                        {% for link in news.links.all %}
-                        <li>
-                                <a class="normal" href="{{link.url}}">{{link.title}}</a>
-                        </li>
-                        {% endfor %}
-                </ul>
-                <br>
-                <br>
-                {% endif %}
-                </div>
+<div class="container" style="padding: 30px 0 0 0;">
+  {% for news in news_list %}
+    <p style="margin-top:30px" class="cool-date">{{news.date|date:"M"}} {{news.date|date:"d"}}</p>
+  <h2 id="post{{news.id}}">{{news.title}}</h2>
+  <hr>
+  <p>
+  {{news.description}}
+  </p>
+  <br>
+  <div class="left-indent">
+    {% if news.topics %}
+    <p>
+    Topics will include:
+    </p>
+    <ul>
+      {% for topic in news.topics.all %}
+      <li>
+      {{topic.title}}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
-                {% endfor %}
-        </div>
+    {% if news.links %}
+    <br>
+    <p>Relevant Links:</p>
+    <ul>
+      {% for link in news.links.all %}
+      <li>
+      <a class="normal" href="{{link.url}}">{{link.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <br>
+    <br>
+    {% endif %}
+  </div>
+
+  {% endfor %}
+</div>
 
 {% endblock %}

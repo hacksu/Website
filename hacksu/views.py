@@ -45,8 +45,14 @@ def learn(request):
 def contact(request):
     return render_to_response('contact.html', RequestContext(request))
 
-def hackathon(request):
-    return render_to_response('hackathon.html', RequestContext(request))
+def hackathon2012f(request):
+    return render_to_response('hackathon2012f.html', RequestContext(request))
+
+def hackathon2013s(request):
+    return render_to_response('hackathon2013s.html', RequestContext(request))
+
+def opportunities(request):
+    return render_to_response('opportunities.html', RequestContext(request))
 
 def pull(request):
     return HttpResponse(git.pull()) 

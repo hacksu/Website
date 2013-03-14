@@ -4,91 +4,92 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-	<!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>{% block title %}Base Site Title{% endblock %}</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
+  <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{% block title %}Base Site Title{% endblock %}</title>
+<meta name="description" content="">
 
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/fonts.css" />
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/leaders.css">
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>    
-		<script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.1.min.js"></script>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/fonts.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/leaders.css">
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>    
+<script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.1.min.js"></script>
+{% block head %}{% endblock %}
+</head>
+<body>
+<div id="container">
 
-	</head>
-  <body>
-    <div id="container">
-
-    <!--[if lt IE 7]>
+  <!--[if lt IE 7]>
     <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
 
-    <!-- Header -->
-    <header>
-      <div id="social">
-        <div class="container">
-          <ul>
-            <li><a href="https://www.facebook.com/groups/hacksu/"><img src="{{STATIC_URL}}img/facebook.png"/></a></li>
-            <li><a href="https://twitter.com/hacKSU1"><img src="{{STATIC_URL}}img/twitter.png"/></a></li>
-            <li><a href="https://github.com/organizations/hacKSU"><img src="{{STATIC_URL}}img/github.png"/></a></li>
-          </ul>
-        </div>
-      </div>
-      <div id="logo">
-        <div class="container">
-          <a href="/" class="none"><h1>hacKSU</h1>
-            <p>Hackers that keep it real.</p></a>
-          <nav id="main-menu">
-            <ul>
-              <li><a href="/learn">About</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-              <li><a href="/leaders">Leaders</a></li>
-              <li><a href="/news">News</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-		{% block body %}{% endblock %}
-
-    <div id="spacer">
-    </div>
-
-    <footer>
+  <!-- Header -->
+  <header>
+    <div id="social">
       <div class="container">
-        <a class="basic" href="/leaders">Leaders</a><a class="basic" href="/news">News</a><a class="basic" href="/apps">Apps</a><a class="basic" href="/contact">Contact Us</a><a class="basic" href="/learn">About</a>
-      
-			<p>&copy2012 by the leaders of hacKSU</p>
-      </div>  
-    </footer>
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')
-		</script>
-		<script src="{{ STATIC_URL }}js/vendor/jquery.timeago.js"></script>
-		<script src="{{ STATIC_URL }}js/plugins.js"></script>
-		<script src="{{ STATIC_URL }}js/main.js"></script>
-		<script src="{{ STATIC_URL }}js/facebook.js"></script>
-		<script src="{{ STATIC_URL }}js/leaders.js"></script>
-
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			var _gaq = [['_setAccount', 'UA-35084827-1'], ['_trackPageview']];
-			( function(d, t) {
-					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-					s.parentNode.insertBefore(g, s)
-				}(document, 'script'));
-      </script>
+        <ul>
+          <li><a href="https://www.facebook.com/groups/hacksu/"><img src="{{STATIC_URL}}img/facebook.png"/></a></li>
+          <li><a href="https://twitter.com/hacKSU1"><img src="{{STATIC_URL}}img/twitter.png"/></a></li>
+          <li><a href="https://github.com/hacKSU"><img src="{{STATIC_URL}}img/github.png"/></a></li>
+          <li><a href="https://plus.google.com/100316329407631422164/"><img src="{{STATIC_URL}}img/googleplus.png"/></a></li>
+        </ul>
+      </div>
     </div>
-	</body>
+    <div class="container">
+      <div id="logo" style="margin-top:20px;float:left">
+        <a id="text" href="/">hacKSU</a>
+        <p>Hackers that keep it real.</p>
+      </div>
+        <nav id="main-menu">
+          <ul>
+            <li><a href="/opportunities">Opportunities</a></li>
+            <li><a href="/learn">About</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/leaders">Leaders</a></li>
+            <li><a href="/news">News</a></li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+
+  {% block body %}{% endblock %}
+
+  <div id="spacer">
+  </div>
+
+  <footer>
+    <div class="container">
+      <a class="basic" href="/leaders">Leaders</a><a class="basic" href="/news">News</a><a class="basic" href="/apps">Apps</a><a class="basic" href="/contact">Contact Us</a><a class="basic" href="/learn">About</a>
+
+      <p>&copy2012 by the leaders of hacKSU</p>
+    </div>  
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script>
+window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')
+  </script>
+  <script src="{{ STATIC_URL }}js/vendor/jquery.timeago.js"></script>
+  <script src="{{ STATIC_URL }}js/plugins.js"></script>
+  <script src="{{ STATIC_URL }}js/main.js"></script>
+  <script src="{{ STATIC_URL }}js/facebook.js"></script>
+  <script src="{{ STATIC_URL }}js/leaders.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+var _gaq = [['_setAccount', 'UA-35084827-1'], ['_trackPageview']];
+( function(d, t) {
+  var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g, s)
+}(document, 'script'));
+  </script>
+</div>
+</body>
 </html>

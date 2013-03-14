@@ -1,0 +1,64 @@
+{% extends "base_content.html" %}
+
+{% block title %}hacKSU - Opportunities{% endblock %}
+
+{% block head %}
+<style>
+#list ul {
+  list-style-type: none;
+  width: 800px;
+}
+
+#list h2 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+#list li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+#list li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+#list li {
+  padding: 10px;
+  overflow: auto;
+}
+
+#list li:hover {
+  background: #eee;
+  cursor: pointer;
+   }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Single column content -->
+
+<div id="content-1col" style="margin-top:40px">
+  <div class="container">
+    <h1>Opportunities</h1>
+    <hr>
+    <br/>
+    <p>This page lists all the different oppurtunites, connections, and resources that hacKSU is affliated with. Don't be afraid to reach out and talk to some of the companies/people to see what connections you can make.</p>
+    <br>
+    <div id="list" style="margin-bottom:100px">
+      <ul>
+        <li>
+        <a href="http://www.kent.edu/blackstonelaunchpad/index.cfm" class="normal"><img src="{{STATIC_URL}}img/blackstone.png">
+          <h2>Blackstone LaunchPad - Kent State University</h2>
+          <p>Blackstone LaunchPad is an innovative program that treats entrepreneurship as a viable career path. The program teaches students, faculty and alumni how to transform their ideas into thriving businesses.</p></a>
+        </li>
+        <li>
+        <a href="http://www.launchhouse.com/" class="normal"><img src="{{STATIC_URL}}img/launchhouse.png">
+          <h2>LaunchHouse</h2>
+          <p>LaunchHouse is a lean business accelerator that fosters entrepreneurial success and job creation through investing cash, hard work and collaboration with interesting, like-minded people. Our mission is to create a hub of entrepreneurial innovation for promising startups and to help transform ideas into successful companies.</p></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {% endblock %}
+

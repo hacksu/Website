@@ -13,6 +13,7 @@ urlpatterns = patterns('hacksu.views',
     url(r'^news/(?P<news_id>\d+)/$', 'news'),
     url(r'^hackathon2012f/$', 'hackathon2012f'),
     url(r'^hackathon2013s/$', 'hackathon2013s'),
+    url(r'^hackathon2013f/$', 'hackathon2013f'),
     url(r'^leaders/(\d{1,2})/$', 'leader'),
     url(r'^opportunities/$', 'opportunities'),
 )

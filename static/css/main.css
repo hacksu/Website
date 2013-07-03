@@ -118,9 +118,9 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-h1, p, h2, a, span, li, div, h3 {
-	font-family: 'Actor', sans-serif;
-	font-weight: 100;
+h1, p, h2, a, span, li, div, h3, h4 {
+	font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 	font-style:	normal;
   margin-bottom:0px;
 }
@@ -135,11 +135,11 @@ h2{
 
 h3{
 	font-size: 1.3em;
-	font-family: 'Actor', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 h4{
-	font-size: 1.5em;
+	font-size: 1.1em;
   margin: 20px 0 0 0;
 }
 
@@ -177,7 +177,7 @@ header{
   float: right;
   text-align: right;
   margin-top: 50px;
-  width: 500px;
+  width: 600px;
 }
 
 #main-menu li{
@@ -293,7 +293,8 @@ a.nav:hover{
 }
 
 a.basic{
-	color: white;
+	font-size: 0.8em;
+  color: white;
 	text-decoration: none;
 	opacity: 0.5;
 }
@@ -304,6 +305,7 @@ a.basic:hover{
 
 a.normal{
 	text-decoration: none;
+  font-weight: bold;
 	color: #285363;
 }
 
@@ -585,4 +587,8 @@ img.sponsor{
     h3 {
         page-break-after: avoid;
     }
+}
+
+strong {
+  font-weight: bold;
 }

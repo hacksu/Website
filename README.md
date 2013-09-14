@@ -1,36 +1,5 @@
-hacKSU Website a
-=======
+##hacksu Website 
 
-Repository that contains code for the website located at http://www.hacksu.cs.kent.edu
+This repo houses all the code for the [hacksu website](http://hacksu.cs.kent.edu).
 
-###To Run:
-
-    python manage.py runserver
-
-###To Sync database:
-
-    python manage.py syncdb
-
-###To Restart server
-
-    sudo /etc/init.d/httpd restart
-
-##Common Problems
-
-Can not write to a read only database
-
-    sudo chgrp -R apache www/*
-
-    sudo chmod -R 0775 www/*
-
-
-
-##Migration
-
-Using [django-evolution](http://code.google.com/p/django-evolution/)
-
-1. Run python manage.py syncdb
-2. Make modifications to the model files in your project
-3. Run python manage.py evolve --hint --execute
-
-More detailed instructions foind [here](http://django-evolution.googlecode.com/svn/trunk/docs/evolution.txt)
+If you are interested in making improvements to the site our have some awesome ideas for it, please submit a pull request and we will be happy to add it into the site!

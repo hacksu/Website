@@ -120,7 +120,7 @@ textarea {
 
 h1, p, h2, a, span, li, div, h3, h4 {
 	font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 	font-style:	normal;
   margin-bottom:0px;
 }
@@ -202,7 +202,7 @@ header{
 #logo #text{
   font-size: 2em;
   line-height: 2em;
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
   text-shadow: 1px 1px #000000;
   color: #fbffec;
   text-decoration: none;
@@ -271,7 +271,7 @@ header{
 .column .title p{
   font-size: 1.7em;
   padding: 10px 5px 5px 20px;
-  font-family: 'Lobster';
+  font-family: 'Lobster Two';
   color: #feffd4;
   text-shadow: 1px 1px #433830;
 }

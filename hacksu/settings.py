@@ -15,8 +15,10 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(SITE_ROOT, 'database.db'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'hacksu-db',
+        'USER': 'hacksu',
+        'PASSWORD': 'hacksu123!',
     }
 }
 
@@ -151,3 +153,10 @@ LOGGING = {
         },
     }
 }
+
+### settings.py file
+### settings that are not environment dependent
+try:
+    from local_settings import *
+except ImportError:
+    pass

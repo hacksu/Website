@@ -7,7 +7,7 @@ from django.core import serializers
 def index(request):
     apps = Apps.objects.all()[:3]
     news = News.objects.all().order_by('-date')[:3]
-    return render_to_response('index.html', {'apps': apps, 'news_list': news},
+    return render_to_response('super_base.html', {'apps': apps, 'news_list': news},
                               RequestContext(request))
 
 def leaders(request):

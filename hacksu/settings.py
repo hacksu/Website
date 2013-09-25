@@ -122,7 +122,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'django_evolution',
-    'hacksu', 'bootstrap3',
+    'hacksu',
 )
 
 # A sample logging configuration. The only tangible logging

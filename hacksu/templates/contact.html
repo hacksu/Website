@@ -1,26 +1,29 @@
-{% extends "base_content.html" %}
-
-{% block title %}hacKSU - contact{% endblock %}
-
-{% block content %} <!-- Header -->
-        
-        <!-- Single column content -->
-        <div id="content-1col" style="margin-top:40px">
-                <div class="container">
-                        <div class="title"><h2>Questions or concerns?</h2></div>
-                        <hr>
-			<p>Just email us at <a href="mailto:hacKSU@cs.kent.edu" class="normal">hacKSU@cs.kent.edu</a></p><br>
-			<br><br>
-                        <div class="title"><h2>Social media.</h2></div>
-                        <hr>
-			<p><a href="https://www.facebook.com/groups/414549295277975/" class="normal">Facebook</a></p><br>
-			<p><a href="https://twitter.com/hacKSU1" class="normal">Twitter</a></p><br>
-			<p><a href="https://plus.google.com/100316329407631422164/" class="normal">Google+</a></p><br>
-                        <p><a href="https://github.com/hacKSU" class="normal">Github</a></p><br>
-                        <br><br>
-                        <div class="title"><h2>Kent State CS Department</h2></div>
-                        <hr>
-                        <p>Check out the Kent State University Computer Science Department <a href="http://www.cs.kent.edu" class="normal">here.</a></p><br><br><br>
-        </div>
+{% extends "super_base.html" %} {% block title %}hacKSU - Contact{% endblock %} {% block page_content %}
+<!-- Header -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h1>Contact Us
                 
-{% endblock %}
+            </h1>
+            <br>
+            <p class="lead">Send us an email at
+                <a href="mailto:hacksu@cs.kent.edu">hacksu@cs.kent.edu</a>
+            </p>
+            <p class="lead">Join our group on
+                <a href="http://facebook.com/groups/hacksu">Facebook</a>
+            </p>
+            <p class="lead">Follow us on
+                <a href="http://twitter.com/_hacksu">Twitter</a>
+            </p>
+            <p class="lead">Check out our projects on
+                <a href="https://github.com/hacksu">GitHub</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="text-align:center;color:#b9b9b9;">
+            <h3 style="font-weight:300;">We want to hear what you think!</h3>
+        </div>
+    </div>
+</div>{% endblock %}

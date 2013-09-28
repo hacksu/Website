@@ -1,114 +1,83 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{% block title %}Base Site Title{% endblock %}</title>
         <meta name="description" content="">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="{{ STATIC_URL }}ico/favicon.png">
+        <title>{% block title %}Base Site Title{% endblock %}</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.min.css" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-        {% block extra_head %}{% endblock %}
-    </head>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="../../assets/js/html5shiv.js"></script>
+            <script src="../../assets/js/respond.min.js"></script>
+        <![endif]-->{% block extra_head %}{% endblock %}</head>
     
     <body>
-        <div id="container">
-            <!--[if lt IE 7]>
-                <p class="chromeframe">You are using an outdated browser.
-                    <a href="http://browsehappy.com/">Upgrade your browser today</a>or
-                    <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to better experience this site.</p>
-            <![endif]-->
-            <!-- Header -->
-            <header>
-                <div id="social">
-                    <div class="container">
-                        <ul>
+        <!-- Wrap all page content here -->
+        <div id="wrap">
+            <!-- Social header -->
+            <div id="social-header">
+                <div class="container">
+                    <a class="social-item" href="https://www.facebook.com/groups/hacksu/">
+                        <img src="{{STATIC_URL}}img/facebook.png" />
+                    </a>
+                    <a class="social-item" href="https://twitter.com/hacKSU1">
+                        <img src="{{STATIC_URL}}img/twitter.png" />
+                    </a>
+                    <a class="social-item" href="https://github.com/hacKSU">
+                        <img src="{{STATIC_URL}}img/github.png" />
+                    </a>
+                </div>
+            </div>
+            <!-- Fixed navbar -->
+            <div class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">hacksu</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
                             <li>
-                                <a href="https://www.facebook.com/groups/hacksu/">
-                                    <img src="{{STATIC_URL}}img/facebook.png" />
-                                </a>
+                                <a href="/#about-info" onclick="showAbout();return false;">About</a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/hacKSU1">
-                                    <img src="{{STATIC_URL}}img/twitter.png" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/hacKSU">
-                                    <img src="{{STATIC_URL}}img/github.png" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://plus.google.com/100316329407631422164/">
-                                    <img src="{{STATIC_URL}}img/googleplus.png" />
-                                </a>
+                                <a href="/contact">Contact</a>
                             </li>
                         </ul>
                     </div>
+                    <!--/.nav-collapse -->
                 </div>
-                <div class="container">
-                    <div id="logo" style="margin-top:20px;float:left">
-                        <a id="text" href="/">Hacksu</a>
-                        <p>Learn. Build. Collaborate.</p>
-                    </div>
-                    <nav id="main-menu">
-                        <ul>
-                            <li>
-                                <a href="/hackathon2013f">Hackathon 2013</a>
-                            </li>
-                            <li>
-                                <a href="/learn">About</a>
-                            </li>
-                            <li>
-                                <a href="/news">News</a>
-                            </li>
-                            <li>
-                                <a href="/opportunities">Opportunities</a>
-                            </li>
-                            <li>
-                                <a href="/contact">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>{% block body %}{% endblock %}
-            <div id="spacer"></div>
-            <footer>
-                <div class="container">
-                    <a class="basic" href="/leaders">Leaders</a>
-                    <a class="basic" href="/news">News</a>
-                    <a class="basic" href="/apps">Apps</a>
-                    <a class="basic" href="/opportunities">Opportunities</a>
-                    <a class="basic" href="/contact">Contact Us</a>
-                    <a class="basic" href="/learn">About</a>
-                    <p>&copy2012 by the leaders of hacKSU</p>
-                </div>
-            </footer>
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-            <script>
-                window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')
-            </script>
-            <script src="{{ STATIC_URL }}js/vendor/jquery.timeago.js"></script>
-            <script src="{{ STATIC_URL }}js/plugins.js"></script>
-            <script src="{{ STATIC_URL }}js/main.js"></script>
-            <script src="{{ STATIC_URL }}js/facebook.js"></script>
-            <script src="{{ STATIC_URL }}js/leaders.js"></script>
-            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-            <script>
-                var _gaq = [
-                    ['_setAccount', 'UA-35084827-1'],
-                    ['_trackPageview']
-                ];
-                (function(d, t) {
-                    var g = d.createElement(t),
-                        s = d.getElementsByTagName(t)[0];
-                    g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-                    s.parentNode.insertBefore(g, s)
-                }(document, 'script'));
-            </script>
+            </div>
+            {% block page_content %}{% endblock %}
         </div>
+        <div id="footer">
+            <div class="container">
+                <ul class="list-inline sub-nav">
+                    <li>
+                        <a href="/#about-info">About</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <p class="text-muted credit">&copy; 2013 hacksu</p>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}js/main.js"></script>
     </body>
 
 </html>

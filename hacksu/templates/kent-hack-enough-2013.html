@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="{{ STATIC_URL }}ico/favicon.png">
+        <title>Kent Hack Enough 2013</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.min.css" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,700,600,500,300,200,100' rel='stylesheet' type='text/css'>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="../../assets/js/html5shiv.js"></script>
+            <script src="../../assets/js/respond.min.js"></script>
+        <![endif]-->
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDYq8zb9yh7cvohTTkXoGehvEgYISHD5BQ&sensor=false"></script>
+        <script>
+            var map;
+            var myCenter = new google.maps.LatLng(41.1466, -81.3425);
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 18,
+                    center: myCenter,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI: true,
+                    zoomControl: false,
+                    scrollwheel: false,
+                    navigationControl: false,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    draggable: false,
+                    disableDoubleClickZoom: true
+                };
+                map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
+
+                var marker = new google.maps.Marker({
+                    position: myCenter,
+                });
+
+                marker.setMap(map);
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<a target="_blank" href="https://www.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=kent+state+university&aq=&sll=40.365278,-82.669253&sspn=11.361268,20.852051&vpsrc=0&ie=UTF8&hq=kent+state+university&ll=41.145828,-81.332474&spn=0.043886,0.081453&t=m&z=14&iwloc=A&cid=15986076152611259443"><h4>Kent State University Library</h4></a>1125 Risman Drive<br>Kent OH, 44242</p>'
+                });
+
+                infowindow.open(map, marker);
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <style>
+            h1, h4 {
+                font-family:'Raleway', sans-serif;
+                font-weight:700;
+            }
+            .hackathon-nav-item > h4 {
+                color: white;
+            }
+            .hackathon-nav-item:hover {
+                text-decoration:none;
+            }
+            p.lead {
+                line-height: 1.7em;
+            }
+            .hackathon-marketing > h1 {
+                font-size:4.5em;
+            }
+            .jumbotron-hackathon {
+                height: 330px;
+                vertical-align: middle;
+                margin-bottom: 0px!important;
+                background-size: 100%;
+                background-position: 50% 30%;
+                background-repeat: no-repeat;
+                background-image: url({{STATIC_URL}}img/library.jpg);
+                color: white!important;
+            }
+            .jumbotron-hackathon .container {
+                padding-top: 0px;
+            }
+            .jumbotron-hackathon .title {
+                text-shadow:2px 2px 2px black;
+                font-size: 1.4em;
+            }
+            /* Medium devices (desktops, 992px and up) */
+            @media (min-width: 992px) {
+                .jumbotron-hackathon {
+                height: 700px;
+                }
+                .hackathon-marketing {
+                    margin-top:100px;
+                }
+                #eventbrite-button {
+                    margin-top:75px;
+                }
+            }
+            @media (min-width: 1200px) {
+                .jumbotron-hackathon {
+                height: 700px;
+                }
+                .hackathon-marketing {
+                    margin-top:150px;
+                }
+                #eventbrite-button {
+                    margin-top:100px;
+                }
+            }
+            @media (min-width: 768px) {
+                .jumbotron-hackathon {
+                    height: 700px;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="jumbotron-hackathon" style="padding:0;">
+            <div style="background-color:rgba(118, 118, 118, 0.42);height:100%;margin:0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a class="hackathon-nav-item" href="/kent-hack-enough-2013">
+                                <h4 style="margin-top:23px">KENT HACK ENOUGH 2013</h4>
+                            </a>
+                        </div>
+                        <div class="col-md-2 col-md-offset-2">
+                            <a class="hackathon-nav-item" href="#what">
+                                <h4>WHAT</h4>
+                                <p class="text-muted" style="font-weight:300;font-size:0.7em;color:#d0d0d0">about khe</p>
+                            </a>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="hackathon-nav-item" href="#when">
+                                <h4>WHEN</h4>
+                                <p class="text-muted" style="font-weight:300;font-size:0.7em;color:#d0d0d0">date & time</p>
+                            </a>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="hackathon-nav-item" href="#where">
+                                <h4>WHERE</h4>
+                                <p class="text-muted" style="font-weight:300;font-size:0.7em;color:#d0d0d0">location & directions</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 hackathon-marketing">
+                            <h1>DESIGN, CREATE AND BUILD.</h1>
+                            <p class="lead">YOU CAN'T AFFORD TO MISS OHIO'S LARGEST HACKATHON.</p>
+                            <br>
+                            <div id="eventbrite-button" style="text-align:center">
+                                <a href="http://www.eventbrite.com/event/8255356995?ref=ebtnebregn" target="_blank">
+                                    <img src="http://www.eventbrite.com/custombutton?eid=8255356995" alt="Eventbrite - Kent Hack Enough" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="what" style="background-color:#1abc9c;color:white;">
+            <div class="container">
+                <div class="row" style="padding: 50px inherit">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 style="text-align:center;">Kent Hack Enough&nbsp;
+                            <small style="color:rgba(255,255,255,0.5)">What</small>
+                        </h1>
+                        <br>
+                        <p class="lead">Kent Hack Enough, Hacksu's annual hackathon, brings the passion and innovation behind hackathons to the Midwest. With over 150 participants, Kent Hack Enough will be the largest hackathon in Ohio. Top prizes will include cash and exposure to top companies. Admission is completely free for students, and travel costs will be reimbursed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="when" class="row" style="padding: 90px inherit">
+                <div class="col-md-5 col-md-offset-1">
+                    <h1>Date & Time&nbsp;
+                        <small>When</small>
+                    </h1>
+                    <p class="lead">Kent Hack Enough will be held on October 18th starting at 6:00pm and run until 2:00pm on October 20th.</p>
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <img src="{{STATIC_URL}}img/hackathon-calendar.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <div id="where" class="row" style="padding:50px 0;background-color:#9b59b6;margin:0!important;">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1">
+                    <h1 style="color:white;">Location&nbsp;
+                        <small style="color:rgba(255,255,255,0.5)">Where</small>
+                    </h1>
+                    <div id="map-canvas" style="width:100%;height:500px;margin:0 auto;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="padding: 50px inherit">
+                <div class="col-md-10 col-md-offset-1">
+                    <h1>Registration</h1>
+                    <div style="width:100%; text-align:left;">
+                        <iframe src="http://www.eventbrite.com/tickets-external?eid=8255356995&ref=etckt&v=2" frameborder="0" height="306" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
+                        <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;">
+                            <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Sell Tickets Online</a>
+                            <span style="color:#ddd;">through</span>
+                            <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=etckt">Eventbrite</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding: 50px inherit; margin: 0!important">
+            <div class="container">
+                <div class="col-md-10 col-md-offset-1" style="text-align:center">
+                    <h1>Sponsorship</h1>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{{STATIC_URL}}img/Google.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="{{STATIC_URL}}img/hyland-software.aspx" class="img-responsive">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="{{STATIC_URL}}img/progressive.png" class="img-responsive">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="{{STATIC_URL}}img/improv-electronics.png" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="padding: 50px inherit">
+                <div class="col-md-10 col-md-offset-1" style="text-align:center">
+                    <h2>Have any questions for us?</h2>
+                    <p class="lead">Send us an email at
+                        <a class="normal" href="mailto:hacksu@cs.kent.edu">hacksu@cs.kent.edu</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <ul class="list-inline sub-nav">
+                    <li>
+                        <a href="/#about-info" onclick="showAbout();return false;">About</a>
+                    </li>
+                    <li>
+                        <a href="/kent-hack-enough-2013">Kent Hack Enough</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <p class="text-muted credit">&copy; 2013 hacksu</p>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}js/main.js"></script>
+        <script src="{{ STATIC_URL }}js/retina-1.1.0.min.js"></script>
+    </body>
+
+</html>

@@ -89,10 +89,11 @@ code {
     height: 200px;
     color: white!important;
 }
+
 .jumbotron .container {
     padding-top: 0px;
 }
-.jumbotron h1 {
+.jumbotron .title {
     text-shadow:2px 2px 2px black;
     font-size: 1.4em;
 }
@@ -143,6 +144,11 @@ code {
     .jumbotron {
         height: 400px;
     }
+    
+    .jumbotron .title {
+        font-size:3em;
+    }
+
     .jumbotron .container {
         padding-top: 75px;
     }

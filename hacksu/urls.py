@@ -8,6 +8,7 @@ urlpatterns = patterns('hacksu.views',
     url(r'^contact/$', 'contact'),
     url(r'^learn/$', 'learn'),
     url(r'^kent-hack-enough-2013/$', 'kenthackenough2013'),
+    url(r'^hackathon2013f/$', 'kenthackenough2013'),
     url(r'^leaders/(\d{1,2})/$', 'leader'),
     url(r'^opportunities/$', 'opportunities'),
 )

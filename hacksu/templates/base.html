@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
     <head>
         <meta charset="utf-8">
         <meta name="description" content="">
@@ -61,9 +62,7 @@
                     </div>
                     <!--/.nav-collapse -->
                 </div>
-            </div>
-            {% block page_content %}{% endblock %}
-        </div>
+            </div>{% block page_content %}{% endblock %}</div>
         <div id="footer">
             <div class="container">
                 <ul class="list-inline sub-nav">
@@ -86,6 +85,19 @@
         <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
         <script src="{{ STATIC_URL }}js/main.js"></script>
         <script src="{{ STATIC_URL }}js/retina-1.1.0.min.js"></script>
+        <!-- Google Analytics -->
+        <script>
+            var _gaq = [
+                ['_setAccount', 'UA-35084827-1'],
+                ['_trackPageview']
+            ];
+            (function(d, t) {
+                var g = d.createElement(t),
+                    s = d.getElementsByTagName(t)[0];
+                g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g, s)
+            }(document, 'script'));
+        </script>
     </body>
 
 </html>

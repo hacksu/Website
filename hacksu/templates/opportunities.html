@@ -1,82 +1,14 @@
-{% extends "base_content.html" %}
-
-{% block title %}hacKSU - Opportunities{% endblock %}
-
-{% block head %}
-<style>
-#list ul {
-  list-style-type: none;
-  width: 800px;
-}
-
-#list h2 {
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
-}
-
-#list li {
-  padding: 20px;
-  overflow: auto;
-}
-
-</style>
-{% endblock %}
-
-{% block content %}
-<!-- Single column content -->
-
-<div id="content-1col" style="margin-top:40px">
-  <div class="container">
-    <h1>Opportunities</h1>
-    <hr>
-    <br/>
-    <p>This page lists all the different oppurtunites, connections, and resources that hacKSU is affliated with. Don't be afraid to reach out and talk to some of the companies/people to see what connections you can make.</p>
-    <br>
-    <div id="list" style="margin-bottom:100px">
-      <ul>
-        <li>
-        <a href="http://www.kent.edu/blackstonelaunchpad/index.cfm" class="normal">
-          <h2>Blackstone LaunchPad - Kent State University</h2></a>
-          <p>Blackstone LaunchPad is an innovative program that treats entrepreneurship as a viable career path. The program teaches students, faculty and alumni how to transform their ideas into thriving businesses.</p>
-        </li>
-        <li>
-        <a href="http://www.launchhouse.com/" class="normal">
-          <h2>LaunchHouse</h2></a>
-          <p>LaunchHouse is a lean business accelerator that fosters entrepreneurial success and job creation through investing cash, hard work and collaboration with interesting, like-minded people. Our mission is to create a hub of entrepreneurial innovation for promising startups and to help transform ideas into successful companies.</p>
-        </li>
-        <li>
-        <a href="http://cynergies.net/" class="normal">
-          <h2>Cynergies Solutions</h2></a>
-            <p>Cynergies Solutions Group has multiple openings for entry-level to junior level candidates for a Software Developer opportunity with one of our clients located in Downtown Cleveland, OH. This is a great opportunity for those looking to learn and grown their talents in programming and coding. The Software Developer will have the chance to work as in a challenging, team environment focused on developing new projects and improving existing projects. Ideal candidates will have 1 year of relevant work experience or hands-on coding experience in an internship.
-            <a href="{{STATIC_URL}}docs/cynergies_software_developer.docx" class="normal"><p>More information</p></a>
-            </li>
-        <li>
-        <h2>Mobile Phone Alert Application</h2>
-        <p>My name is Marius Paulikas and I had the pleasure meeting some of you during the Kent State Innov8athon weekend some weeks back.  I had an idea for a smartphone application that was pitched to the large group, but I wanted to assemble visual illustrations and various resources to better explain the concept. I am attaching two documents; one describes the idea in detail, and the second features visual illustration figures for your reference. Please <a href="mailto:mpaulika@kent.edu">contact me</a> if there are any questions or comments; I look forward to working with you folks soon.</p>
-        <br>
-        <a href="{{STATIC_URL}}docs/smartphone_idea.docx" class="normal">Idea</a>&nbsp;&nbsp;
-        <a href="{{STATIC_URL}}docs/smartphone_visuals.docx" class="normal">Visuals</a>
-            </li>
-        <li>
-        <a href="http://www.segmint.com/" class="normal">
-          <h2>Segmint</h2></a>
-        <p>Segmint is looking for a front front end developer who will be tasked with creating dynamic user interfaces that guide their customers through the campaign management and targeting interfaces of Segmint’s applications. The interfaces created by this role serve as the window to their instantly actionable analytics products. As a result millions and potentially billions of impressions will be served throughout the internet on secure web portals as well as all of the major ad exchanges on the internet. The Front End Engineer will work closely with design and developers to help paint the picture of value their products bring to the market.</p>
-            <a href="{{STATIC_URL}}docs/segmint_front_end.doc" class="normal"><p>More information</p></a>
-            </li>
-        <li>
-        <h2>Website for a Women's Organization</h2>
-        <p>A Kent State alum is looking for some help on building an interactive website, synced with social media outlets; as well as different "cliques" or message boards with different categories. This website will not only be the landing page for the support of their organization, but they also want to enable users to create a sign-in and spend time on this website interacting with others who also have a similar question or concern. The organization is reaching out to young women ages 16-39. They want to keep it simple and engaging. This organization is THE only local organization that reaches out to this specific group of women and have already had offers to speak on local media.</p>
-        <br>
-        <a href="mailto:jasminebalosky@sternadvertising.com" class="normal">Email Jasmine Balosky for more information</a>
-            </li>
-          <li>
-        <h2>Book and Art Commerce</h2>
-        <p>A Kent State grad student is starting an online book and art selling business and need some technical help to get it up and running. They have run into problems creating a personal seller website that ties into a program called Art of Books and are looking for someone to help with the configuration of a FTP conneciton.</p>
-        <br>
-        <a href="mailto:edobran@kent.edu" class="normal">Email Ellie Piper for more information</a>
-            </li>
-      </ul>
+{% extends "base.html" %} {% block title %}Hacksu - Opportunities{% endblock %} {% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h1>Opportunities</h1>
+            <p class="lead">This page lists all the different oppurtunites, connections, and resources that Hacksu is affliated with. Don't be afraid to reach out and talk to some of the companies/people to see what connections you can make.</p>
+            <br>
+            <a href="http://www.kent.edu/blackstonelaunchpad/index.cfm" class="normal">
+                <h3>Blackstone LaunchPad - Kent State University</h3>
+            </a>
+            <p>Blackstone LaunchPad is an innovative program that treats entrepreneurship as a viable career path. The program teaches students, faculty and alumni how to transform their ideas into thriving businesses.</p>
+        </div>
     </div>
-  </div>
-
-  {% endblock %}
-
+</div>{% endblock %}

@@ -54,6 +54,10 @@
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
         <style>
+            .row.row-info-section {
+                padding-top: 80px;
+                padding-bottom: 120px!important;
+            }
             h1, h4 {
                 font-family:'Raleway', sans-serif;
                 font-weight:700;
@@ -90,10 +94,10 @@
             /* Medium devices (desktops, 992px and up) */
             @media (min-width: 992px) {
                 .jumbotron-hackathon {
-                    height: 700px;
+                    height: 700px!important;
                 }
                 .hackathon-marketing {
-                    margin-top:100px;
+                    margin-top:150px;
                 }
                 #eventbrite-button {
                     margin-top:75px;
@@ -104,7 +108,7 @@
                     height: 700px;
                 }
                 .hackathon-marketing {
-                    margin-top:150px;
+                    margin-top:200px;
                 }
                 #eventbrite-button {
                     margin-top:100px;
@@ -112,7 +116,7 @@
             }
             @media (min-width: 768px) {
                 .jumbotron-hackathon {
-                    height: 700px;
+                    height: 500px;
                 }
             }
         </style>
@@ -123,24 +127,24 @@
             <div style="background-color:rgba(118, 118, 118, 0.42);height:100%;margin:0;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4">
                             <a class="hackathon-nav-item" href="/kent-hack-enough-2013">
                                 <h4 style="margin-top:23px">KENT HACK ENOUGH 2013</h4>
                             </a>
                         </div>
-                        <div class="col-md-2 col-md-offset-2">
+                        <div class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-2">
                             <a class="hackathon-nav-item" href="#what">
                                 <h4>WHAT</h4>
                                 <p class="text-muted" style="font-weight:300;color:#d0d0d0">about khe</p>
                             </a>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-sm-2">
                             <a class="hackathon-nav-item" href="#when">
                                 <h4>WHEN</h4>
                                 <p class="text-muted" style="font-weight:300;color:#d0d0d0">date & time</p>
                             </a>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-sm-2">
                             <a class="hackathon-nav-item" href="#where">
                                 <h4>WHERE</h4>
                                 <p class="text-muted" style="font-weight:300;color:#d0d0d0">location & directions</p>
@@ -148,9 +152,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-10 col-md-offset-1 hackathon-marketing">
+                        <div class="col-md-12 hackathon-marketing">
                             <h1>DESIGN, CREATE AND BUILD.</h1>
-                            <p class="lead">YOU CAN'T AFFORD TO MISS OHIO'S LARGEST HACKATHON.</p>
+                            <p class="lead">YOU KENT AFFORD TO MISS OHIO'S LARGEST HACKATHON.</p>
                             <br>
                             <div id="eventbrite-button" style="text-align:center">
                                 <a href="http://www.eventbrite.com/event/8255356995?ref=ebtnebregn" target="_blank">
@@ -164,31 +168,27 @@
         </div>
         <div id="what" style="background-color:#1abc9c;color:white;">
             <div class="container">
-                <div class="row" style="padding: 50px inherit 0 inherit">
-                    <div class="col-md-10 col-md-offset-1">
+                <div class="row row-info-section">
+                    <div class="col-md-12">
                         <h1 style="text-align:center;">Kent Hack Enough&nbsp;
                             <small style="color:rgba(255,255,255,0.5)">What</small>
                         </h1>
                         <br>
                         <p class="lead">Kent Hack Enough, Hacksu's annual hackathon, brings the passion and innovation behind hackathons to the Midwest. With over 150 participants, Kent Hack Enough will be the largest hackathon in Ohio. Top prizes will include cash and exposure to top companies. Admission is completely free for students, and travel costs will be reimbursed.</p>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-1">
+                    <div class="col-md-5">
                         <h3 class="text-center">Travel</h3>
-                        <p>If you are traveling from outside of Kent, we will reimburse travel up to $100. So, there really is no excuse you can't attend!</p>
+                        <p>If you are traveling from outside of Kent, we will reimburse travel up to $100. So, there really is no excuse you kent attend!</p>
                     </div>
-                    <div class="col-md-4 col-md-offset-2">
+                    <div class="col-md-5 col-md-offset-2">
                         <h3 class="text-center">Participants</h3>
                         <p>The only requirement to participate is to be a graduate or ungraduate student. We also will allow high-school students, if emailed before hand.</p>
                     </div>
-                </div>
-                <div class="row" style="padding-bottom:50px;">
-                    <div class="col-md-4 col-md-offset-1">
+                    <div class="col-md-5">
                         <h3 class="text-center">Rules</h3>
                         <p>The only rule is that you must start your project from scratch. Use of 3rd party libraries and APIs are allowed to be integrated into your project.</p>
                     </div>
-                    <div class="col-md-4 col-md-offset-2">
+                    <div class="col-md-5 col-md-offset-2">
                         <h3 class="text-center">Teams</h3>
                         <p>The maximum number of students is limited to four. There will be time before the hackathon to meet students and join a team if you don't have one.</p>
                     </div>
@@ -196,21 +196,82 @@
             </div>
         </div>
         <div class="container">
-            <div id="when" class="row" style="padding: 90px inherit">
-                <div class="col-md-5 col-md-offset-1">
+            <div id="when" class="row row-info-section">
+                <div class="col-md-6">
                     <h1>Date & Time&nbsp;
                         <small>When</small>
                     </h1>
                     <p class="lead">Kent Hack Enough will be held on October 18th starting at 6:00pm and run until 2:00pm on October 20th.</p>
                 </div>
-                <div class="col-md-3 col-md-offset-1">
-                    <img src="{{STATIC_URL}}img/hackathon-calendar.png" class="img-responsive">
+                <div class="col-md-6">
+                    <img style="margin: 0 auto;" src="{{STATIC_URL}}img/hackathon-calendar.png" class="img-responsive">
+                </div>
+                <div class="col-md-12">
+                    <h2>Schedule</h2>
+                    <br>
+                    <h4>
+                        <strong>FRIDAY</strong>
+                    </h4>
+                    <p class="lead">
+                        <strong>6:00pm</strong>&nbsp;- Arrival of hackers</p>
+                    <p class="lead">
+                        <strong>7:00pm</strong>&nbsp;- Introduction of hcakthon and sponsors</p>
+                    <p class="lead">
+                        <strong>8:00pm</strong>&nbsp;- Hacking begins</p>
+                    <p class="lead">
+                        <strong>8:30pm</strong>&nbsp;- Dinner&nbsp;
+                        <small>Provided by
+                            <a href="https://www.georgiosofp.com/">Georgio’s Oven Fresh Pizza Co.</a>
+                        </small>
+                    </p>
+                    <p class="lead">
+                        <strong>12:00am</strong>&nbsp;- Midnight Snack</p>
+                    <br>
+                    <h4>
+                        <strong>SATURDAY</strong>
+                    </h4>
+                    <p class="lead">
+                        <strong>7:00am</strong>&nbsp;- Breakfast</p>
+                    <p class="lead">
+                        <strong>1:00pm</strong>&nbsp;- Lunch</p>
+                    <p class="lead">
+                        <strong>3:00pm</strong>&nbsp;- MakerBot Demo&nbsp;
+                        <small>Provided by
+                            <a href="http://www.kent.edu/blackstonelaunchpad/index.cfm">Blackstone LaunchPad</a>
+                        </small>
+                    </p>
+                    <p class="lead">
+                        <strong>4:00pm</strong>&nbsp;- Amazon Web Services Presentation&nbsp;
+                        <small>Provided by
+                            <a href="http://aws.amazon.com/">AWS</a>
+                        </small>
+                    </p>
+                    <p class="lead">
+                        <strong>7:00pm</strong>&nbsp;- Dinner&nbsp;
+                        <small>Provided by
+                            <a href="https://www.georgiosofp.com/">Georgio’s Oven Fresh Pizza Co.</a>
+                        </small>
+                    </p>
+                    <p class="lead">
+                        <strong>12:00am</strong>&nbsp;- Midnight Snack</p>
+                    <br>
+                    <h4>
+                        <strong>SUNDAY</strong>
+                    </h4>
+                    <p class="lead">
+                        <strong>7:00am</strong>&nbsp;- Breakfast</p>
+                    <p class="lead">
+                        <strong>11:00am</strong>&nbsp;- End of hacking</p>
+                    <p class="lead">
+                        <strong>12:00pm</strong>&nbsp;- Start of presentations</p>
+                    <p class="lead">
+                        <strong>2:00pm</strong>&nbsp;- Winners announced and goodbye lunch</p>
                 </div>
             </div>
         </div>
-        <div id="where" class="row" style="padding:50px 0;background-color:#9b59b6;margin:0!important;">
+        <div id="where" class="row row-info-section" style="background-color:#9b59b6;">
             <div class="container">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12">
                     <h1 style="color:white;">Location&nbsp;
                         <small style="color:rgba(255,255,255,0.5)">Where</small>
                     </h1>
@@ -219,8 +280,8 @@
             </div>
         </div>
         <div class="container">
-            <div class="row" style="padding: 50px inherit">
-                <div class="col-md-10 col-md-offset-1">
+            <div class="row row-info-section">
+                <div class="col-md-12">
                     <h1>Registration</h1>
                     <div style="width:100%; text-align:left;">
                         <iframe src="http://www.eventbrite.com/tickets-external?eid=8255356995&ref=etckt&v=2" frameborder="0" height="306" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
@@ -236,8 +297,8 @@
         </div>
         <div id="what" style="background-color:#3498db;color:white;">
             <div class="container">
-                <div class="row" style="padding: 50px inherit">
-                    <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                <div class="row row-info-section">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <h1 style="margin-bottom:75px">Sponsorship</h1>
                         <div class="col-md-3 col-sm-4 col-xs-6">
                             <img src="{{STATIC_URL}}img/Google.png" class="img-responsive img-grayscale">
@@ -256,15 +317,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a style="color:white;" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf"><h4>Sponsorship Details</h4></a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container">
-            <div class="row" style="padding: 50px inherit">
-                <div class="col-md-10 col-md-offset-1" style="text-align:center">
+            <div class="row row-info-section">
+                <div class="col-md-12" style="text-align:center">
                     <h1 style="margin-bottom:75px">Have any questions for us?</h1>
                     <p class="lead">Send us an email at
-                        <a class="normal" href="mailto:hacksu@cs.kent.edu">hacksu@cs.kent.edu</a>.
-                    </p>
+                        <a class="normal" href="mailto:hacksu@cs.kent.edu">hacksu@cs.kent.edu</a>.</p>
                 </div>
             </div>
         </div>
@@ -272,13 +337,16 @@
             <div class="container">
                 <ul class="list-inline sub-nav">
                     <li>
-                        <a href="/#about-info" onclick="showAbout();return false;">About</a>
+                        <a href="#what">What</a>
                     </li>
                     <li>
-                        <a href="/kent-hack-enough-2013">Kent Hack Enough</a>
+                        <a href="#when">When</a>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a href="#where">Where</a>
+                    </li>
+                    <li>
+                        <a href="/">Hacksu</a>
                     </li>
                 </ul>
                 <p class="text-muted credit">&copy; 2013 hacksu</p>

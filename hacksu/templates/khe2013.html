@@ -138,19 +138,19 @@
                             </a>
                         </div>
                         <div class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-2">
-                            <a class="hackathon-nav-item" href="#what">
+                            <a class="hackathon-nav-item" href="#what" onclick="showWhat();return false;">
                                 <h4>WHAT</h4>
                                 <p class="text-muted" style="font-weight:300;color:#d0d0d0">about khe</p>
                             </a>
                         </div>
                         <div class="col-md-2 col-sm-2">
-                            <a class="hackathon-nav-item" href="#when">
+                            <a class="hackathon-nav-item" href="#when" onclick="showWhen();return false;">
                                 <h4>WHEN</h4>
                                 <p class="text-muted" style="font-weight:300;color:#d0d0d0">date & time</p>
                             </a>
                         </div>
                         <div class="col-md-2 col-sm-2">
-                            <a class="hackathon-nav-item" href="#where">
+                            <a class="hackathon-nav-item" href="#where" onclick="showWhere();return false;">
                                 <h4>WHERE</h4>
                                 <p class="text-muted" style="font-weight:300;color:#d0d0d0">location & directions</p>
                             </a>
@@ -163,7 +163,7 @@
                             <br>
                             <div id="eventbrite-button" style="text-align:center">
                                 <a href="http://www.eventbrite.com/event/8255356995?ref=ebtnebregn" target="_blank">
-                                    <img src="http://www.eventbrite.com/custombutton?eid=8255356995" alt="Eventbrite - Kent Hack Enough" />
+                                    <img style="background-color:white;border-radius:7px;" src="{{STATIC_URL}}img/eventbrite-button.png" alt="Eventbrite - Kent Hack Enough" />
                                 </a>
                             </div>
                         </div>
@@ -311,16 +311,19 @@
             <div class="container">
                 <ul class="list-inline sub-nav">
                     <li>
-                        <a href="#what">What</a>
+                        <a href="#what" onclick="showWhat();return false;">What</a>
                     </li>
                     <li>
-                        <a href="#when">When</a>
+                        <a href="#when" onclick="showWhen();return false;">When</a>
                     </li>
                     <li>
-                        <a href="#where">Where</a>
+                        <a href="#where" onclick="showWhere();return false;">Where</a>
                     </li>
                     <li>
-                        <a href="#registration">Registration</a>
+                        <a href="#registration" onclick="showRegistration();return false;">Registration</a>
+                    </li>
+                    <li>
+                        <a href="#registration" onclick="showSponsors();return false;">Sponsors</a>
                     </li>
                     <li>
                         <a href="/">Hacksu</a>

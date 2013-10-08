@@ -44,14 +44,8 @@ def learn(request):
 def contact(request):
     return render_to_response('contact.html', RequestContext(request))
 
-def kenthackenough2013(request):
-    return render_to_response('kent-hack-enough-2013.html', RequestContext(request))
-
-def hackathon2013s(request):
-    return render_to_response('hackathon2013s.html', RequestContext(request))
-
-def hackathon2013f(request):
-    return render_to_response('hackathon2013f.html', RequestContext(request))
+def khe2013(request):
+    return render_to_response('khe2013.html', RequestContext(request))
 
 def opportunities(request):
     return render_to_response('opportunities.html', RequestContext(request))

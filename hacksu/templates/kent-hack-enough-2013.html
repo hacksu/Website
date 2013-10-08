@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="{{ STATIC_URL }}img/favicon-hackathon.png" type="image/png"/>
+        <link rel="icon" href="{{ STATIC_URL }}img/favicon-hackathon.png" type="image/png" />
         <title>Kent Hack Enough 2013</title>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" media="screen">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" media="screen">
@@ -57,6 +57,8 @@
             .row.row-info-section {
                 padding-top: 80px;
                 padding-bottom: 120px!important;
+                padding-left:80px;
+                padding-right: 80px;
             }
             h1, h4 {
                 font-family:'Raleway', sans-serif;
@@ -90,6 +92,9 @@
             .jumbotron-hackathon .title {
                 text-shadow:2px 2px 2px black;
                 font-size: 1.4em;
+            }
+            .img-sponsor {
+                padding:20px;
             }
             /* Medium devices (desktops, 992px and up) */
             @media (min-width: 992px) {
@@ -202,87 +207,33 @@
                         <small>When</small>
                     </h1>
                     <p class="lead">Kent Hack Enough will be held on October 18th starting at 6:00pm and run until 2:00pm on October 20th.</p>
+                    <div class="text-center">
+                        <a data-toggle="modal" href="#myModal" class="btn btn-danger btn-lg">Schedule</a>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <img style="margin: 0 auto;" src="{{STATIC_URL}}img/hackathon-calendar.png" class="img-responsive">
                 </div>
-                <div class="col-md-12">
-                    <h2>Schedule</h2>
-                    <br>
-                    <h4>
-                        <strong>FRIDAY</strong>
-                    </h4>
-                    <p class="lead">
-                        <strong>6:00pm</strong>&nbsp;- Arrival of hackers</p>
-                    <p class="lead">
-                        <strong>7:00pm</strong>&nbsp;- Introduction of hcakthon and sponsors</p>
-                    <p class="lead">
-                        <strong>8:00pm</strong>&nbsp;- Hacking begins</p>
-                    <p class="lead">
-                        <strong>8:30pm</strong>&nbsp;- Dinner&nbsp;
-                        <small>Provided by
-                            <a href="https://www.georgiosofp.com/">Georgio’s Oven Fresh Pizza Co.</a>
-                        </small>
-                    </p>
-                    <p class="lead">
-                        <strong>12:00am</strong>&nbsp;- Midnight Snack</p>
-                    <br>
-                    <h4>
-                        <strong>SATURDAY</strong>
-                    </h4>
-                    <p class="lead">
-                        <strong>7:00am</strong>&nbsp;- Breakfast</p>
-                    <p class="lead">
-                        <strong>1:00pm</strong>&nbsp;- Lunch</p>
-                    <p class="lead">
-                        <strong>3:00pm</strong>&nbsp;- MakerBot Demo&nbsp;
-                        <small>Provided by
-                            <a href="http://www.kent.edu/blackstonelaunchpad/index.cfm">Blackstone LaunchPad</a>
-                        </small>
-                    </p>
-                    <p class="lead">
-                        <strong>4:00pm</strong>&nbsp;- Amazon Web Services Presentation&nbsp;
-                        <small>Provided by
-                            <a href="http://aws.amazon.com/">AWS</a>
-                        </small>
-                    </p>
-                    <p class="lead">
-                        <strong>7:00pm</strong>&nbsp;- Dinner&nbsp;
-                        <small>Provided by
-                            <a href="https://www.georgiosofp.com/">Georgio’s Oven Fresh Pizza Co.</a>
-                        </small>
-                    </p>
-                    <p class="lead">
-                        <strong>12:00am</strong>&nbsp;- Midnight Snack</p>
-                    <br>
-                    <h4>
-                        <strong>SUNDAY</strong>
-                    </h4>
-                    <p class="lead">
-                        <strong>7:00am</strong>&nbsp;- Breakfast</p>
-                    <p class="lead">
-                        <strong>11:00am</strong>&nbsp;- End of hacking</p>
-                    <p class="lead">
-                        <strong>12:00pm</strong>&nbsp;- Start of presentations</p>
-                    <p class="lead">
-                        <strong>2:00pm</strong>&nbsp;- Winners announced and goodbye lunch</p>
-                </div>
             </div>
         </div>
-        <div id="where" class="row row-info-section" style="background-color:#9b59b6;">
+        <div id="where" style="background-color:#9b59b6;">
             <div class="container">
-                <div class="col-md-12">
-                    <h1 style="color:white;">Location&nbsp;
-                        <small style="color:rgba(255,255,255,0.5)">Where</small>
-                    </h1>
-                    <div id="map-canvas" style="width:100%;height:500px;margin:0 auto;"></div>
+                <div class="row row-info-section">
+                    <div class="col-md-12">
+                        <h1 style="color:white;">Location&nbsp;
+                            <small style="color:rgba(255,255,255,0.5)">Where</small>
+                        </h1>
+                        <br>
+                        <div id="map-canvas" style="height:500px;margin:0 auto;"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="row row-info-section">
+            <div id="registration" class="row row-info-section">
                 <div class="col-md-12">
                     <h1>Registration</h1>
+                    <br>
                     <div style="width:100%; text-align:left;">
                         <iframe src="http://www.eventbrite.com/tickets-external?eid=8255356995&ref=etckt&v=2" frameborder="0" height="306" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
                         <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;">
@@ -295,43 +246,64 @@
                 </div>
             </div>
         </div>
-        <div id="what" style="background-color:#3498db;color:white;">
+        <div id="sponsors" style="background-color:#3498db;color:white;">
             <div class="container">
                 <div class="row row-info-section">
+                    <h1>Sponsors
+                        <small style="font-size:50%;">
+                            <a style="color:#286b98" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Details</a>
+                        </small>
+                    </h1>
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h1 style="margin-bottom:75px">Sponsorship</h1>
-                        <div class="col-md-3 col-sm-4 col-xs-6">
-                            <img src="{{STATIC_URL}}img/Google.png" class="img-responsive img-grayscale">
+                        <div class="col-md-4 text-center" style="height:100px;">
+                            <a href="http://www.knightfoundation.org/">
+                                <img src="{{STATIC_URL}}img/knight-foundation.png" class="img-responsive img-grayscale img-sponsor" style="margin-top:50px">
+                            </a>
                         </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6">
-                            <img src="{{STATIC_URL}}img/hyland-software.aspx" class="img-responsive img-grayscale">
+                        <div class="col-md-4">
+                            <a href="http://aws.amazon.com/">
+                                <img src="{{STATIC_URL}}img/aws.png" class="img-grayscale img-responsive img-sponsor">
+                            </a>
                         </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6">
-                            <img src="{{STATIC_URL}}img/progressive.png" class="img-responsive img-grayscale">
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6">
-                            <img src="{{STATIC_URL}}img/improv-electronics.png" class="img-responsive img-grayscale">
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-xs-6">
-                            <img src="{{STATIC_URL}}img/aws.png" class="img-responsive img-grayscale">
+                        <div class="col-md-4">
+                            <a href="http://www.improvelectronics.com/">
+                                <img src="{{STATIC_URL}}img/boogie-board.png" class="img-grayscale img-responsive img-sponsor" style="margin-top:50px">
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a style="color:white;" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">
-                            <h4>Sponsorship Details</h4>
-                        </a>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-3">
+                            <a href="http://www.progressive.com/">
+                                <img src="{{STATIC_URL}}img/progressive.png" class="img-grayscale img-responsive img-sponsor">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="http://www.google.com/">
+                                <img src="{{STATIC_URL}}img/Google.png" class="img-grayscale img-responsive img-sponsor">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="http://www.hyland.com/">
+                                <img src="{{STATIC_URL}}img/hyland-software.aspx" class="img-grayscale img-responsive img-sponsor">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href "http://www.kent.edu/blackstonelaunchpad/index.cfm">
+                                <img src="{{STATIC_URL}}img/blackstone.png" class="img-grayscale img-responsive img-sponsor">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="row row-info-section">
+            <div id="contact" class="row row-info-section">
                 <div class="col-md-12" style="text-align:center">
                     <h1 style="margin-bottom:75px">Have any questions for us?</h1>
                     <p class="lead">Send us an email at
                         <a class="normal" href="mailto:hacksu@cs.kent.edu">hacksu@cs.kent.edu</a>.</p>
+                    <p class="lead">Follow us us on
+                        <a class="normal" href="http://www.twitter.com/kenthackenough">Twitter</a>&nbsp;for news and announcements.</p>
                 </div>
             </div>
         </div>
@@ -348,12 +320,91 @@
                         <a href="#where">Where</a>
                     </li>
                     <li>
+                        <a href="#registration">Registration</a>
+                    </li>
+                    <li>
                         <a href="/">Hacksu</a>
                     </li>
                 </ul>
                 <p class="text-muted credit">&copy; 2013 hacksu</p>
             </div>
         </div>
+        <!-- Schedule Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Kent Hack Enough Schedule</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4>
+                            <strong>FRIDAY</strong>
+                        </h4>
+                        <p class="lead">
+                            <strong>6:00pm</strong>&nbsp;- Arrival of hackers</p>
+                        <p class="lead">
+                            <strong>7:00pm</strong>&nbsp;- Introduction of hackthon and sponsors</p>
+                        <p class="lead">
+                            <strong>8:00pm</strong>&nbsp;- Hacking begins</p>
+                        <p class="lead">
+                            <strong>8:30pm</strong>&nbsp;- Dinner&nbsp;
+                            <small>Provided by
+                                <a href="https://www.georgiosofp.com/">Georgio’s Oven Fresh Pizza Co.</a>
+                            </small>
+                        </p>
+                        <p class="lead">
+                            <strong>12:00am</strong>&nbsp;- Midnight Snack</p>
+                        <br>
+                        <h4>
+                            <strong>SATURDAY</strong>
+                        </h4>
+                        <p class="lead">
+                            <strong>7:00am</strong>&nbsp;- Breakfast</p>
+                        <p class="lead">
+                            <strong>1:00pm</strong>&nbsp;- Lunch</p>
+                        <p class="lead">
+                            <strong>3:00pm</strong>&nbsp;- MakerBot Demo&nbsp;
+                            <small>Provided by
+                                <a href="http://www.kent.edu/blackstonelaunchpad/index.cfm">Blackstone LaunchPad</a>
+                            </small>
+                        </p>
+                        <p class="lead">
+                            <strong>4:00pm</strong>&nbsp;- Amazon Web Services Presentation&nbsp;
+                            <small>Provided by
+                                <a href="http://aws.amazon.com/">AWS</a>
+                            </small>
+                        </p>
+                        <p class="lead">
+                            <strong>7:00pm</strong>&nbsp;- Dinner&nbsp;
+                            <small>Provided by
+                                <a href="https://www.georgiosofp.com/">Georgio’s Oven Fresh Pizza Co.</a>
+                            </small>
+                        </p>
+                        <p class="lead">
+                            <strong>12:00am</strong>&nbsp;- Midnight Snack</p>
+                        <br>
+                        <h4>
+                            <strong>SUNDAY</strong>
+                        </h4>
+                        <p class="lead">
+                            <strong>7:00am</strong>&nbsp;- Breakfast</p>
+                        <p class="lead">
+                            <strong>11:00am</strong>&nbsp;- End of hacking</p>
+                        <p class="lead">
+                            <strong>12:00pm</strong>&nbsp;- Start of presentations</p>
+                        <p class="lead">
+                            <strong>2:00pm</strong>&nbsp;- Winners announced and goodbye lunch</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

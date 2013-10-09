@@ -57,8 +57,6 @@
             .row.row-info-section {
                 padding-top: 80px;
                 padding-bottom: 120px!important;
-                padding-left:80px;
-                padding-right: 80px;
             }
             h1, h4 {
                 font-family:'Raleway', sans-serif;
@@ -74,7 +72,7 @@
                 line-height: 1.7em;
             }
             .hackathon-marketing > h1 {
-                font-size:4.5em;
+                font-size:3.2em;
             }
             .jumbotron-hackathon {
                 height: 330px;
@@ -131,7 +129,7 @@
         <div class="jumbotron-hackathon" style="padding:0;">
             <div style="background-color:rgba(118, 118, 118, 0.42);height:100%;margin:0;">
                 <div class="container">
-                    <div class="row">
+                    <div class="row hidden-xs">
                         <div class="col-md-4 col-sm-4">
                             <a class="hackathon-nav-item" href="/khe2013">
                                 <h4 style="margin-top:23px">KENT HACK ENOUGH 2013</h4>
@@ -171,7 +169,7 @@
                 </div>
             </div>
         </div>
-        <div id="what" style="color:white;background-size: 100%;background-position: 50% 30%;background-repeat: no-repeat;background-image: url({{STATIC_URL}}img/fab-fourth.jpg);">
+        <div id="what" style="color:white;">
             <div style="background-color:rgba(28, 209, 173, 0.8);">
             <div class="container">
                 <div class="row row-info-section">
@@ -205,17 +203,16 @@
         <div class="container">
             <div id="when" class="row row-info-section">
                 <div class="col-md-6">
+                    <img style="margin: 0 auto;" src="{{STATIC_URL}}img/hackathon-calendar.png" class="img-responsive">
+                </div>
+                <div class="col-md-6">
                     <h1>Date & Time&nbsp;
                         <small>When</small>
                     </h1>
                     <p class="lead">Kent Hack Enough will be held on October 18th starting at 6:00pm and run until 2:00pm on October 20th.</p>
-                    <div class="text-center" style="margin-bottom:100px;">
-                        <a data-toggle="modal" href="#myModal" class="btn btn-danger btn-lg">Schedule</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img style="margin: 0 auto;" src="{{STATIC_URL}}img/hackathon-calendar.png" class="img-responsive">
-                </div>
+                    <br>
+                    <p class="lead">Check out the <a data-toggle="modal" href="#myModal">schedule</a> to see what is going on.</p>
+                </div>                
             </div>
         </div>
         <div id="where" style="background-color:#9b59b6;">
@@ -251,12 +248,13 @@
         <div id="sponsors" style="background-color:#3498db;color:white;">
             <div class="container">
                 <div class="row row-info-section">
-                    <h1>Sponsors
+                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h1>Sponsors
                         <small style="font-size:50%;">
                             <a style="color:#286b98" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Details</a>
                         </small>
                     </h1>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="col-md-4 text-center" style="height:100px;">
                             <a href="http://www.knightfoundation.org/">
                                 <img src="{{STATIC_URL}}img/knight-foundation.png" class="img-responsive img-grayscale img-sponsor" style="margin-top:50px">
@@ -324,14 +322,14 @@
                     <li>
                         <a href="#registration" onclick="showRegistration();return false;">Registration</a>
                     </li>
-                    <li>
+                    <li class="hidden-xs">
                         <a href="#registration" onclick="showSponsors();return false;">Sponsors</a>
                     </li>
-                    <li>
+                    <li class="hidden-xs">
                         <a href="/">Hacksu</a>
                     </li>
                 </ul>
-                <p class="text-muted credit">&copy; 2013 hacksu</p>
+                <p class="text-muted credit">&copy; 2013 Hacksu</p>
             </div>
         </div>
         <!-- Schedule Modal -->

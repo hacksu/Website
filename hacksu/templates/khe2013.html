@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" href="{{ STATIC_URL }}img/favicon-hackathon.png" type="image/png" />
         <title>Kent Hack Enough 2013</title>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" media="screen">
@@ -95,6 +96,14 @@
                 padding:20px;
             }
             /* Medium devices (desktops, 992px and up) */
+            @media (min-width: 768px) {
+                .jumbotron-hackathon {
+                    height: 500px;
+                }
+                .hackathon-marketing > h1 {
+                    font-size:5em;
+                }
+            }
             @media (min-width: 992px) {
                 .jumbotron-hackathon {
                     height: 700px!important;
@@ -104,6 +113,9 @@
                 }
                 #eventbrite-button {
                     margin-top:75px;
+                }
+                .hackathon-marketing > h1 {
+                    font-size:5.3em;
                 }
             }
             @media (min-width: 1200px) {
@@ -116,10 +128,8 @@
                 #eventbrite-button {
                     margin-top:100px;
                 }
-            }
-            @media (min-width: 768px) {
-                .jumbotron-hackathon {
-                    height: 500px;
+                .hackathon-marketing > h1 {
+                    font-size:5.5em;
                 }
             }
         </style>
@@ -171,34 +181,34 @@
         </div>
         <div id="what" style="color:white;">
             <div style="background-color:rgba(28, 209, 173, 0.8);">
-            <div class="container">
-                <div class="row row-info-section">
-                    <div class="col-md-12">
-                        <h1 style="text-align:center;">Kent Hack Enough&nbsp;
-                            <small style="color:rgba(255,255,255,0.5)">What</small>
-                        </h1>
-                        <br>
-                        <p class="lead">Kent Hack Enough, Hacksu's annual hackathon, brings the passion and innovation behind hackathons to the Midwest. With over 150 participants, Kent Hack Enough will be the largest hackathon in Ohio. Top prizes will include cash and exposure to top companies. Admission is completely free for students, and travel costs will be reimbursed.</p>
-                    </div>
-                    <div class="col-md-5">
-                        <h3 class="text-center">Travel</h3>
-                        <p>If you are traveling from outside of Kent, we will reimburse travel up to $100. So, there really is no excuse you kent attend!</p>
-                    </div>
-                    <div class="col-md-5 col-md-offset-2">
-                        <h3 class="text-center">Participants</h3>
-                        <p>The only requirement to participate is to be a graduate or ungraduate student. We also will allow high-school students, if emailed before hand.</p>
-                    </div>
-                    <div class="col-md-5">
-                        <h3 class="text-center">Rules</h3>
-                        <p>The only rule is that you must start your project from scratch. Use of 3rd party libraries and APIs are allowed to be integrated into your project.</p>
-                    </div>
-                    <div class="col-md-5 col-md-offset-2">
-                        <h3 class="text-center">Teams</h3>
-                        <p>The maximum number of students is limited to four. There will be time before the hackathon to meet students and join a team if you don't have one.</p>
+                <div class="container">
+                    <div class="row row-info-section">
+                        <div class="col-md-12">
+                            <h1 style="text-align:center;">Kent Hack Enough&nbsp;
+                                <small style="color:rgba(255,255,255,0.5)">What</small>
+                            </h1>
+                            <br>
+                            <p class="lead">Kent Hack Enough, Hacksu's annual hackathon, brings the passion and innovation behind hackathons to the Midwest. With over 150 participants, Kent Hack Enough will be the largest hackathon in Ohio. Top prizes will include cash and exposure to top companies. Admission is completely free for students, and travel costs will be reimbursed.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <h3 class="text-center">Travel</h3>
+                            <p>If you are traveling from outside of Kent, we will reimburse travel up to $100. So, there really is no excuse you kent attend!</p>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2">
+                            <h3 class="text-center">Participants</h3>
+                            <p>The only requirement to participate is to be a graduate or ungraduate student. We also will allow high-school students, if emailed before hand.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <h3 class="text-center">Rules</h3>
+                            <p>The only rule is that you must start your project from scratch. Use of 3rd party libraries and APIs are allowed to be integrated into your project.</p>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2">
+                            <h3 class="text-center">Teams</h3>
+                            <p>The maximum number of students is limited to four. There will be time before the hackathon to meet students and join a team if you don't have one.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-                </div>
         </div>
         <div class="container">
             <div id="when" class="row row-info-section">
@@ -211,8 +221,9 @@
                     </h1>
                     <p class="lead">Kent Hack Enough will be held on October 18th starting at 6:00pm and run until 2:00pm on October 20th.</p>
                     <br>
-                    <p class="lead">Check out the <a data-toggle="modal" href="#myModal">schedule</a> to see what is going on.</p>
-                </div>                
+                    <p class="lead">Check out the
+                        <a data-toggle="modal" href="#myModal">schedule</a>to see what is going on.</p>
+                </div>
             </div>
         </div>
         <div id="where" style="background-color:#9b59b6;">
@@ -248,13 +259,12 @@
         <div id="sponsors" style="background-color:#3498db;color:white;">
             <div class="container">
                 <div class="row row-info-section">
-                    
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <h1>Sponsors
-                        <small style="font-size:50%;">
-                            <a style="color:#286b98" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Details</a>
-                        </small>
-                    </h1>
+                            <small style="font-size:50%;">
+                                <a style="color:#286b98" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Details</a>
+                            </small>
+                        </h1>
                         <div class="col-md-4 text-center" style="height:100px;">
                             <a href="http://www.knightfoundation.org/">
                                 <img src="{{STATIC_URL}}img/knight-foundation.png" class="img-responsive img-grayscale img-sponsor" style="margin-top:50px">

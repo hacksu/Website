@@ -27,11 +27,3 @@ function showRegistration() {
         scrollTop: $("#registration").offset().top
     }, 500);
 }
-
-function showSponsors() {
-    $('html, body').animate({
-        scrollTop: $("#sponsors").offset().top
-    }, 500);
-}
-
-

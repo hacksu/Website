@@ -259,6 +259,9 @@
                         <h1>Location&nbsp;
                             <small>Where</small>
                         </h1>
+                        <a data-toggle="modal" href="#directionsModal">
+                            <p class="lead">Parking information</p>
+                        </a>
                         <br>
                         <div id="map-canvas" style="height:500px;margin:0 auto;"></div>
                     </div>
@@ -289,8 +292,7 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                         <h1>Sponsors</h1>
-                        <p class="lead">Would you like to get involved with Kent Hack Enough?
-                            <a style="color:#286b98" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Contact us</a>.</p>
+                        <p class="lead"><a style="color:#286b98" target="_blank" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Would you like to help sponsor and get involved with Kent Hack Enough?</a></p>
                         <div class="col-md-12">
                             <a href="http://www.knightfoundation.org/">
                                 <img src="{{STATIC_URL}}img/knight-foundation.png" class="img-responsive img-grayscale img-sponsor" style="margin:0 auto;">
@@ -469,6 +471,27 @@
                             <strong>12:00pm</strong>&nbsp;- Start of presentations</p>
                         <p class="lead">
                             <strong>2:00pm</strong>&nbsp;- Winners announced and goodbye lunch</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- Directions and Parking Modal -->
+        <div class="modal fade" id="directionsModal" tabindex="-1" role="dialog" aria-labelledby="directionsModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Parking information</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead">Parking for the event is free for the entire weekend. You must park in the lot labeled Visitor Parking located on this
+                            <a href="{{STATIC_URL}}docs/parking-map.pdf" target="_blank">map</a>&nbsp;near the Library.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

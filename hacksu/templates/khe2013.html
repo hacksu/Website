@@ -75,6 +75,13 @@
             .hackathon-marketing > h1 {
                 font-size:3.2em;
             }
+            .hackathon-marketing > h1 {
+                text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+            }
+            .hackathon-marketing > h3 {
+                font-weight: 300;
+                text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+            }
             .jumbotron-hackathon {
                 height: 600px;
                 vertical-align: middle;
@@ -154,12 +161,9 @@
                 }
                 .hackathon-marketing > h1 {
                     font-size:8em;
-                    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
                 }
                 .hackathon-marketing > h3 {
                     font-size: 2em;
-                    font-weight: 300;
-                    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
                 }
             }
         </style>
@@ -171,8 +175,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
+                            <a href="http://www.twitter.com/kenthackenough">
+                                <img style="width:30px;" src="{{STATIC_URL}}img/twitter-logo.png">
+                            </a>
+                            <a href="http://www.facebook.com/kenthackenough">
+                                <img style="width:30px;" src="{{STATIC_URL}}img/facebook-logo.png">
+                            </a>
                             <a class="hackathon-nav-item" href="/khe2013">
-                                <h4 style="margin-top:23px">KENT HACK ENOUGH
+                                <h4>KENT HACK ENOUGH
                                     <small style="color:#d4d4d4">2013</small>
                                 </h4>
                             </a>
@@ -198,7 +208,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 hackathon-marketing">
-                            <h1>DESIGN, CREATE AND BUILD.</h1>
+                            <h1 style="margin-top:0px;">DESIGN, CREATE AND BUILD.</h1>
                             <h3>YOU KENT AFFORD TO MISS OHIO'S LARGEST HACKATHON.</h3>
                             <br>
                             <div id="eventbrite-button" class="text-center">
@@ -292,7 +302,9 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                         <h1>Sponsors</h1>
-                        <p class="lead"><a style="color:#286b98" target="_blank" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Would you like to help sponsor and get involved with Kent Hack Enough?</a></p>
+                        <p class="lead">
+                            <a style="color:#286b98" target="_blank" href="{{STATIC_URL}}docs/TechSponsorHandout.pdf">Would you like to help sponsor and get involved with Kent Hack Enough?</a>
+                        </p>
                         <div class="col-md-12">
                             <a href="http://www.knightfoundation.org/">
                                 <img src="{{STATIC_URL}}img/knight-foundation.png" class="img-responsive img-grayscale img-sponsor" style="margin:0 auto;">
@@ -429,8 +441,7 @@
                         <p class="lead">
                             <strong>8:00pm</strong>&nbsp;- Hacking begins</p>
                         <p class="lead">
-                            <strong>8:30pm</strong>&nbsp;- Dinner&nbsp;
-                        </p>
+                            <strong>8:30pm</strong>&nbsp;- Dinner&nbsp;</p>
                         <p class="lead">
                             <strong>11:00pm</strong>&nbsp;- Late Night Snack</p>
                         <br>
@@ -454,8 +465,7 @@
                             </small>
                         </p>
                         <p class="lead">
-                            <strong>7:00pm</strong>&nbsp;- Dinner&nbsp;
-                        </p>
+                            <strong>7:00pm</strong>&nbsp;- Dinner&nbsp;</p>
                         <p class="lead">
                             <strong>12:00am</strong>&nbsp;- Midnight Snack</p>
                         <br>

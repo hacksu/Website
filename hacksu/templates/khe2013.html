@@ -228,6 +228,9 @@
                         </h1>
                         <br>
                         <p class="lead">Kent Hack Enough, Hacksu's annual hackathon, brings the passion and innovation behind hackathons to the Midwest. With over 150 participants, Kent Hack Enough will be the largest hackathon in Ohio. Top prizes will include cash and exposure to top companies. Admission is completely free for students, and travel costs will be reimbursed.</p>
+                        <p class="lead">
+                            <a data-toggle="modal" href="#apisModal">Use these APIs and services in your hack.</a>
+                        </p>
                     </div>
                 </div>
                 <div class="row">
@@ -511,6 +514,32 @@
                     <div class="modal-body">
                         <p class="lead">Parking for the event is free for the entire weekend. You must park in the lot labeled Visitor Parking located on this
                             <a href="{{STATIC_URL}}docs/parking-map.pdf" target="_blank">map</a>&nbsp;near the Library.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- /.modal -->
+        <!-- Directions and Parking Modal -->
+        <div class="modal fade" id="apisModal" tabindex="-1" role="dialog" aria-labelledby="apisModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">APIs and Services</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><p class="lead">$30 in <a href="http://www.twilio.com">Twilio</a> Credit, just use the promo code "KentHackEnough"</p></li>
+                            <li><p class="lead"><a href="http://aws.amazon.com/">Amazon Web Services</a> will have $100 credit at the hackathon for every hacker</p></li>
+                            <li><p class="lead">Don't want to work with databases, try out <a href="https://www.firebase.com/">Firebase</a></p></li>
+                            <li><p class="lead">Tie your app into <a href="https://developers.google.com/google-apps/app-apis">Google's APIs</a></p></li>
+                        </ul>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

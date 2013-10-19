@@ -109,17 +109,18 @@
             #footer {
                 margin-top:0px!important;
             }
-            #register-button {
-                background-color:#27ae60;
+            #submit-hack-link {
+                background-color:#e74d3e;
                 color: white;
                 font-weight:300;
                 padding: 14px 30px;
                 border-radius: 5px;
                 box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
                 font-size:1.2em;
+                margin-top:40px;
             }
-            #register-button:hover {
-                background-color:#25a059;
+            #submit-hack-link:hover {
+                background-color:#c74336;
                 text-decoration:none;
             }
             @media (min-width: 768px) {
@@ -133,7 +134,7 @@
                 .hackathon-marketing {
                     margin-top:50px;
                 }
-                #eventbrite-button {
+                #submit-hack-button {
                     margin-top:50px;
                 }
             }
@@ -145,7 +146,7 @@
                 .hackathon-marketing {
                     margin-top:150px;
                 }
-                #eventbrite-button {
+                #submit-hack-button {
                     margin-top:75px;
                 }
                 .hackathon-marketing > h1 {
@@ -156,7 +157,7 @@
                 .hackathon-marketing {
                     margin-top:75px;
                 }
-                #eventbrite-button {
+                #submit-hack-button {
                     margin-top:50px;
                 }
                 .hackathon-marketing > h1 {
@@ -211,8 +212,8 @@
                             <h1 style="margin-top:0px;">DESIGN, CREATE AND BUILD.</h1>
                             <h3>YOU KENT AFFORD TO MISS OHIO'S LARGEST HACKATHON.</h3>
                             <br>
-                            <div id="eventbrite-button" class="text-center">
-                                <a href="http://www.eventbrite.com/event/8255356995?ref=ebtnebregn" id="register-button">REGISTER NOW</a>
+                            <div id="submit-hack-button" class="text-center">
+                                <a href="http://kenthackenough.challengepost.com/" id="submit-hack-link" target="_blank">SUBMIT HACK</a>
                             </div>
                         </div>
                     </div>
@@ -281,21 +282,15 @@
                 </div>
             </div>
         </div>
-        <div id="registration" style="background-color:#1abc9c;color:white">
+        <div style="background-color:#e74d3e">
             <div class="container">
-                <div id="registration" class="row row-info-section">
-                    <div class="col-md-10 col-md-offset-1">
-                        <h1>Registration</h1>
-                        <br>
-                        <div style="width:100%; text-align:left;">
-                            <iframe src="http://www.eventbrite.com/tickets-external?eid=8255356995&ref=etckt&v=2" frameborder="0" height="306" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
-                            <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;">
-                                <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Sell Tickets Online</a>
-                                <span style="color:#ddd;">through</span>
-                                <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=etckt">Eventbrite</a>
-                            </div>
-                        </div>
-                        <br>
+                <div id="contact" class="row" style="margin: 100px 0px;">
+                    <div class="col-md-12" style="text-align:center;color:white;">
+                        <h1 style="margin-bottom:75px">Have any questions for us?</h1>
+                        <p class="lead">Send us an email at
+                            <a style="color:#2f2f2f;" href="mailto:hacksu@cs.kent.edu">hacksu@cs.kent.edu</a>.</p>
+                        <p class="lead">Follow us us on
+                            <a style="color:#2f2f2f;" href="http://www.twitter.com/kenthackenough">Twitter</a>&nbsp;for news and announcements.</p>
                     </div>
                 </div>
             </div>
@@ -403,19 +398,6 @@
                 </div>
             </div>
         </div>
-        <div style="background-color:#e74d3e">
-            <div class="container">
-                <div id="contact" class="row" style="margin: 100px 0px;">
-                    <div class="col-md-12" style="text-align:center;color:white;">
-                        <h1 style="margin-bottom:75px">Have any questions for us?</h1>
-                        <p class="lead">Send us an email at
-                            <a style="color:#2f2f2f;" href="mailto:hacksu@cs.kent.edu">hacksu@cs.kent.edu</a>.</p>
-                        <p class="lead">Follow us us on
-                            <a style="color:#2f2f2f;" href="http://www.twitter.com/kenthackenough">Twitter</a>&nbsp;for news and announcements.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div id="footer">
             <div class="container">
                 <ul class="list-inline sub-nav">
@@ -427,9 +409,6 @@
                     </li>
                     <li>
                         <a href="#where" onclick="showWhere();return false;">Where</a>
-                    </li>
-                    <li>
-                        <a href="#registration" onclick="showRegistration();return false;">Registration</a>
                     </li>
                 </ul>
                 <p class="text-muted credit">&copy; 2013 Hacksu</p>

@@ -4,11 +4,27 @@
         <div class="col-md-10 col-md-offset-1">
             <h1>Opportunities</h1>
             <p class="lead">This page lists all the different oppurtunites, connections, and resources that Hacksu is affliated with. Don't be afraid to reach out and talk to some of the companies/people to see what connections you can make.</p>
-            <br>
+            <br/>
+            <a href="#" data-toggle="modal" data-target="#projectBuiltModal" class="normal"><h3>Need a project built?</h3></a>
+            <p>If you have an idea but need programmers/designers to actually build it, you are at the right place! Fill out this form and we will contact you.</p>
+            <br/>
             <a href="http://www.kent.edu/blackstonelaunchpad/index.cfm" class="normal">
                 <h3>Blackstone LaunchPad - Kent State University</h3>
             </a>
             <p>Blackstone LaunchPad is an innovative program that treats entrepreneurship as a viable career path. The program teaches students, faculty and alumni how to transform their ideas into thriving businesses.</p>
         </div>
     </div>
-</div>{% endblock %}
+</div>
+
+<!-- Need Project Modal -->
+<div class="modal fade" id="projectBuiltModal" tabindex="-1" role="dialog" aria-labelledby="projectBuiltModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe src="https://docs.google.com/forms/d/1fnh8sz-MswFEYcvb9eGe5O2oP2rXv0zZZ5YFrvcoZuE/viewform?embedded=true#start=embed" width="550" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+     </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+{% endblock %}

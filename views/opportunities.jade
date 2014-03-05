@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+    div.container
+        div.row
+            div.col-md-10.col-md-offset-1
+              h1 Opportunities
+              p.lead
+                | This page lists all the different oppurtunites, connections, and resources that Hacksu is affliated with. Don't be afraid to reach out and talk to some of the companies/people to see what connections you can make.
+              br
+              a.normal(href='#', data-toggle='modal', data-target='#projectBuiltModal')
+                h3 Need a project built?
+              p
+                | If you have an idea but need programmers/designers to actually build it, you are at the right place! Fill out this form and we will contact you.
+              br
+              a.normal(href='http://www.kent.edu/blackstonelaunchpad/index.cfm')
+                h3 Blackstone LaunchPad - Kent State University
+              p
+                | Blackstone LaunchPad is an innovative program that treats entrepreneurship as a viable career path. The program teaches students, faculty and alumni how to transform their ideas into thriving businesses.
+        //
+           Need Project Modal 
+        div#projectBuiltModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='projectBuiltModalLabel', aria-hidden='true')
+          div.modal-dialog
+            div.modal-content
+              div.modal-body
+                iframe(src='https://docs.google.com/forms/d/1fnh8sz-MswFEYcvb9eGe5O2oP2rXv0zZZ5YFrvcoZuE/viewform?embedded=true#start=embed', width='550', height='500', frameborder='0', marginheight='0', marginwidth='0') Loading...

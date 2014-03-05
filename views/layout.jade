@@ -1,0 +1,71 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        meta(name="description", content="")
+        meta(name="author", content="")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        link(rel="shortcut icon", href="/images/favicon.ico")
+        link(rel="stylesheet", href="/stylesheets/main.css", media="screen")
+        link(rel="stylesheet", href="/stylesheets/bootstrap.min.css", media="screen")
+        link(rel="stylesheet", href="/stylesheets/bootstrap-theme.min.css", media="screen")
+        link(href='http://fonts.googleapis.com/css?family=Lobster+Two:400', rel='stylesheet', type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600', rel='stylesheet', type='text/css')
+        block extra-head
+    
+    body
+        // Wrap all page content here
+        div#wrap
+            div#social-header
+                div.container
+                    a.social-item(href="https://www.facebook.com/groups/hacksu/")
+                        img(src="/images/facebook.png")
+                    a.social-item(href="https://twitter.com/hacKSU1")
+                        img(src="/images/twitter.png")
+                    a.social-item(href="https://github.com/hacKSU")
+                        img(src="/images/github.png")
+            div.navbar.navbar-default
+                div.container
+                    div.navbar-header
+                        button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href="/") hacksu
+                    div.collapse.navbar-collapse
+                        ul.nav.navbar-nav
+                            li
+                                a(href="/khe2013") Kent Hack Enough
+                            li
+                                a(href="/opportunities") Opportunities
+                            li
+                                a(href="/#about-info", onclick="showAbout();return false;") About
+                            li
+                                a(href="/contact") Contact
+            block content
+        div#footer
+            div.container
+                ul.list-inline.sub-nav
+                    li
+                        a(href="/#about-info", onclick="showAbout();return false;") About
+                    li
+                        a(href="/khe2013") Kent Hack Enough
+                    li
+                        a(href="/contact") Contact
+                p.text-muted.credit &copy; 2013 hacksu
+        script(src="/javascripts/jquery-2.0.3.min.js")
+        script(src="/javascripts/bootstrap.min.js")
+        script(src="/javascripts/main.js")
+        script(src="/javascripts/retina-1.1.0.min.js")
+        script.
+            var _gaq = [
+                ['_setAccount', 'UA-35084827-1'],
+                ['_trackPageview']
+            ];
+            (function(d, t) {
+                var g = d.createElement(t),
+                    s = d.getElementsByTagName(t)[0];
+                g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g, s)
+            }(document, 'script'));

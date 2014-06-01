@@ -18,3 +18,7 @@ exports.opportunities = function(req, res){
 exports.khe2013 = function(req, res){
   res.render('khe2013', { title: 'Kent Hack Enough 2013' });
 };
+
+exports.khe2014 = function(req, res){
+  res.render('khe2014', { title: 'Kent Hack Enough 2014' });
+};

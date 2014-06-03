@@ -32,6 +32,7 @@ app.get('/', routes.index);
 app.get('/contact', routes.contact);
 app.get('/opportunities', routes.opportunities);
 app.get('/khe2013', routes.khe2013);
+app.get('/khe2014', routes.khe2014);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

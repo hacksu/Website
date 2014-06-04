@@ -62,7 +62,7 @@ head
       font-weight:700;
       }
       .hackathon-nav-item > h4 {
-      color: white;
+      color: #d5f111;
       }
       .hackathon-nav-item:hover {
       text-decoration:none;
@@ -115,16 +115,21 @@ head
       border-radius: 5px;
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
       font-size:1.2em;
-      margin-top:40px;
+      margin-top:30%;
       }
       #submit-hack-link:hover {
       background-color:#d5f111;
       text-decoration:none;
       }
+      @media (min-width:300px) {
+      #submit-hack-button {
+      margin-top:75px;
+      }
+      }
       @media (min-width: 768px) {
       .jumbotron-hackathon {
       height: 600px;
-      background-position: -50px -70px;
+      background-position: -100px 0px;
       }
       .hackathon-marketing > h1 {
       font-size:5em;
@@ -133,7 +138,7 @@ head
       margin-top:50px;
       }
       #submit-hack-button {
-      margin-top:50px;
+      margin-top:150px;
       }
       }
       @media (min-width: 992px) {
@@ -145,7 +150,7 @@ head
       margin-top:150px;
       }
       #submit-hack-button {
-      margin-top:75px;
+      margin-top:150px;
       }
       .hackathon-marketing > h1 {
       font-size:5.3em;
@@ -156,7 +161,7 @@ head
       margin-top:75px;
       }
       #submit-hack-button {
-      margin-top:50px;
+      margin-top:200px;
       }
       .hackathon-marketing > h1 {
       font-size:8em;
@@ -193,7 +198,7 @@ head
                 p.text-muted(style='font-weight: 300; color: #d0d0d0;') location & directions
           div.row
             div.col-md-12.hackathon-marketing
-              h3 YOU KENT AFFORD TO MISS OHIO'S LARGEST HACKATHON.
+              br
               br
               div#submit-hack-button.text-center
                 a#submit-hack-link(href='#', target='_blank') REGISTRATION COMING SOON
@@ -223,7 +228,7 @@ head
       div.container
         div.row(style='margin: 100px 0px;')
           div.col-md-5.col-md-offset-1
-            img.img-responsive(style='margin: 0px auto;', src='/images/TempCalendar.png')
+            img.img-responsive(style='margin: 0px auto;', src='/images/Calendar.png')
           div.col-md-5
             h1
               | Date & Time

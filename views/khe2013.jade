@@ -199,6 +199,7 @@ head
           div.col-lg-10.col-lg-offset-1
             h1(style='text-align: center;')
               | Kent Hack Enough
+              small What
             br
             p.lead
               | Kent Hack Enough, Hacksu's annual hackathon, brings the passion and innovation behind hackathons to the Midwest. With over 150 participants, Kent Hack Enough will be the largest hackathon in Ohio. Top prizes will include cash and exposure to top companies. Admission is completely free for students, and travel costs will be reimbursed.
@@ -219,23 +220,25 @@ head
       div.container
         div.row(style='margin: 100px 0px;')
           div.col-md-5.col-md-offset-1
-            img.img-responsive(style='margin: 0px auto;', src='/images/TempCalendar.png')
+            img.img-responsive(style='margin: 0px auto;', src='/images/calendar.png')
           div.col-md-5
             h1
               | Date & Time
-              small(style='color: white; opacity: 0.8;') 
+              small(style='color: white; opacity: 0.8;') When
             p.lead
-              | Kent Hack Enough will be held on October 24th starting at 6:00pm and run until 2:00pm on October 26th.
+              | Kent Hack Enough will be held on October 18th starting at 6:00pm and run until 2:00pm on October 20th.
             br
             p.lead
-              a(style='color: #fff; font-weight: 600;', data-toggle='modal', href='#myModal') Hackers, click on me to find out what's going on.
-              
+              | Check out the
+              a(style='color: #fff; font-weight: 600;', data-toggle='modal', href='#myModal') schedule
+              | to see what is going on.
     #where
       div.container
         div.row.row-info-section
           div.col-md-10.col-md-offset-1
             h1
               | Location
+              small Where
             a(data-toggle='modal', href='#directionsModal')
               p.lead Parking information
             br
@@ -259,62 +262,60 @@ head
           div.col-md-10.col-md-offset-1.col-sm-12.col-xs-12
             h1 Sponsors
             p.lead
-              a(style='color: #286b98;', target='_blank', href='/docs/InformationPacket.pdf') Would you like to help sponsor and get involved with Kent Hack Enough?
+              a(style='color: #286b98;', target='_blank', href='/docs/TechSponsorHandout.pdf') Would you like to help sponsor and get involved with Kent Hack Enough?
             div.col-md-12
-                p.lead
-                | Future Sponsors TBA.
-              //a(href='http://www.knightfoundation.org/')
-                //img.img-responsive.img-grayscale.img-sponsor(src='/images/knight-foundation.png', style='margin: 0 auto;')
+              a(href='http://www.knightfoundation.org/')
+                img.img-responsive.img-grayscale.img-sponsor(src='/images/knight-foundation.png', style='margin: 0 auto;')
         div.row
           div.col-md-10.col-md-offset-1.col-sm-12.col-xs-12
             div.col-md-6
-              //a(href='http://aws.amazon.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/aws.png', style='margin: 0 auto;')
+              a(href='http://aws.amazon.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/aws.png', style='margin: 0 auto;')
             div.col-md-6
-              //a(href='http://www.improvelectronics.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/boogie-board.png', style='margin: 30px auto;')
+              a(href='http://www.improvelectronics.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/boogie-board.png', style='margin: 30px auto;')
         div.row
           div.col-md-10.col-md-offset-1.col-sm-12.col-xs-12
             div.col-md-3
-              //a(href='http://www.progressive.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/progressive.png', style='margin: -10px auto;')
+              a(href='http://www.progressive.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/progressive.png', style='margin: -10px auto;')
             div.col-md-3
-              //a(href='http://www.google.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/Google.png', style='margin: 0 auto;')
+              a(href='http://www.google.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/Google.png', style='margin: 0 auto;')
             div.col-md-3
-              //a(href='http://www.hyland.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/hyland-software.aspx', style='margin: 0 auto;')
+              a(href='http://www.hyland.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/hyland-software.aspx', style='margin: 0 auto;')
             div.col-md-3
-              //a(href='href', http:='http:', www.kent.edu='www.kent.edu', blackstonelaunchpad='blackstonelaunchpad', index.cfm='index.cfm')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/blackstone.png', style='margin: 0 auto;')
+              a(href='href', http:='http:', www.kent.edu='www.kent.edu', blackstonelaunchpad='blackstonelaunchpad', index.cfm='index.cfm')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/blackstone.png', style='margin: 0 auto;')
         div.row
           div.col-md-10.col-md-offset-1.col-sm-12.col-xs-12
             div.col-md-3
-              //a(href='http://www.flashstarts.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/flashstarts.png', style='margin: 35px auto 0 auto;')
+              a(href='http://www.flashstarts.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/flashstarts.png', style='margin: 35px auto 0 auto;')
             div.col-md-3
-              //a(href='http://www.kent.edu/library/index.cfm')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/university-library.png', style='margin: 0 auto;')
+              a(href='http://www.kent.edu/library/index.cfm')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/university-library.png', style='margin: 0 auto;')
             div.col-md-3
-              //a(href='http://www.yahoo.com')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/yahoo.png', style='margin: 30px auto 0 auto;')
+              a(href='http://www.yahoo.com')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/yahoo.png', style='margin: 30px auto 0 auto;')
             div.col-md-3
-              //a(href='http://www.challengepost.com')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/challengepost.png', style='margin: 30px auto 0 auto;')
+              a(href='http://www.challengepost.com')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/challengepost.png', style='margin: 30px auto 0 auto;')
         div.row
           div.col-md-10.col-md-offset-1.col-sm-12.col-xs-12
             div.col-md-3
-              //a(href='http://www.tackk.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/tackk.png', style='margin: 0 auto 0 auto;')
+              a(href='http://www.tackk.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/tackk.png', style='margin: 0 auto 0 auto;')
             div.col-md-3
-              //a(href='http://www.twilio.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/twilio.png', style='margin: 23px auto 0 auto;')
+              a(href='http://www.twilio.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/twilio.png', style='margin: 23px auto 0 auto;')
             div.col-md-3
-              //a(href='http://www.firebase.com/')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/firebase.png', style='margin: 31px auto 0 auto;')
+              a(href='http://www.firebase.com/')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/firebase.png', style='margin: 31px auto 0 auto;')
             .col-md-3
-              //a(href='http://www.cs.kent.edu')
-                //img.img-grayscale.img-responsive.img-sponsor(src='/images/kent-state.png', style='margin: 20px auto 0 auto;')
+              a(href='http://www.cs.kent.edu')
+                img.img-grayscale.img-responsive.img-sponsor(src='/images/kent-state.png', style='margin: 20px auto 0 auto;')
     div#footer
       div.container
         ul.list-inline.sub-nav
@@ -344,6 +345,12 @@ head
               strong 7:30pm
               | - Find teams and generate ideas
             p.lead
+              strong 8:00pm
+              | - Amazon Web Services Presentation
+              small
+                | Provided by
+                a(href='http://aws.amazon.com/') AWS
+            p.lead
               strong 8:30pm
               | - Hacking Begins & Dinner
             p.lead
@@ -355,6 +362,12 @@ head
             p.lead
               strong 7:00am
               | - Breakfast
+            p.lead
+              strong 10:00am
+              | - Yoga Lessons
+              small
+                | Provided by
+                a(href='http://oneloveyogakent.com/') One Love Yoga Boutique
             p.lead
               strong 1:00pm
               | - Lunch

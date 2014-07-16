@@ -95,13 +95,8 @@ head
       text-shadow:2px 2px 2px black;
       font-size: 1.4em;
       }
-      .img-sponsor {
-      padding:20px;
-      }
-      #footer {
-      margin-top:0px!important;
-      }
-      #submit-hack-link {
+      #submit-hack-button {
+      margin:auto;
       background-color:#d5f111;
       color: white;
       font-weight:bold;
@@ -110,9 +105,18 @@ head
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
       font-size:1.2em;
       margin-top:0px;
+      display:inline-block;
+      }
+      .center {
+      text-align:center;
+      }
+      .img-sponsor {
+      padding:20px;
+      }
+      #footer {
+      margin-top:0px!important;
       }
       #submit-hack-link:hover {
-      background-color:#d4e60f;
       text-decoration:none;
       }
       @media (min-width: 768px) {
@@ -125,9 +129,7 @@ head
       .hackathon-marketing {
       margin-top:50px;
       }
-      #submit-hack-button {
-      margin-top:0px;
-      }
+
       }
       @media (min-width: 992px) {
       .jumbotron-hackathon {
@@ -135,9 +137,6 @@ head
       }
       .hackathon-marketing {
       margin-top:150px;
-      }
-      #submit-hack-button {
-      margin-top:0px;
       }
       .hackathon-marketing > h1 {
       font-size:5.3em;
@@ -147,15 +146,18 @@ head
       .hackathon-marketing {
       margin-top:75px;
       }
-      #submit-hack-button {
-      margin-top:0px;
-      }
       .hackathon-marketing > h1 {
       font-size:8em;
       }
       .hackathon-marketing > h3 {
       font-size: 2em;
       }
+      }
+      a#submit-hack-link {
+      color:white;
+      }
+      #submit-hack-button:hover {
+      background-color:#d7e910;
       }
   body
     div.jumbotron-hackathon(style='padding: 0;')
@@ -189,9 +191,9 @@ head
                 div.col-md-8.col-md-offset-2
                   img(src="images/KHE_Logo.png", alt="KHE", style="width: 100%")
               div.row
-                div.col-md-12
+                div.col-md-12.center
                   div#submit-hack-button.text-center(style="margin-top: -100px;")
-                    a#submit-hack-link(href='https://www.eventbrite.com/e/kent-hack-enough-tickets-12185923425', target='_blank') REGISTRATION IS NOW OPEN
+                    a#submit-hack-link(href='https://www.eventbrite.com/e/kent-hack-enough-tickets-12185923425', target='_blank', style="text-color:white;") REGISTRATION IS NOW OPEN
     div#what(style='background-color: #fafafa;')
       div.container
         div.row

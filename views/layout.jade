@@ -17,14 +17,6 @@ html
     body
         // Wrap all page content here
         div#wrap
-            div#social-header
-                div.container
-                    a.social-item(href="https://www.facebook.com/groups/hacksu/")
-                        img(src="/images/facebook.png")
-                    a.social-item(href="https://twitter.com/_hacksu")
-                        img(src="/images/twitter.png")
-                    a.social-item(href="https://github.com/hacKSU")
-                        img(src="/images/github.png")
             div.navbar.navbar-default
                 div.container
                     div.navbar-header
@@ -32,17 +24,27 @@ html
                             span.icon-bar
                             span.icon-bar
                             span.icon-bar
-                        a.navbar-brand(href="/") hacksu
+                        a.navbar-brand(href="/")
+                          img(src="/images/hacksu.png")
                     div.collapse.navbar-collapse
                         ul.nav.navbar-nav
                             li
-                                a(href="/khe2014") Kent Hack Enough
+                                a(href="https://khe.io") Kent Hack Enough
                             li
                                 a(href="/opportunities") Opportunities
                             li
                                 a(href="/#about-info", onclick="showAbout();return false;") About
                             li
                                 a(href="/contact") Contact
+                            li
+                                a.social-item(href="https://www.facebook.com/groups/hacksu/")
+                                  img(src="/images/facebook.png")
+                            li
+                                a.social-item(href="https://twitter.com/_hacksu")
+                                  img(src="/images/twitter.png")
+                            li
+                                a.social-item(href="https://github.com/hacKSU")
+                                  img(src="/images/github.png")
             block content
         div#footer
             div.container
@@ -50,7 +52,7 @@ html
                     li
                         a(href="/#about-info", onclick="showAbout();return false;") About
                     li
-                        a(href="/khe2013") Kent Hack Enough
+                        a(href="https://khe.io") Kent Hack Enough
                     li
                         a(href="/contact") Contact
                 p.text-muted.credit &copy; 2013 hacksu

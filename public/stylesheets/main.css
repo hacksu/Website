@@ -37,24 +37,12 @@
 code {
     font-size: 80%;
 }
-/* Social header at the top of the page. */
- #social-header {
-    background: white;
-    height: 25px;
-    margin: 10px 0;
-}
-#social-header .social-item {
-    margin: 0px 20px 0px 0;
-}
-#social-header .social-item:hover {
-    margin: 0px 20px 0px 0;
-    text-decoration:none;
-}
 .navbar {
     margin-bottom:0px!important;
 }
 .navbar-default {
-    background: #27ae60!important;
+    background: #white!important;
+    color: #06AAB6!important;
     border: 0px!important;
     border-radius:0px!important;
 }
@@ -65,18 +53,20 @@ code {
 }
 .navbar .navbar-nav>.active>a {
     background-color:rgba(0, 0, 0, 0)!important;
-    color:white!important;
+    color:#06AAB6!important;
 }
 .navbar-default .navbar-nav>li>a {
-    color:rgba(255, 255, 255, 0.8)!important;
+    color:#06AAB6!important;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    color:white!important;
+    color:#000!important;
 }
 .navbar-brand {
-    font-family:'Lobster Two', cursive;
-    color: white!important;
-    font-size:2em!important;
+    height:2.5em;
+}
+.navbar-brand img{
+  height:2em;
+  margin-top:-.3em;
 }
 /* Jumbotron. */
  .jumbotron {
@@ -101,11 +91,8 @@ code {
     margin:0 auto;
 }
 /* Helper. */
- .lobster {
-    font-family:'Lobster Two', cursive;
-}
 .color-bg {
-    background-color: #27ae60;
+    background-color: #06AAB6;
     color: white;
 }
 .row {

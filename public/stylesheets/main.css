@@ -94,6 +94,7 @@ code {
 .color-bg {
     background-color: #06AAB6;
     color: white;
+    padding:3em;
 }
 .row {
     margin: 30px inherit;

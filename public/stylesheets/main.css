@@ -13,6 +13,7 @@
     margin: 0 auto -150px;
     /* Pad bottom by footer height */
     padding: 0 0 150px;
+    font-family: "Open Sans";
 }
 /* Set the fixed height of the footer here */
  #footer {

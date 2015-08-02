@@ -10,7 +10,7 @@
     height: auto !important;
     height: 100%;
     /* Negative indent footer by its height */
-    margin: 0 auto -150px;
+    margin: 0 auto -100px;
     /* Pad bottom by footer height */
     padding: 0 0 150px;
     font-family: "Open Sans";
@@ -19,14 +19,13 @@
  #footer {
     height: 100px;
     background-color: #2f2f2f;
-    margin-top: 50px;
 }
 /* Custom page CSS
 -------------------------------------------------- */
 
 /* Not required for template or sticky footer method. */
  #wrap > .container {
-    padding: 40px 15px;
+    padding: 5em 15px;
 }
 .container .credit {
     margin: 20px 0;
@@ -76,7 +75,7 @@ code {
     background-size: 100%;
     background-position: 50% 30%;
     background-repeat: no-repeat;
-    background-image: url(/images/image1.jpg);
+    background-image: url(/images/header.jpg);
     height: 200px;
     color: white!important;
 }
@@ -89,13 +88,14 @@ code {
 }
 .img-info {
     max-width:50%!important;
-    margin:0 auto;
+    margin:auto;
+    margin-top: 20px;
 }
 /* Helper. */
 .color-bg {
     background-color: #06AAB6;
     color: white;
-    padding:3em;
+    padding:5em;
 }
 .row {
     margin: 30px inherit;

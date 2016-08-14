@@ -133,6 +133,51 @@ code {
     -webkit-filter: grayscale(0%);
     opacity:1;
 }
+
+.card {
+    background: #f4f4f4;
+    padding: 20px;
+    padding-top: 5px;
+    color: black;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    transition: all 250ms;
+    -moz-transition: all 250ms;
+    -webkit-transition: all 250ms;
+    opacity: 1;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    -webkit-transform: translateY(-5px);
+    moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.event {
+
+}
+
+.event h3 {
+    margin-top: 0px;
+}
+
+.event .title-bar .date {
+    position: relative;
+    float: right;
+}
+
+.event .title-bar .event-title {
+    position: relative;
+    float: left;
+}
+
+.event .title-bar {
+    position: relative;
+    width: inherit;
+    height: 24px;
+}
+
 /* Extra small devices (phones, up to 480px) */
 
 /* No media query since this is the default in Bootstrap */

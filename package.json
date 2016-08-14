@@ -7,6 +7,11 @@
   },
   "dependencies": {
     "express": "3.4.8",
-    "jade": "*"
+    "jade": "*",
+    "passport": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "ts-loader": "^0.8.2"
   }
 }

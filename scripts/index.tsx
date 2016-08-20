@@ -2,10 +2,10 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { EventList } from "./components/EventList";
-
+import {Accordian} from "./components/Accordian";
 ReactDOM.render(
     <div>
-        <EventList src="http://localhost:3000/events"/>
+        <Accordian/>
     </div>,
     document.getElementById("events")
 );

@@ -1,0 +1,47 @@
+.accordian {
+    color: black;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.accordian .header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    display: block;
+    min-height: 3rem;
+    line-height: 3rem;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.accordian li {
+    list-style-type: none;
+    opacity: 1;
+}
+
+.accordian .content {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    height: 0;
+    -webkit-transition: height 500ms;
+    transition: height 500ms;
+    overflow: hidden;
+}
+
+.accordian-content-enter {
+  opacity: 0.01;
+}
+
+.accordian-content.accordian-content-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.accordian-content-leave {
+  opacity: 1;
+}
+
+.accordian-content-leave.accordian-content-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+

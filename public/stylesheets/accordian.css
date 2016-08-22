@@ -1,8 +1,6 @@
 .accordian {
     color: black;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background: white;
-    opacity: 1;
 }
 
 .accordian .header {
@@ -19,39 +17,3 @@
     list-style-type: none;
     opacity: 1;
 }
-
-.content-enter {
-  height: 0;
-  transform: height 500ms;
-  -webkit-transform: height 500ms;
-  overflow: hidden;
-}
-
-.content-enter-active {
-    height: 300px;
-}
-
-.example-enter {
-    max-height: 1px;
-    overflow: hidden;
-    transition: max-height 500ms ease-in;
-
-}
-
-.example-enter.example-enter-active {
-    max-height: 500px;
-    transition: max-height 500ms ease-in;
-}
-
-.example-leave {
-    max-height: 500px;
-    transition: max-height 500ms ease-in;
-
-}
-
-.example-leave.example-leave-active {
-    max-height: 1px;
-    overflow: hidden;
-    transition: max-height 500ms ease-in;
-}
-

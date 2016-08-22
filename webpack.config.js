@@ -1,13 +1,7 @@
-var webpack = require("webpack");
-var path = require("path");
 module.exports = {
-    entry: {
-        main: "./scripts/index.tsx",
-        vendor: ["react", "react-dom"]
-    },
+    entry: "./scripts/index.tsx",
     output: {
-        path: path.join(__dirname, "dist"),
-        filename: "[name].bundle.js"
+        filename: "./dist/bundle.js",
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -30,12 +24,13 @@ module.exports = {
         ]
     },
 
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
-    ]
-
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM",
+        "remarkable": "Remarkable"
+    },
 };

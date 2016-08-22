@@ -1,5 +1,5 @@
 import * as React from "react";
-import {ReactCSSTransitionGroup} from "react-addons-css-transition-group";
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 console.log(ReactCSSTransitionGroup);
 
 export interface AccordianItemProps {title: string}
@@ -12,7 +12,6 @@ export class AccordianItem extends React.Component<AccordianItemProps, {}> {
     }
 
     expand () {
-        console.log("Expanding", this.state.expanded)
         this.setState({expanded: !this.state.expanded})
     }
 
@@ -22,12 +21,13 @@ export class AccordianItem extends React.Component<AccordianItemProps, {}> {
                     <div className="header" onClick={() => this.expand()}>
                         {this.props.title}
                     </div>
-                    <ReactCSSTransitionGroup transitionName="accordian-content" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+                    <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
                     {
                         (() => {
-                            console.log("test123")
                             if (this.state.expanded) {
-                                return  this.props.children
+                                return  <div key={"1"}>
+                                            {this.props.children}
+                                        </div>
 
                             }
                         })()

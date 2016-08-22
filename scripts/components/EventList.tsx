@@ -1,5 +1,7 @@
 import * as React from "react";
 import {Event, EventProps} from "./Event";
+import {Accordian} from "./Accordian";
+
 export interface EventListProps { src: string }
 
 
@@ -32,8 +34,8 @@ export class EventList extends React.Component<EventListProps, {}> {
             (event) => <Event key={event.title + event.date} title={event.title}
                         content={event.content} date={event.date} />
         )
-        return <div className="card">
+        return <Accordian>
                     {events}
-                </div>;
+                </Accordian>;
     }
 }

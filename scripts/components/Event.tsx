@@ -1,4 +1,6 @@
 import * as React from "react";
+import {AccordianItem} from "./AccordianItem";
+
 export interface EventProps { title: string, content: string, date: Date }
 
 export class Event extends React.Component<EventProps, {}> {
@@ -19,20 +21,8 @@ export class Event extends React.Component<EventProps, {}> {
     }
 
     render() {
-        return <div className="event">
-                    <div className="title-bar">
-                        <h3 className="event-title" >{this.props.title}</h3>
-                        <h5 className="date">{this.formatedDate}</h5>
-                    </div>
-                    <div>
-                        {() => {
-                            if (this.state.expanded) {
-                                return <span dangerouslySetInnerHTML={this.messageHtml} />
-                            } else {
-                                return;
-                            }
-                        }}
-                    </div>
-                </div>;
+        return  <AccordianItem title={this.props.title + this.formatedDate}>
+                    <span dangerouslySetInnerHTML={this.messageHtml} />
+                </AccordianItem>
     }
 }

@@ -1,26 +1,23 @@
 import * as React from "react";
 import {AccordianContent} from "./AccordianContent";
 
-export interface AccordianItemProps {title: string}
+
+export interface AccordianItemProps {title: string | JSX.Element, expanded: boolean,  onToggled: (item: AccordianItem) => void}
 
 export class AccordianItem extends React.Component<AccordianItemProps, {}> {
-    state: {expanded: boolean, height: string}
+    state: {}
     constructor(props: AccordianItemProps) {
         super(props);
-        this.state = {expanded: false, height: "0"};
-    }
-
-    expand () {
-        this.setState({expanded: !this.state.expanded})
+        this.state = {};
     }
 
     render() {
 
         return <div>
-                    <div className="header" onClick={() => this.expand()}>
+                    <div className="header" onClick={this.props.onToggled}>
                         {this.props.title}
                     </div>
-                    <AccordianContent expanded={this.state.expanded}>
+                    <AccordianContent expanded={this.props.expanded}>
                         {this.props.children}
                     </AccordianContent>
                 </div>;

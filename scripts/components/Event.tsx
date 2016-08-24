@@ -1,7 +1,7 @@
 import * as React from "react";
 import {AccordianItem} from "./AccordianItem";
 
-export interface EventProps { title: string, content: string, date: Date }
+export interface EventProps { title: string, content: string, date: Date, expanded: boolean, onToggled: (item: AccordianItem) => void }
 
 export class Event extends React.Component<EventProps, {}> {
     state: {expanded: boolean}
@@ -21,7 +21,12 @@ export class Event extends React.Component<EventProps, {}> {
     }
 
     render() {
-        return  <AccordianItem title={this.props.title + this.formatedDate}>
+        var title = <div>
+                        <i className="material-icons" style={{color: "rgba(0, 0, 0, 0.7)"}}>date_range</i>
+                        <span>{this.props.title} </span>
+                        <span style={{float: "right"}}>{this.formatedDate}</span>
+                    </div>;
+        return  <AccordianItem title={title} expanded={this.props.expanded} onToggled={this.props.onToggled}>
                     <span dangerouslySetInnerHTML={this.messageHtml} />
                 </AccordianItem>
     }

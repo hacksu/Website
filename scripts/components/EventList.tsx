@@ -28,11 +28,21 @@ export class EventList extends React.Component<EventListProps, {}> {
         this.request.abort();
     }
 
+    collapseAll() {
+        this.state.events.forEach((event) => {event.expanded=false})
+    }
+
     render() {
         this.state
         let events = this.state.events.map(
             (event) => <Event key={event.title + event.date} title={event.title}
-                        content={event.content} date={event.date} />
+                        content={event.content} date={event.date} expanded={event.expanded}
+                        onToggled={(e) => {
+                                            var current_state = event.expanded;
+                                            this.collapseAll();
+                                            event.expanded=!current_state;
+                                            this.setState({events: this.state.events});
+                                        }} />
         )
         return <Accordian>
                     {events}

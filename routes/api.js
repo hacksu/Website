@@ -4,7 +4,7 @@ exports.events = function(req, res){
   res.json({
       events: [
           {
-              "date": "2016-09-30T19:00:00.000Z",
+              "date": "2016-08-30T19:00:00.000Z",
               "title": "Meet and Greet",
               "content": `
               <p>Hey Hackers!</p>
@@ -17,8 +17,8 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": "2016-10-06T19:00:00.000Z",
-              "title": "Websites: not that hard, really",
+              "date": "2016-09-06T19:00:00.000Z",
+              "title": "Websites: Doable",
               "content": `
               <p>Hey Hackers!</p>
               <p>
@@ -29,8 +29,8 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": "2016-10-13T19:00:00.000Z",
-              "title": "Scripting, Real Programing",
+              "date": "2016-09-13T19:00:00.000Z",
+              "title": "Scripting",
               "content": `
               <p>Hey Hackers!</p>
               <p>
@@ -41,14 +41,14 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": "2016-10-13T19:00:00.000Z",
+              "date": "2016-09-13T19:00:00.000Z",
               "title": "Style's Important",
               "content": `
               <p>Hey Hackers!</p>
               <p>
                 This week we'll be talking about how to make that website your
                 dreaming about look great. Ben will lead a talk on the basics of CSS
-                and Isaac will talk about more advanced things that can be done with it.
+                and Isaac will talk about more advanced things that can be done with CSS.
               </p>
               `
           }

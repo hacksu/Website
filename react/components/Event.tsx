@@ -16,7 +16,7 @@ export class Event extends React.Component<EventProps, {}> {
 
     get formatedDate() {
         const months = ["January", "February ", "March", "April", "May", "June",
-                        "July", "August", "October", "November", "December"]
+                        "July", "August", "September", "October", "November", "December"]
         return months[this.props.date.getMonth()] + " " + this.props.date.getDate()
     }
 

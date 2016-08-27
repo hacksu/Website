@@ -18,7 +18,7 @@ export class AccordianContent extends React.Component<AccordianContentProps, {}>
             "overflow": "hidden",
             "transition": "height 500ms",
             "background": "white",
-            "border-bottom": ((this.state.expanded || this.state.inTransition) ? "1px solid  #ddd": "none")
+            "borderBottom": ((this.state.expanded || this.state.inTransition) ? "1px solid  #ddd": "none")
         };
         return <div style={style} ref={(content) => {
                     if (!content) {

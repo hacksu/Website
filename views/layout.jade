@@ -21,29 +21,29 @@ html
         // Wrap all page content here
         div#wrap
             div.navbar.navbar-default
-                div.container
-                    div.navbar-header
-                        button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
-                            span.icon-bar
-                            span.icon-bar
-                            span.icon-bar
-                        a.navbar-brand(href="/")
-                          img(src="/images/hacksu.png")
-                    div.collapse.navbar-collapse
-                        ul.nav.navbar-nav
-                            li
-                                a(href="https://khe.io") Kent Hack Enough
-                            li
-                                a(href="/contact") Contact
-                            li
-                                a.social-item(href="https://www.facebook.com/groups/hacksu/")
-                                  img(src="/images/facebook.png")
-                            li
-                                a.social-item(href="https://twitter.com/_hacksu")
-                                  img(src="/images/twitter.png")
-                            li
-                                a.social-item(href="https://github.com/hacKSU")
-                                  img(src="/images/github.png")
+                div.navbar-header
+                    button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="/")
+                      img(src="/images/hacksu.png")
+                div.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li#nextup
+                        li
+                            a(href="https://khe.io") Kent Hack Enough
+                        li
+                            a(href="/contact") Contact
+                        li
+                            a.social-item(href="https://www.facebook.com/groups/hacksu/")
+                              img(src="/images/facebook.png")
+                        li
+                            a.social-item(href="https://twitter.com/_hacksu")
+                              img(src="/images/twitter.png")
+                        li
+                            a.social-item(href="https://github.com/hacKSU")
+                              img(src="/images/github.png")
             block content
         div#footer
             div.container

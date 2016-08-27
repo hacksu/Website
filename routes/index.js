@@ -22,3 +22,7 @@ exports.khe2013 = function(req, res){
 exports.khe2014 = function(req, res){
   res.render('khe2014', { title: 'Kent Hack Enough 2014' });
 };
+
+exports.calender = function(req, res){
+  res.render('upcoming', { title: 'Up Coming HacKSU Meetings' });
+};

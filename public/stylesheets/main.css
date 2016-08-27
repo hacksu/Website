@@ -6,9 +6,7 @@
 }
 
 div#events {
-    position: absolute;
-    left: 50vw;
-    z-index: 20;
+    
     width: 40vw
 }
 /* Wrapper for page content to push down footer */

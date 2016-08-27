@@ -97,13 +97,13 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/events', api.events);
+app.get('/api/events', api.events);
 
 app.get('/contact', routes.contact);
 app.get('/opportunities', routes.opportunities);
 app.get('/khe2013', routes.khe2013);
 app.get('/khe2014', routes.khe2014);
-
+app.get('/calender', routes.calender)
 app.use('/dist', express.static('dist'));
 
 

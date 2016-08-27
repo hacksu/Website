@@ -1,4 +1,4 @@
-
+var fs = require("fs")
 
 exports.events = function(req, res){
   res.json({
@@ -55,3 +55,11 @@ exports.events = function(req, res){
       ]
   });
 };
+
+exports.addToMailingList = function(req, res) {
+    console.log(req.body.email);
+    fs.appendFile('emails.txt', req.body.email + "\n", (err) => {
+      if (err) throw err;
+    });
+    res.json({});
+}

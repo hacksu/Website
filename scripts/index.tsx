@@ -8,11 +8,9 @@ ReactDOM.render(
     </div>,
     document.getElementById("events")
 );
-console.log("Loaded");
-
 
 ReactDOM.render(
-    <a href="/calender">
+    <a href="/#events">
         <i className="material-icons" style={{fontSize: "20px"}}>date_range</i>
         <span style={{float: "right"}}>Welcome Back </span>
     </a>,

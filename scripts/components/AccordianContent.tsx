@@ -10,7 +10,6 @@ export class AccordianContent extends React.Component<AccordianContentProps, {}>
     }
     render() {
         if (this.state.expanded != this.props.expanded) {
-            console.log("this.state.inTransition=",this.state.inTransition)
             this.state.inTransition = true;
             this.state.expanded = this.props.expanded;
         }
@@ -25,7 +24,6 @@ export class AccordianContent extends React.Component<AccordianContentProps, {}>
                         return;
                     }
                     let setSize = () => {
-                        console.log(this.state.height)
                         if (this.state.inTransition) {
                             content.style.height = this.state.expanded ? "0" : this.state.height + "px";
                             setTimeout(setSize, 1);

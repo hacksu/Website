@@ -98,6 +98,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/api/events', api.events);
+app.post('/api/mailinglist', api.addToMailingList)
 
 app.get('/contact', routes.contact);
 app.get('/opportunities', routes.opportunities);

@@ -61,5 +61,5 @@ exports.addToMailingList = function(req, res) {
     fs.appendFile('emails.txt', req.body.email + "\n", (err) => {
       if (err) throw err;
     });
-    res.json({});
+    res.redirect("/");
 }

@@ -6,9 +6,7 @@
 }
 
 div#events {
-    
-    width: 40vw
-}
+    }
 /* Wrapper for page content to push down footer */
  #wrap {
     min-height: 100%;
@@ -100,7 +98,9 @@ code {
 .color-bg {
     background-color: #06AAB6;
     color: white;
-    padding:5em;
+    padding-top:5em;
+    padding-bottom:5em;
+
 }
 .row {
     margin: 30px inherit;

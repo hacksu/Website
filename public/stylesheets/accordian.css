@@ -2,6 +2,8 @@
     color: black;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     border-radius: 10px;
+    margin: 15px;
+    margin-top: 3rem;
 }
 
 .accordian .header {
@@ -12,6 +14,10 @@
     line-height: 3rem;
     cursor: pointer;
     padding: 0 1rem;
+}
+
+.accordian .header * {
+    line-height: 3rem;
 }
 
 .accordian li {

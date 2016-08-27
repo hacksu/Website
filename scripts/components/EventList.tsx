@@ -33,16 +33,16 @@ export class EventList extends React.Component<EventListProps, {}> {
     }
 
     render() {
-        this.state
-        let events = this.state.events.map(
-            (event) => <Event key={event.title + event.date} title={event.title}
-                        content={event.content} date={event.date} expanded={event.expanded}
-                        onToggled={(e) => {
-                                            var current_state = event.expanded;
-                                            this.collapseAll();
-                                            event.expanded=!current_state;
-                                            this.setState({events: this.state.events});
-                                        }} />
+        let events = this.state.events
+            .filter((event) => (event.date > new Date))
+            .map( (event) => <Event key={event.title + event.date} title={event.title}
+                            content={event.content} date={event.date} expanded={event.expanded}
+                            onToggled={(e) => {
+                                                var current_state = event.expanded;
+                                                this.collapseAll();
+                                                event.expanded = !current_state;
+                                                this.setState({events: this.state.events});
+                                            }} />
         )
         return <Accordian>
                     {events}

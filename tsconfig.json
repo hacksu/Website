@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
+        "outDir": "./public/javascripts/react",
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
@@ -9,6 +9,6 @@
     },
     "filesGlob": [
       "./typings/index.d.ts",
-      "./scripts/**/*.tsx"
+      "./react/**/*.tsx"
     ]
 }

@@ -105,7 +105,6 @@ app.get('/opportunities', routes.opportunities);
 app.get('/khe2013', routes.khe2013);
 app.get('/khe2014', routes.khe2014);
 app.get('/calender', routes.calender)
-app.use('/dist', express.static('dist'));
 
 
 http.createServer(app).listen(app.get('port'), function(){

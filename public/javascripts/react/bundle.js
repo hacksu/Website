@@ -50,7 +50,6 @@
 	var EventList_1 = __webpack_require__(3);
 	ReactDOM.render(React.createElement("div", null, React.createElement(EventList_1.EventList, {src: "http://localhost:3000/api/events"})), document.getElementById("events"));
 	ReactDOM.render(React.createElement("a", {href: "/#events"}, React.createElement("i", {className: "material-icons", style: { fontSize: "20px" }}, "date_range"), React.createElement("span", {style: { float: "right" }}, "Welcome Back ")), document.getElementById("nextup"));
-	console.log("working");
 
 
 /***/ },
@@ -143,7 +142,7 @@
 	    Object.defineProperty(Event.prototype, "formatedDate", {
 	        get: function () {
 	            var months = ["January", "February ", "March", "April", "May", "June",
-	                "July", "August", "October", "November", "December"];
+	                "July", "August", "September", "October", "November", "December"];
 	            return months[this.props.date.getMonth()] + " " + this.props.date.getDate();
 	        },
 	        enumerable: true,

@@ -39,5 +39,9 @@ block content
                     |  and follow us on
                     a(href="http://www.twitter.com/_hacksu")  Twitter
                     |   to see what we are up to!
-                    form(action="/api/mailinglist", method="post")
-                        input(type="email", name="email")
+                p.lead
+                    | Sign up to our mailing list so we can keep you updated on
+                    | our weekly meetings and other goings ons.
+                form(action="/api/mailinglist", method="post")
+                    label(for="email") Email:
+                    input(type="email", name="email", id="email")

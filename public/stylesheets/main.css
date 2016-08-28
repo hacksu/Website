@@ -5,8 +5,19 @@
     /* The html and body elements cannot have any padding or margin. */
 }
 
-div#events {
-    }
+form input {
+    margin-left: 0.5em;
+    line-height: 1.4;
+    border-style: hidden;
+    border-bottom: 2px solid #428bca;
+    width: inherit;
+}
+
+form input:focus {
+    border-style: hidden;
+    border-bottom: 2px solid #428bca;
+}
+
 /* Wrapper for page content to push down footer */
  #wrap {
     min-height: 100%;
@@ -159,9 +170,6 @@ code {
     transform: translateY(-5px);
 }
 
-.event {
-
-}
 
 .event h3 {
     margin-top: 0px;

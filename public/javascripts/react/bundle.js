@@ -49,7 +49,7 @@
 	var ReactDOM = __webpack_require__(2);
 	var EventList_1 = __webpack_require__(3);
 	ReactDOM.render(React.createElement("div", null, React.createElement(EventList_1.EventList, {src: "http://localhost:3000/api/events"})), document.getElementById("events"));
-	ReactDOM.render(React.createElement("a", {href: "/#events"}, React.createElement("i", {className: "material-icons", style: { fontSize: "20px" }}, "date_range"), React.createElement("span", {style: { float: "right" }}, "Welcome Back ")), document.getElementById("nextup"));
+	ReactDOM.render(React.createElement("a", {href: "/#events"}, React.createElement("i", {className: "material-icons", style: { fontSize: "20px", display: "inline" }}, "date_range"), React.createElement("span", {style: { display: "inline", verticalAlign: "top", paddingLeft: "0.5rem" }}, "Welcome Back ")), document.getElementById("nextup"));
 
 
 /***/ },
@@ -149,7 +149,7 @@
 	        configurable: true
 	    });
 	    Event.prototype.render = function () {
-	        var title = React.createElement("div", null, React.createElement("span", null, this.props.title, " "), React.createElement("i", {className: "material-icons", style: { color: "rgba(0, 0, 0, 0.7)", fontSize: "20px", float: "right" }}, "date_range"), React.createElement("span", {style: { float: "right" }}, this.formatedDate));
+	        var title = React.createElement("div", null, React.createElement("span", null, this.props.title, " "), React.createElement("i", {className: "material-icons", style: { color: "rgba(0, 0, 0, 0.7)", fontSize: "20px", float: "right", marginLeft: "1rem" }}, "date_range"), React.createElement("span", {style: { float: "right" }}, this.formatedDate));
 	        return React.createElement(AccordianItem_1.AccordianItem, {title: title, expanded: this.props.expanded, onToggled: this.props.onToggled}, React.createElement("span", {dangerouslySetInnerHTML: this.messageHtml}));
 	    };
 	    return Event;

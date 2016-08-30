@@ -33,7 +33,7 @@ var Event = (function (_super) {
             React.createElement("span", null, 
                 this.props.title, 
                 " "), 
-            React.createElement("i", {className: "material-icons", style: { color: "rgba(0, 0, 0, 0.7)", fontSize: "20px", float: "right" }}, "date_range"), 
+            React.createElement("i", {className: "material-icons", style: { color: "rgba(0, 0, 0, 0.7)", fontSize: "20px", float: "right", marginLeft: "1rem" }}, "date_range"), 
             React.createElement("span", {style: { float: "right" }}, this.formatedDate));
         return React.createElement(AccordianItem_1.AccordianItem, {title: title, expanded: this.props.expanded, onToggled: this.props.onToggled}, 
             React.createElement("span", {dangerouslySetInnerHTML: this.messageHtml})

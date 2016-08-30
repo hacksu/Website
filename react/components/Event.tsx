@@ -23,7 +23,7 @@ export class Event extends React.Component<EventProps, {}> {
     render() {
         var title = <div>
                         <span>{this.props.title} </span>
-                        <i className="material-icons" style={{color: "rgba(0, 0, 0, 0.7)", fontSize: "20px", float: "right"}}>date_range</i>
+                        <i className="material-icons" style={{color: "rgba(0, 0, 0, 0.7)", fontSize: "20px", float: "right", marginLeft: "1rem"}}>date_range</i>
                         <span style={{float: "right"}}>{this.formatedDate}</span>
                     </div>;
         return  <AccordianItem title={title} expanded={this.props.expanded} onToggled={this.props.onToggled}>

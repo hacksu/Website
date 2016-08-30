@@ -11,8 +11,8 @@ ReactDOM.render(
 
 ReactDOM.render(
     <a href="/#events">
-        <i className="material-icons" style={{fontSize: "20px"}}>date_range</i>
-        <span style={{float: "right"}}>Welcome Back </span>
+        <i className="material-icons" style={{fontSize: "20px", display: "inline"}}>date_range</i>
+        <span style={{display: "inline", verticalAlign: "top", paddingLeft: "0.5rem"}}>Welcome Back </span>
     </a>,
     document.getElementById("nextup")
 );

@@ -42,6 +42,7 @@ block content
                 p.lead
                     | Sign up to our mailing list so we can keep you updated on
                     | our weekly meetings and other goings ons.
-                form(action="/api/mailinglist", method="post")
-                    label(for="email") Email:
-                    input(type="email", name="email", id="email")
+                form.newsletter(action="/api/mailinglist", method="post")
+                    label() Email:
+                    input(type="email", name="email", id="email", required)
+                    input(type="submit", value="Register")

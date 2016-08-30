@@ -49,8 +49,8 @@
 	var ReactDOM = __webpack_require__(2);
 	var EventList_1 = __webpack_require__(3);
 	var NextEvent_1 = __webpack_require__(8);
-	ReactDOM.render(React.createElement("div", null, React.createElement(EventList_1.EventList, {src: "http://localhost:3000/api/events"})), document.getElementById("events"));
-	ReactDOM.render(React.createElement(NextEvent_1.NextEvent, {src: "http://localhost:3000/api/events"}), document.getElementById("nextup"));
+	ReactDOM.render(React.createElement("div", null, React.createElement(EventList_1.EventList, {src: "/api/events"})), document.getElementById("events"));
+	ReactDOM.render(React.createElement(NextEvent_1.NextEvent, {src: "/api/events"}), document.getElementById("nextup"));
 
 
 /***/ },

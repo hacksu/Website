@@ -41,7 +41,7 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": Date.parse("2016-09-13 19:00"),
+              "date": Date.parse("2016-09-20 19:00"),
               "title": "Style's Important",
               "content": `
               <p>Hey Hackers!</p>
@@ -53,7 +53,7 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": Date.parse("2016-09-20 19:00"),
+              "date": Date.parse("2016-09-27 19:00"),
               "title": "Mini Hackathon",
               "content": `
               <p>Hey Hackers!</p>

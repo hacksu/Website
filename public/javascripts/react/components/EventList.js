@@ -31,6 +31,7 @@ var EventList = (function (_super) {
         var _this = this;
         var events = this.state.events
             .filter(function (event) { return (event.date > new Date); })
+            .slice(0, 4)
             .map(function (event) { return React.createElement(Event_1.Event, {key: event.title + event.date, title: event.title, content: event.content, date: event.date, expanded: event.expanded, onToggled: function (e) {
             var current_state = event.expanded;
             _this.collapseAll();

@@ -48,8 +48,9 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(2);
 	var EventList_1 = __webpack_require__(3);
+	var NextEvent_1 = __webpack_require__(8);
 	ReactDOM.render(React.createElement("div", null, React.createElement(EventList_1.EventList, {src: "http://localhost:3000/api/events"})), document.getElementById("events"));
-	ReactDOM.render(React.createElement("a", {href: "/#events"}, React.createElement("i", {className: "material-icons", style: { fontSize: "20px", display: "inline" }}, "date_range"), React.createElement("span", {style: { display: "inline", verticalAlign: "top", paddingLeft: "0.5rem" }}, "Welcome Back ")), document.getElementById("nextup"));
+	ReactDOM.render(React.createElement(NextEvent_1.NextEvent, {src: "http://localhost:3000/api/events"}), document.getElementById("nextup"));
 
 
 /***/ },
@@ -101,6 +102,7 @@
 	        var _this = this;
 	        var events = this.state.events
 	            .filter(function (event) { return (event.date > new Date); })
+	            .slice(0, 4)
 	            .map(function (event) { return React.createElement(Event_1.Event, {key: event.title + event.date, title: event.title, content: event.content, date: event.date, expanded: event.expanded, onToggled: function (e) {
 	            var current_state = event.expanded;
 	            _this.collapseAll();
@@ -264,6 +266,46 @@
 	    return Accordian;
 	}(React.Component));
 	exports.Accordian = Accordian;
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
+	var NextEvent = (function (_super) {
+	    __extends(NextEvent, _super);
+	    function NextEvent(props) {
+	        var _this = this;
+	        _super.call(this, props);
+	        this.request = $.get(props.src, function (data) {
+	            console.log(data);
+	            for (var i = 0; i < data.events.length; ++i) {
+	                if (new Date(data.events[i].date) > new Date()) {
+	                    data.events[i].date = new Date(data.events[i].date);
+	                    _this.setState({ event: data.events[i] });
+	                    return;
+	                }
+	                ;
+	            }
+	        });
+	        this.state = { event: undefined };
+	    }
+	    NextEvent.prototype.componentWillUnmount = function () {
+	        this.request.abort();
+	    };
+	    NextEvent.prototype.render = function () {
+	        return React.createElement("a", {href: "/#events"}, React.createElement("i", {className: "material-icons", style: { fontSize: "20px", display: "inline" }}, "date_range"), React.createElement("span", {style: { display: "inline", verticalAlign: "top", paddingLeft: "0.5rem" }}, this.state.event ? this.state.event.title : ""));
+	    };
+	    return NextEvent;
+	}(React.Component));
+	exports.NextEvent = NextEvent;
 
 
 /***/ }

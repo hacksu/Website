@@ -35,6 +35,7 @@ export class EventList extends React.Component<EventListProps, {}> {
     render() {
         let events = this.state.events
             .filter((event) => (event.date > new Date))
+            .slice(0, 4)
             .map( (event) => <Event key={event.title + event.date} title={event.title}
                             content={event.content} date={event.date} expanded={event.expanded}
                             onToggled={(e) => {

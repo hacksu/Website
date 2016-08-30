@@ -51,7 +51,20 @@ exports.events = function(req, res){
                 and Isaac will talk about more advanced things that can be done with CSS.
               </p>
               `
-          }
+          },
+          {
+              "date": Date.parse("2016-09-20 19:00"),
+              "title": "Mini Hackathon",
+              "content": `
+              <p>Hey Hackers!</p>
+              <p>
+                We all had a lot of fun last semester with a mini-hackathon,
+                so we're doing it again. Here's what going to happen. Everyone will
+                break up into groups and then your have about an hour to make something
+                based on a couple random words we'll give as a prompt.
+              </p>
+              `
+         }
       ]
   });
 };

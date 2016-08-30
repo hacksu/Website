@@ -6,12 +6,12 @@ import { NextEvent } from "./components/NextEvent";
 
 ReactDOM.render(
     <div>
-        <EventList src="http://localhost:3000/api/events"/>
+        <EventList src="http://hacksu.cs.kent.edu/api/events"/>
     </div>,
     document.getElementById("events")
 );
 
 ReactDOM.render(
-        <NextEvent src="http://localhost:3000/api/events"/>,
+        <NextEvent src="http://hacksu.cs.kent.edu/api/events"/>,
     document.getElementById("nextup")
 );

@@ -4,7 +4,7 @@ exports.events = function(req, res){
   res.json({
       events: [
           {
-              "date": "2016-08-30T19:00:00.000Z",
+              "date": Date.parse("2016-08-30 19:00"),
               "title": "Meet and Greet",
               "content": `
               <p>Hey Hackers!</p>
@@ -17,7 +17,7 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": "2016-09-06T19:00:00.000Z",
+              "date": Date.parse("2016-09-06 19:00"),
               "title": "Websites: Doable",
               "content": `
               <p>Hey Hackers!</p>
@@ -29,7 +29,7 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": "2016-09-13T19:00:00.000Z",
+              "date": Date.parse("2016-09-13 19:00"),
               "title": "Scripting",
               "content": `
               <p>Hey Hackers!</p>
@@ -41,7 +41,7 @@ exports.events = function(req, res){
               `
           },
           {
-              "date": "2016-09-13T19:00:00.000Z",
+              "date": Date.parse("2016-09-13 19:00"),
               "title": "Style's Important",
               "content": `
               <p>Hey Hackers!</p>

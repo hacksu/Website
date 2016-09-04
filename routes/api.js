@@ -1,4 +1,10 @@
 var fs = require("fs")
+var MailingList = require("../email/list");
+var config = require("../config")
+var mailingList = new MailingList(config.mailingList.url, config.mailingList.list, config.mailingList.password, false)
+mailingList.connect(function () {
+    console.log("Connected to MailingList");
+})
 
 exports.events = function(req, res){
   res.json({
@@ -71,6 +77,7 @@ exports.events = function(req, res){
 
 exports.addToMailingList = function(req, res) {
     console.log(req.body.email);
+    mailingList.add(req.body.email);
     fs.appendFile('emails.txt', req.body.email + "\n", (err) => {
       if (err) throw err;
     });

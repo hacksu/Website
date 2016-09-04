@@ -84,7 +84,7 @@ exports.addToMailingList = function(req, res) {
         if (!success) {
             mailingList.connect(function (success) {
                 mailingList.add(req.body.email, function (success) {
-                    console.log("failed again on the second time for", email);
+                    console.log("failed again on the second time for", req.body.email);
                 });
             });
             console.log("failed to add", req.body.email)

@@ -32,6 +32,7 @@ module.exports = class MailingList{
     }
 
     connected(callback) {
+        var self = this;
         this.session.get(
             {
                 url: this.url + this.list,
@@ -40,10 +41,10 @@ module.exports = class MailingList{
                     if (callback) {
                         if (!error && response.statusCode == 200 && body.includes("General Options Section")) {
                             callback(true);
-                            this.logged_in = true;
+                            self.logged_in = true;
                         } else {
                             callback(false)
-                            this.logged_in = false;
+                            self.logged_in = false;
                         }
                     }
                 }
@@ -51,13 +52,6 @@ module.exports = class MailingList{
     }
 
     add(email, callback) {
-        console.log("not logged in");
-        if (!this.logged_in) {
-            if (callback) {
-                callback(false);
-            }
-            return;
-        }
         var form_data  = {
             subscribe_or_invite: 0,
             send_welcome_msg_to_this_batch: 1,
@@ -76,7 +70,7 @@ module.exports = class MailingList{
                     if (!error && response.statusCode == 200 && !body.includes("Administrator Authentication")) {
                         callback(true);
                     } else {
-                        console.log(email, "couldn't add ")
+                        console.log(email, "couldn't be added")
                         callback(false);
                     }
                 }

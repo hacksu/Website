@@ -82,7 +82,11 @@ exports.events = function(req, res){
 exports.addToMailingList = function(req, res) {
     mailingList.add(req.body.email, function (success) {
         if (!success) {
-            mailingList.connect();
+            mailingList.connect(function (success) {
+                mailingList.add(req.body.email, function (success) {
+                    console.log("failed again on the second time for", email);
+                });
+            });
             console.log("failed to add", req.body.email)
         }
     });

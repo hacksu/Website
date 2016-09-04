@@ -2,8 +2,12 @@ var fs = require("fs")
 var MailingList = require("../email/list");
 var config = require("../config")
 var mailingList = new MailingList(config.mailingList.url, config.mailingList.list, config.mailingList.password, false)
-mailingList.connect(function () {
-    console.log("Connected to MailingList");
+mailingList.connect(function (success) {
+    if (success) {
+        console.log("Connected to MailingList");
+    } else {
+        console.log("failed to login");
+    }
 })
 
 exports.events = function(req, res){
@@ -76,10 +80,11 @@ exports.events = function(req, res){
 };
 
 exports.addToMailingList = function(req, res) {
-    console.log(req.body.email);
-    mailingList.add(req.body.email);
-    fs.appendFile('emails.txt', req.body.email + "\n", (err) => {
-      if (err) throw err;
+    mailingList.add(req.body.email, function (success) {
+        if (!success) {
+            mailingList.connect();
+            console.log("failed to add", req.body.email)
+        }
     });
     res.redirect("/");
 }

@@ -8,6 +8,7 @@ module.exports = class MailingList{
         this.list = list;
         this.password = password;
         this.secure = secure;
+        this.connected = false;
     }
 
     connect(callback) {
@@ -17,9 +18,15 @@ module.exports = class MailingList{
                 form: {adminpw: this.password, dmlogin: "Let+me+in..."},
                 agentOptions: {rejectUnauthorized: this.secure}},
                 function (error, response, body) {
-                  if (!error && response.statusCode == 200) {
-                    callback(true);
-                  }
+                    if (callback) {
+                        if (!error && response.statusCode == 200 && !body.includes("Authorization\nfailed.")) {
+                            callback(true);
+                            this.connected = true;
+                        } else {
+                            callback(false)
+                            this.connected = false;
+                        }
+                    }
                 }
         );
     }
@@ -45,3 +52,4 @@ module.exports = class MailingList{
          );
     }
 }
+

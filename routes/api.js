@@ -52,13 +52,14 @@ exports.events = function(req, res){
           },
           {
               "date": Date.parse("2016-09-20 19:00"),
-              "title": "Style's Important",
+              "title": "Git",
               "content": `
               <p>Hey Hackers!</p>
               <p>
-                This week we'll be talking about how to make that website your
-                dreaming about look great. Ben will lead a talk on the basics of CSS
-                and Isaac will talk about more advanced things that can be done with CSS.
+                If you want to write code, you'll want to learn Git. 
+                Git keeps track of all of your changes and makes collaboration with others easy!
+                Nick will be showing you basic git commands to get up and running as well as best
+                practices when working in teams.
               </p>
               `
           },

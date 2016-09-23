@@ -2,6 +2,7 @@ import * as React from "react";
 import {Jumbotron} from "./jumbotron"
 import {Zebra} from "../layout/zebra"
 import {PicInfo} from "./pic-info"
+import {WhatWeTeach} from "./what-we-teach"
 
 export interface HomeProps {  }
 
@@ -36,20 +37,8 @@ export class Home extends React.Component<HomeProps, {}> {
                                 welcome.
                             </p>
                         </PicInfo>
-                        <PicInfo
-                        img="/images/1.jpg">
-                            <h2>What do we teach?</h2>
 
-                            <p className="lead">
-                                We teach a wide variety of technologies, both
-                                front end and back end. These include things like jQuery
-                                Mobile, Python, Django, Node.js, Android, iOS, Heroku,
-                                and much more. All of this is in hopes that you fall in
-                                love with one or many of these technologies and construct
-                                something cool.
-                            </p>
-                        </PicInfo>
-
+                        <WhatWeTeach img="/images/1.jpg"/>
                         <PicInfo
                         img="/images/3.jpg">
                             <h2> How do I get involved? </h2>

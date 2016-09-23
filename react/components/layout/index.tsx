@@ -7,7 +7,7 @@ export interface LayoutProps { }
 
 export class Layout extends React.Component<LayoutProps, {}> {
     render() {
-        return  <div id="wrap">
+        return  <div>
                     <Navbar>
                         <div id="nextup"/>
                         <a href="https://khe.io"> Kent Hack Enough </a>

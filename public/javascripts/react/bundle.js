@@ -47,10 +47,8 @@
 	"use strict";
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(2);
-	var EventList_1 = __webpack_require__(3);
-	var NextEvent_1 = __webpack_require__(8);
-	ReactDOM.render(React.createElement("div", null, React.createElement(EventList_1.EventList, {src: "/api/events"})), document.getElementById("events"));
-	ReactDOM.render(React.createElement(NextEvent_1.NextEvent, {src: "/api/events"}), document.getElementById("nextup"));
+	var home_1 = __webpack_require__(3);
+	ReactDOM.render(React.createElement(home_1.Home, null), document.getElementById("react"));
 
 
 /***/ },
@@ -76,44 +74,20 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var Event_1 = __webpack_require__(4);
-	var Accordian_1 = __webpack_require__(7);
-	var EventList = (function (_super) {
-	    __extends(EventList, _super);
-	    function EventList(props) {
-	        var _this = this;
-	        _super.call(this, props);
-	        this.request = $.get(props.src, function (data) {
-	            console.log(data);
-	            _this.setState({ events: data.events.map(function (event) {
-	                    event.date = new Date(event.date);
-	                    return event;
-	                }) });
-	        });
-	        this.state = { events: [] };
+	var jumbotron_1 = __webpack_require__(4);
+	var zebra_1 = __webpack_require__(5);
+	var pic_info_1 = __webpack_require__(6);
+	var Home = (function (_super) {
+	    __extends(Home, _super);
+	    function Home() {
+	        _super.apply(this, arguments);
 	    }
-	    EventList.prototype.componentWillUnmount = function () {
-	        this.request.abort();
+	    Home.prototype.render = function () {
+	        return React.createElement("div", null, React.createElement(jumbotron_1.Jumbotron, null, React.createElement("div", {className: "row"}, React.createElement("div", {className: "col-xs-4"}, React.createElement("h1", {className: "title"}, " Learn "), React.createElement("h1", {className: "title"}, " Grow "), React.createElement("h1", {className: "title"}, " Create ")))), React.createElement(zebra_1.Zebra, null, React.createElement(pic_info_1.PicInfo, {id: "about-info", img: "/images/2.jpg", title: "Who are we?", content: "Hacksu is a student organization at Kent\n                        State University focused on learning and\n                        utilizing contemporary web and mobile\n                        technologies. We are a very diverse\n                        community, spanning multiple majors from\n                        Fashion Design to Zoology and are open to\n                        students of any skill level. Everyone is\n                        welcome."}), React.createElement(pic_info_1.PicInfo, {img: "/images/2.jpg", title: "Who are we?", content: "Hacksu is a student organization at Kent\n                        State University focused on learning and\n                        utilizing contemporary web and mobile\n                        technologies. We are a very diverse\n                        community, spanning multiple majors from\n                        Fashion Design to Zoology and are open to\n                        students of any skill level. Everyone is\n                        welcome."})));
 	    };
-	    EventList.prototype.collapseAll = function () {
-	        this.state.events.forEach(function (event) { event.expanded = false; });
-	    };
-	    EventList.prototype.render = function () {
-	        var _this = this;
-	        var events = this.state.events
-	            .filter(function (event) { return (event.date > new Date); })
-	            .slice(0, 4)
-	            .map(function (event) { return React.createElement(Event_1.Event, {key: event.title + event.date, title: event.title, content: event.content, date: event.date, expanded: event.expanded, onToggled: function (e) {
-	            var current_state = event.expanded;
-	            _this.collapseAll();
-	            event.expanded = !current_state;
-	            _this.setState({ events: _this.state.events });
-	        }}); });
-	        return React.createElement(Accordian_1.Accordian, null, events);
-	    };
-	    return EventList;
+	    return Home;
 	}(React.Component));
-	exports.EventList = EventList;
+	exports.Home = Home;
 
 
 /***/ },
@@ -127,36 +101,18 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var AccordianItem_1 = __webpack_require__(5);
-	var Event = (function (_super) {
-	    __extends(Event, _super);
-	    function Event(props) {
-	        _super.call(this, props);
-	        this.state = { expanded: false };
+	var Jumbotron = (function (_super) {
+	    __extends(Jumbotron, _super);
+	    function Jumbotron() {
+	        _super.apply(this, arguments);
 	    }
-	    Object.defineProperty(Event.prototype, "messageHtml", {
-	        get: function () {
-	            return { __html: this.props.content };
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    Object.defineProperty(Event.prototype, "formatedDate", {
-	        get: function () {
-	            var months = ["January", "February ", "March", "April", "May", "June",
-	                "July", "August", "September", "October", "November", "December"];
-	            return months[this.props.date.getMonth()] + " " + this.props.date.getDate();
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    Event.prototype.render = function () {
-	        var title = React.createElement("div", null, React.createElement("span", null, this.props.title, " "), React.createElement("i", {className: "material-icons", style: { color: "rgba(0, 0, 0, 0.7)", fontSize: "20px", float: "right", marginLeft: "1rem" }}, "date_range"), React.createElement("span", {style: { float: "right" }}, this.formatedDate));
-	        return React.createElement(AccordianItem_1.AccordianItem, {title: title, expanded: this.props.expanded, onToggled: this.props.onToggled}, React.createElement("span", {dangerouslySetInnerHTML: this.messageHtml}));
+	    Jumbotron.prototype.render = function () {
+	        var footer_items = React.Children.map(this.props.children, function (item) { return React.createElement("li", null, item); });
+	        return React.createElement("div", {className: "jumbotron"}, React.createElement("div", {className: "container"}, this.props.children));
 	    };
-	    return Event;
+	    return Jumbotron;
 	}(React.Component));
-	exports.Event = Event;
+	exports.Jumbotron = Jumbotron;
 
 
 /***/ },
@@ -170,19 +126,26 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var AccordianContent_1 = __webpack_require__(6);
-	var AccordianItem = (function (_super) {
-	    __extends(AccordianItem, _super);
-	    function AccordianItem(props) {
-	        _super.call(this, props);
-	        this.state = {};
+	var Zebra = (function (_super) {
+	    __extends(Zebra, _super);
+	    function Zebra() {
+	        _super.apply(this, arguments);
 	    }
-	    AccordianItem.prototype.render = function () {
-	        return React.createElement("div", null, React.createElement("div", {className: "header", onClick: this.props.onToggled}, this.props.title), React.createElement(AccordianContent_1.AccordianContent, {expanded: this.props.expanded}, this.props.children));
+	    Zebra.prototype.render = function () {
+	        var zebra_items = React.Children.map(this.props.children, function (item, i) {
+	            var element = React.cloneElement(item, { left: i % 2 == 0 });
+	            if (i % 2 == 0) {
+	                return React.createElement("div", {className: "container"}, element);
+	            }
+	            else {
+	                return React.createElement("div", {className: "color-bg"}, React.createElement("div", {className: "container"}, element));
+	            }
+	        });
+	        return React.createElement("div", null, zebra_items);
 	    };
-	    return AccordianItem;
+	    return Zebra;
 	}(React.Component));
-	exports.AccordianItem = AccordianItem;
+	exports.Zebra = Zebra;
 
 
 /***/ },
@@ -196,116 +159,22 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var AccordianContent = (function (_super) {
-	    __extends(AccordianContent, _super);
-	    function AccordianContent(props) {
-	        _super.call(this, props);
-	        this.state = { expanded: false, inTransition: false, height: 0 };
-	        this.state.expanded = props.expanded;
+	var PicInfo = (function (_super) {
+	    __extends(PicInfo, _super);
+	    function PicInfo() {
+	        _super.apply(this, arguments);
 	    }
-	    AccordianContent.prototype.render = function () {
-	        var _this = this;
-	        if (this.state.expanded != this.props.expanded) {
-	            this.state.inTransition = true;
-	            this.state.expanded = this.props.expanded;
+	    PicInfo.prototype.render = function () {
+	        if (this.props.left) {
+	            return React.createElement("div", {className: "row", id: this.props.id}, React.createElement("div", {className: "col-md-4"}, React.createElement("img", {className: "img-circle img-responsive img-info", src: this.props.img, alt: "Kent State"})), React.createElement("div", {className: "col-md-7 col-md-offset-1"}, React.createElement("h2", null, " ", this.props.title, " "), React.createElement("p", {className: "lead"}, this.props.content)));
 	        }
-	        var style = {
-	            "overflow": "hidden",
-	            "transition": "height 500ms",
-	            "background": "white",
-	            "borderBottom": ((this.state.expanded || this.state.inTransition) ? "1px solid  #ddd" : "none")
-	        };
-	        return React.createElement("div", {style: style, ref: function (content) {
-	            if (!content) {
-	                return;
-	            }
-	            var setSize = function () {
-	                if (_this.state.inTransition) {
-	                    content.style.height = _this.state.expanded ? "0" : _this.state.height + "px";
-	                    setTimeout(setSize, 1);
-	                    _this.state.inTransition = false;
-	                    setTimeout(function () { return _this.setState({ "inTransition": false }); }, 1 + 500);
-	                }
-	                else {
-	                    content.style.height = !_this.state.expanded ? "0" : _this.state.height + "px";
-	                }
-	            };
-	            setTimeout(setSize, 1);
-	        }}, (function () {
-	            if (_this.state.expanded || _this.state.inTransition) {
-	                return React.createElement("div", {className: "content", ref: function (element) { if (element)
-	                    _this.state.height = element.clientHeight; }}, _this.props.children);
-	            }
-	        })());
+	        else {
+	            return React.createElement("div", {className: "row"}, React.createElement("div", {className: "col-md-7"}, React.createElement("h2", null, " ", this.props.title, " "), React.createElement("p", {className: "lead"}, this.props.content)), React.createElement("div", {className: "col-md-4 col-md-offset-1"}, React.createElement("img", {className: "img-circle img-responsive img-info", src: this.props.img, alt: "Kent State"})));
+	        }
 	    };
-	    return AccordianContent;
+	    return PicInfo;
 	}(React.Component));
-	exports.AccordianContent = AccordianContent;
-
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var React = __webpack_require__(1);
-	var Accordian = (function (_super) {
-	    __extends(Accordian, _super);
-	    function Accordian(props) {
-	        _super.call(this, props);
-	        this.state = {};
-	    }
-	    Accordian.prototype.render = function () {
-	        return React.createElement("div", {className: "accordian"}, this.props.children);
-	    };
-	    return Accordian;
-	}(React.Component));
-	exports.Accordian = Accordian;
-
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var React = __webpack_require__(1);
-	var NextEvent = (function (_super) {
-	    __extends(NextEvent, _super);
-	    function NextEvent(props) {
-	        var _this = this;
-	        _super.call(this, props);
-	        this.request = $.get(props.src, function (data) {
-	            console.log(data);
-	            for (var i = 0; i < data.events.length; ++i) {
-	                if (new Date(data.events[i].date) > new Date()) {
-	                    data.events[i].date = new Date(data.events[i].date);
-	                    _this.setState({ event: data.events[i] });
-	                    return;
-	                }
-	                ;
-	            }
-	        });
-	        this.state = { event: undefined };
-	    }
-	    NextEvent.prototype.componentWillUnmount = function () {
-	        this.request.abort();
-	    };
-	    NextEvent.prototype.render = function () {
-	        return React.createElement("a", {href: "/#events"}, React.createElement("i", {className: "material-icons", style: { fontSize: "20px", display: "inline" }}, "date_range"), React.createElement("span", {style: { display: "inline", verticalAlign: "top", paddingLeft: "0.5rem" }}, this.state.event ? this.state.event.title : ""));
-	    };
-	    return NextEvent;
-	}(React.Component));
-	exports.NextEvent = NextEvent;
+	exports.PicInfo = PicInfo;
 
 
 /***/ }

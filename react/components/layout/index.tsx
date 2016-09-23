@@ -7,7 +7,6 @@ export interface LayoutProps { }
 
 export class Layout extends React.Component<LayoutProps, {}> {
     render() {
-        let content = this.props.children.map( (item, i) => )
         return  <div id="wrap">
                     <Navbar>
                         <div id="nextup"/>

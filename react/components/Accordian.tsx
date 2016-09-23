@@ -7,7 +7,7 @@ export class Accordian extends React.Component<AccordianProps, {}> {
         super(props);
         this.state = {};
     }
-    
+
     render() {
         return <div className="accordian">
                     {this.props.children}

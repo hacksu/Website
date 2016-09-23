@@ -1,17 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { EventList } from "./components/EventList";
-import { NextEvent } from "./components/NextEvent";
+import { Home } from "./components/home";
 
-ReactDOM.render(
-    <div>
-        <EventList src="/api/events"/>
-    </div>,
-    document.getElementById("events")
-);
-
-ReactDOM.render(
-        <NextEvent src="/api/events"/>,
-    document.getElementById("nextup")
+ReactDOM.render(<Home/>,
+    document.getElementById("react")
 );

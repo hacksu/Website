@@ -2,9 +2,9 @@ import * as React from "react";
 
 export interface NavbarProps { }
 
-export class Navbar extends React.Component<EventProps, {}> {
+export class Navbar extends React.Component<NavbarProps, {}> {
     render() {
-        let nav_items = this.props.children.map(item => <li>{item}</li>)
+        let nav_items = React.Children.map(this.props.children, item => <li>{item}</li>)
         return  <div className="navbar navbar-default">
                     <div className="navbar-header">
                         <button className="navbar-toggle"

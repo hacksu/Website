@@ -44,7 +44,7 @@ input[type="submit"]:hover {
     /* Negative indent footer by its height */
     margin: 0 auto -100px;
     /* Pad bottom by footer height */
-    padding: 0 0 150px;
+    padding: 0 0 50px;
     font-family: "Open Sans";
 }
 /* Set the fixed height of the footer here */
@@ -56,9 +56,14 @@ input[type="submit"]:hover {
 -------------------------------------------------- */
 
 /* Not required for template or sticky footer method. */
- #wrap > .container {
+ #wrap .container {
     padding: 5em 15px;
 }
+
+.jumbotron .container {
+    padding-top: 0px !important;
+}
+
 .container .credit {
     margin: 20px 0;
 }
@@ -110,9 +115,6 @@ code {
     background-image: url(/images/header.jpg);
     height: 200px;
     color: white!important;
-}
-.jumbotron .container {
-    padding-top: 0px;
 }
 .jumbotron .title {
     text-shadow:2px 2px 2px black;

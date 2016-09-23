@@ -10,6 +10,9 @@ export class Zebra extends React.Component<ZebraProps, {}> {
         let zebra_items = React.Children.map(
             this.props.children,
             (item, i) => {
+                if(typeof item !== "object") {
+                    return item;
+                }
                 let element = React.cloneElement(item as React.ReactElement<any>, {left: i%2 == 0})
                 if (i%2 == 0) {
                     return  <div className="container">
@@ -24,6 +27,6 @@ export class Zebra extends React.Component<ZebraProps, {}> {
                 }
             }
         );
-        return  <div>{zebra_items}</div>;
+        return  <div id="wrap">{zebra_items}</div>;
     }
 }

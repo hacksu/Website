@@ -83,7 +83,8 @@
 	        _super.apply(this, arguments);
 	    }
 	    Home.prototype.render = function () {
-	        return React.createElement("div", null, React.createElement(jumbotron_1.Jumbotron, null, React.createElement("div", {className: "row"}, React.createElement("div", {className: "col-xs-4"}, React.createElement("h1", {className: "title"}, " Learn "), React.createElement("h1", {className: "title"}, " Grow "), React.createElement("h1", {className: "title"}, " Create ")))), React.createElement(zebra_1.Zebra, null, React.createElement(pic_info_1.PicInfo, {id: "about-info", img: "/images/2.jpg", title: "Who are we?", content: "Hacksu is a student organization at Kent\n                        State University focused on learning and\n                        utilizing contemporary web and mobile\n                        technologies. We are a very diverse\n                        community, spanning multiple majors from\n                        Fashion Design to Zoology and are open to\n                        students of any skill level. Everyone is\n                        welcome."}), React.createElement(pic_info_1.PicInfo, {img: "/images/2.jpg", title: "Who are we?", content: "Hacksu is a student organization at Kent\n                        State University focused on learning and\n                        utilizing contemporary web and mobile\n                        technologies. We are a very diverse\n                        community, spanning multiple majors from\n                        Fashion Design to Zoology and are open to\n                        students of any skill level. Everyone is\n                        welcome."})));
+	        console.log("made it");
+	        return React.createElement("div", {id: "wrap"}, React.createElement(jumbotron_1.Jumbotron, null, React.createElement("div", {className: "row"}, React.createElement("div", {className: "col-xs-4"}, React.createElement("h1", {className: "title"}, " Learn "), React.createElement("h1", {className: "title"}, " Grow "), React.createElement("h1", {className: "title"}, " Create ")))), React.createElement(zebra_1.Zebra, null, React.createElement(pic_info_1.PicInfo, {id: "about-info", img: "/images/2.jpg"}, React.createElement("h2", null, " Who are we? "), React.createElement("p", {className: "lead"}, "Hacksu is a student organization at Kent" + ' ' + "State University focused on learning and" + ' ' + "utilizing contemporary web and mobile" + ' ' + "technologies. We are a very diverse" + ' ' + "community, spanning multiple majors from" + ' ' + "Fashion Design to Zoology and are open to" + ' ' + "students of any skill level. Everyone is" + ' ' + "welcome.")), React.createElement(pic_info_1.PicInfo, {img: "/images/1.jpg"}, React.createElement("h2", null, "What do we teach?"), React.createElement("p", {className: "lead"}, "We teach a wide variety of technologies, both" + ' ' + "front end and back end. These include things like jQuery" + ' ' + "Mobile, Python, Django, Node.js, Android, iOS, Heroku," + ' ' + "and much more. All of this is in hopes that you fall in" + ' ' + "love with one or many of these technologies and construct" + ' ' + "something cool.")), React.createElement(pic_info_1.PicInfo, {img: "/images/3.jpg"}, React.createElement("h2", null, " How do I get involved? "), React.createElement("p", {className: "lead"}, "We recommend coming to our weekly meetings," + ' ' + "held during the semester, on Tuesdays at" + ' ' + "the Honors College in Room 060 at 7:00pm." + ' ' + "You can also join our", React.createElement("a", {href: "http://www.facebook.com/groups/hacksu"}, "Facebook page"), "and follow us on", React.createElement("a", {href: "http://www.twitter.com/_hacksu"}, "Twitter"), "to see what we are up to!"), React.createElement("p", {className: "lead"}, "Sign up to our mailing list so we can keep" + ' ' + "you updated on our weekly meetings and other" + ' ' + "goings ons."), React.createElement("form", {className: "newsletter", action: "/api/mailinglist", method: "post"}, React.createElement("label", null, "Email: "), React.createElement("input", {type: "email", name: "email", id: "email", required: true}), React.createElement("input", {type: "submit", value: "Register"})))));
 	    };
 	    return Home;
 	}(React.Component));
@@ -133,6 +134,9 @@
 	    }
 	    Zebra.prototype.render = function () {
 	        var zebra_items = React.Children.map(this.props.children, function (item, i) {
+	            if (typeof item !== "object") {
+	                return item;
+	            }
 	            var element = React.cloneElement(item, { left: i % 2 == 0 });
 	            if (i % 2 == 0) {
 	                return React.createElement("div", {className: "container"}, element);
@@ -141,7 +145,7 @@
 	                return React.createElement("div", {className: "color-bg"}, React.createElement("div", {className: "container"}, element));
 	            }
 	        });
-	        return React.createElement("div", null, zebra_items);
+	        return React.createElement("div", {id: "wrap"}, zebra_items);
 	    };
 	    return Zebra;
 	}(React.Component));
@@ -166,10 +170,10 @@
 	    }
 	    PicInfo.prototype.render = function () {
 	        if (this.props.left) {
-	            return React.createElement("div", {className: "row", id: this.props.id}, React.createElement("div", {className: "col-md-4"}, React.createElement("img", {className: "img-circle img-responsive img-info", src: this.props.img, alt: "Kent State"})), React.createElement("div", {className: "col-md-7 col-md-offset-1"}, React.createElement("h2", null, " ", this.props.title, " "), React.createElement("p", {className: "lead"}, this.props.content)));
+	            return React.createElement("div", {className: "row", id: this.props.id}, React.createElement("div", {className: "col-md-4"}, React.createElement("img", {className: "img-circle img-responsive img-info", src: this.props.img, alt: "Kent State"})), React.createElement("div", {className: "col-md-7 col-md-offset-1"}, this.props.children));
 	        }
 	        else {
-	            return React.createElement("div", {className: "row"}, React.createElement("div", {className: "col-md-7"}, React.createElement("h2", null, " ", this.props.title, " "), React.createElement("p", {className: "lead"}, this.props.content)), React.createElement("div", {className: "col-md-4 col-md-offset-1"}, React.createElement("img", {className: "img-circle img-responsive img-info", src: this.props.img, alt: "Kent State"})));
+	            return React.createElement("div", {className: "row"}, React.createElement("div", {className: "col-md-7"}, this.props.children), React.createElement("div", {className: "col-md-4 col-md-offset-1"}, React.createElement("img", {className: "img-circle img-responsive img-info", src: this.props.img, alt: "Kent State"})));
 	        }
 	    };
 	    return PicInfo;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import {EventList} from "../EventList"
+import {EventFetch} from "../event-fetch";
 
 export interface WhatWeTeachProps {img: string, left?: boolean, id?: string }
 
@@ -30,7 +30,7 @@ export class WhatWeTeach extends React.Component<WhatWeTeachProps, {}> {
                         </div>
                         <div className="row">
                             <div className="col-md-7 col-md-offset-5">
-                                <EventList src="/api/events"/>
+                                <EventFetch src="/api/events"/>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ export class WhatWeTeach extends React.Component<WhatWeTeachProps, {}> {
                         </div>
                         <div className="row">
                             <div className="col-md-7">
-                                <EventList src="/api/events"/>
+                                <EventFetch src="/api/events"/>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,12 @@
 import * as React from "react";
 import {AccordianItem} from "./accordian-item";
 
-export interface EventViewProps { title: string, content: string, date: Date, expanded: boolean, onToggled: (item: AccordianItem) => void }
+export interface EventViewProps { title: string,
+                                  content: string,
+                                  date: Date,
+                                  id: number,
+                                  expanded: boolean,
+                                  onToggled: (item: AccordianItem) => void }
 
 export class EventView extends React.Component<EventViewProps, {}> {
     state: {expanded: boolean}

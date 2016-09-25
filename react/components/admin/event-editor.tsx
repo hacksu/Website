@@ -9,8 +9,14 @@ export class EventEditor extends React.Component<EventEditorProps, {}> {
     constructor(props: EventEditorProps) {
         super(props);
         let event: any = this.props.event
-        event.date = event.date.toISOString();
+        event.date = event.date.toLocaleString();
         this.state = event;
+    }
+
+    componentWillReceiveProps(props: EventEditorProps) {
+        let event: any = this.props.event
+        event.date = event.date.toLocaleString();
+        this.setState(event);
     }
 
     render() {

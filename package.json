@@ -8,7 +8,7 @@
   "dependencies": {
     "express": "3.4.8",
     "jade": "*",
-    "passport": "*"
+    "request": "*"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

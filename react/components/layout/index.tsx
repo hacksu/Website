@@ -24,7 +24,7 @@ export class Layout extends React.Component<LayoutProps, {}> {
                     </Navbar>
                     {this.props.children}
                     <Footer>
-                        <a href="/#about-info" onclick="showAbout();return false;">
+                        <a href="/#about-info">
                             About
                         </a>
                         <a href="https://khe.io">

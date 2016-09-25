@@ -32,4 +32,4 @@ var EventList = (function (_super) {
     return EventList;
 }(React.Component));
 exports.EventList = EventList;
-//# sourceMappingURL=EventList.js.map
+//# sourceMappingURL=event-list.js.map

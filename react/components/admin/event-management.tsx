@@ -3,7 +3,7 @@ import {EventList} from "../event-list";
 import {EventsEditor} from "./events-editor";
 import {EventFetch} from "../event-fetch";
 import {Event} from "../../event";
-export interface EventManagementProps {src: string}
+export interface EventManagementProps {src: string, token: string}
 
 export class EventManagement extends React.Component<EventManagementProps, {}> {
     state: {events: Event[]}
@@ -36,7 +36,22 @@ export class EventManagement extends React.Component<EventManagementProps, {}> {
     }
 
     addEvent(event: Event){
-        this.setState({events: this.state.events.concat(event)})
+        $.ajax({
+            type: 'POST',
+            url: '/api/event',
+            data: JSON.stringify({token: this.props.token, event: event}),
+            contentType: "application/json",
+            dataType: 'json',
+            success: data  => {
+                if (data.events)
+                    this.setState({events: data.events});
+                console.log(data);
+            },
+            error:  function( data ) {
+                console.log(data);
+            }
+        });
+        //this.setState({events: this.state.events.concat(event)})
     }
 
     removeEvent(event: Event) {

@@ -2,6 +2,7 @@ var fs = require("fs")
 var MailingList = require("../email/list");
 var config = require("../config")
 var request = require('request');
+var MongoClient = require('mongodb').MongoClient
 
 var express = require('express');
 var router = express.Router();
@@ -52,6 +53,46 @@ router.post("/status", function(req, res) {
     res.json({
         "userid": req.userid,
         "authorized": req.authenticated == true
+    });
+});
+
+MongoClient.connect(config.mongodbUrl, function(err, db) {
+    console.log("Connected successfully to server");
+    var events = db.collection('events');
+
+    function get_events(req, res) {
+        var cursor = events.find();
+        var result = [];
+        cursor.each(function(err, event) {
+            if (event != null) {
+                let normalized = {
+                    title: event.title,
+                    date: event.date,
+                    content: event.content,
+                    id: event._id
+                }
+                result.push(normalized);
+            } else {
+                 res.json({events: result});
+            }
+        });
+    };
+
+    router.get("/events", get_events);
+
+    router.use("/event", authentication);
+    router.post("/event", function(req, res){
+        if (!req.authenticated) {
+            res.status(403).json({error: "Not authorized"});
+        }
+        events.insertOne(req.body.event, function(err, result) {
+            if (err === null) {
+                get_events(req, res);
+            } else {
+                get_events(req, res);
+            }
+            console.log("tried to add",err)
+        });
     });
 });
 

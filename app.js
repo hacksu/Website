@@ -32,7 +32,7 @@ if ('development' == app.get('env')) {
   app.use(errorhandler());
 }
 
-app.get('/api/events', api.events);
+//app.get('/api/events', api.events);
 app.use('/api', api.router);
 app.post('/api/mailinglist', api.addToMailingList)
 app.get('/*', routes.react);

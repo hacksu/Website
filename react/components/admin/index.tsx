@@ -57,7 +57,7 @@ export class Admin extends React.Component<AdminProps, {}> {
                         {this.state.userid}
                     </div>
         } else if (this.state.authenticated) {
-            return  <EventManagement src="/api/events"/>
+            return  <EventManagement src="/api/events" token={this.token}/>
         } else {
             return <h1>Please wait</h1>
         }

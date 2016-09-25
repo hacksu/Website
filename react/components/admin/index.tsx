@@ -7,11 +7,10 @@ const CLIENT_ID = encodeURIComponent("172522245692-jcibsu3m69hs8un6ib4hum10voulg
 const SCOPE = encodeURIComponent("https://www.googleapis.com/auth/userinfo.profile");
 
 export class Admin extends React.Component<AdminProps, {}> {
-    state: {authenticated: boolean, userid: string} = {authenticated: false, userid: undefined}
+    state: {authenticated: boolean, userid: string} = {authenticated: undefined, userid: undefined}
 
     constructor(props: AdminProps){
         super(props);
-        this.componentWillReceiveProps(props);
     }
 
     get token() {
@@ -25,29 +24,9 @@ export class Admin extends React.Component<AdminProps, {}> {
         return undefined;
     }
 
-    componentWillReceiveProps(props: AdminProps) {
-        const REDIRECT_URI = encodeURIComponent(window.location.href);
-
-        if (!this.token) {
-            window.location.assign(GOOGLE_OAUTH+"&client_id="+CLIENT_ID+"&redirect_uri="+REDIRECT_URI+"&scope="+SCOPE);
-        }
-        //console.log(this.props.location, this.token)
-        console.log("sending event")
-        $.ajax({
-            type: 'POST',
-            url: '/api/status',
-            data: JSON.stringify({token: this.token}),
-            contentType: "application/json",
-            dataType: 'json',
-            success: data  => {
-                this.setState({userid: data.userid, authenticated: data.authorized == true});
-
-                console.log(data);
-            },
-            error:  function( data ) {
-                console.log(data);
-            }
-        });
+    get oauth_url() {
+        const REDIRECT_URI = encodeURIComponent(window.location.origin + window.location.pathname);
+        return GOOGLE_OAUTH+"&client_id="+CLIENT_ID+"&redirect_uri="+REDIRECT_URI+"&scope="+SCOPE;
     }
 
     render() {
@@ -55,7 +34,35 @@ export class Admin extends React.Component<AdminProps, {}> {
             return  <div>
                         <h1>Can't find you in the list of allowed users</h1>
                         {this.state.userid}
+                        <a href={this.oauth_url}>Click here to sign in with a different account</a>
                     </div>
+        } else if (!this.token) {
+            return  <div>
+                        <h1>You need to get an Oauth2 Token first</h1>
+                        <a href={this.oauth_url}>Click here to sign in</a>
+                    </div>
+        } else if (this.state.authenticated != undefined && this.state.authenticated === false && this.state.userid === undefined) {
+            return  <div>
+                        <h1>Token probably expired</h1>
+                        <a href={this.oauth_url}>Click here to sign in</a>
+                    </div>
+        } else if (this.state.authenticated === undefined) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/status',
+                    data: JSON.stringify({token: this.token}),
+                    contentType: "application/json",
+                    dataType: 'json',
+                    success: data  => {
+                        this.setState({userid: data.userid, authenticated: data.authorized == true});
+
+                        console.log(data);
+                    },
+                    error:  function( data ) {
+                        console.log(data);
+                    }
+                });
+            return <h1>Please wait</h1>
         } else if (this.state.authenticated) {
             return  <EventManagement src="/api/events" token={this.token}/>
         } else {
@@ -63,6 +70,3 @@ export class Admin extends React.Component<AdminProps, {}> {
         }
     }
 }
-
-110876166819934794060
-110947483314315320479

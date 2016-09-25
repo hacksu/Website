@@ -1,6 +1,11 @@
 var fs = require("fs")
 var MailingList = require("../email/list");
 var config = require("../config")
+var request = require('request');
+
+var express = require('express');
+var router = express.Router();
+
 var mailingList = new MailingList(config.mailingList.url, config.mailingList.list, config.mailingList.password, false)
 mailingList.connect(function (success) {
     if (success) {
@@ -10,12 +15,31 @@ mailingList.connect(function (success) {
     }
 })
 
+exports.authentication = function authentication (req, res, next) {
+    if (req.json) {
+        if (req.json.token) {
+            req.json.token
+            request({url:"https://www.googleapis.com/oauth2/v3/tokeninfo", qs: {access_token: req.json.token}}, (error, response, body) => {
+                var authentication_responce = JSON.parse(body);
+                authentication_responce.audience // should contain the application the request was intended for
+                authentication_responce.userid // the user id, the thing we need to checkagainst
+            });
+        }
+    }
+}
+
+exports.accountStatus = function(req, res) {
+
+}
+
+
 exports.events = function(req, res){
   res.json({
       events: [
           {
               "date": Date.parse("2016-08-30 19:00"),
               "title": "Meet and Greet",
+              "id": 1,
               "content": `
               <p>Hey Hackers!</p>
               <p>
@@ -29,6 +53,7 @@ exports.events = function(req, res){
           {
               "date": Date.parse("2016-09-06 19:00"),
               "title": "Websites: Doable",
+              "id": 2,
               "content": `
               <p>Hey Hackers!</p>
               <p>
@@ -41,6 +66,7 @@ exports.events = function(req, res){
           {
               "date": Date.parse("2016-09-13 19:00"),
               "title": "Scripting",
+              "id": 3,
               "content": `
               <p>Hey Hackers!</p>
               <p>
@@ -53,6 +79,7 @@ exports.events = function(req, res){
           {
               "date": Date.parse("2016-09-20 19:00"),
               "title": "Git",
+              "id": 4,
               "content": `
               <p>Hey Hackers!</p>
               <p>
@@ -66,6 +93,7 @@ exports.events = function(req, res){
           {
               "date": Date.parse("2016-09-27 19:00"),
               "title": "Mini Hackathon",
+              "id": 5,
               "content": `
               <p>Hey Hackers!</p>
               <p>

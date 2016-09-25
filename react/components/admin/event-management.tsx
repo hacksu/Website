@@ -3,18 +3,36 @@ import {EventList} from "../event-list";
 import {EventsEditor} from "./events-editor";
 import {EventFetch} from "../event-fetch";
 import {Event} from "../../event";
-export interface EventManagementProps {api: string}
+export interface EventManagementProps {src: string}
 
 export class EventManagement extends React.Component<EventManagementProps, {}> {
     state: {events: Event[]}
+    request: JQueryXHR;
+
     constructor(props: EventManagementProps) {
         super(props);
         this.addEvent;
         this.removeEvent;
         this.editEvent;
-        this.state = {events: [{title: "test", date: new Date(), content: "<p>test</p>", id: 1},
-                               {title: "test", date: new Date(), content: "<p>test</p>", id: 2}]}
+        this.state = {events: []};
+        this.fetch();
 
+    }
+
+    fetch() {
+        this.request = $.get(this.props.src, (data: any) => {
+            this.setState(
+                {events: data.events.map(
+                     (event: any) => {
+                         event.date = new Date(event.date);
+                         return event;
+                     })}
+            );
+        });
+    }
+
+    componentWillUnmount() {
+        this.request.abort();
     }
 
     addEvent(event: Event){

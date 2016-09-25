@@ -17,7 +17,8 @@ export class EventsEditor extends React.Component<EventsEditorProps, {}> {
     }
 
     render() {
-        let events = this.props.events.map(
+        let sorted = this.props.events.sort((a, b) => (((a.date < b.date)?0:1) - ((a.date > b.date)?0:1)) )
+        let events = sorted.map(
             (event, i) => {
                 if (i == this.state.editing) {
                     return  <div  className="container" key={event.id}>
@@ -38,25 +39,25 @@ export class EventsEditor extends React.Component<EventsEditorProps, {}> {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <Add onClick = { () => this.setState({new: true})}/>
                                     <Remove onClick = { () => this.props.onRemove(event)}/>
                                 </div>
                             </div>
                 }
             }
         );
+        let top = <Add onClick = { () => this.setState({new: true})}/>
+
         if (this.state.new) {
-            events.unshift(
-                <div className="container" key={-1}>
-                    <EventEditor event={{title: "", content: "", date: new Date(), id: -1}} onChange={(event) =>{
-                                        this.setState({new: false});
-                                        this.props.onAdd(event);
-                                    }}/>
-                </div>
+            top =   <div className="container" key={-1}>
+                        <EventEditor event={{title: "", content: "", date: new Date(), id: -1}} onChange={(event) =>{
+                                            this.setState({new: false});
+                                            this.props.onAdd(event);
+                                        }}/>
+                    </div>
                                 
-                                )
         }
         return  <div>
+                    {top}
                     {events}
                 </div>
     }

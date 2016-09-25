@@ -21,6 +21,7 @@ export class EventList extends React.Component<EventListProps, {}> {
         let content = this.props.events
             .filter((event) => (event.date > new Date))
             .slice(0, 4)
+            .sort((a, b) => (((a.date < b.date)?0:1) - ((a.date > b.date)?0:1)) )
             .map( (event, i) => <EventView
                             key={event.id}
                             id={event.id}

@@ -105,9 +105,9 @@ export class EventManagement extends React.Component<EventManagementProps, {}> {
                                   onChange={(event) => this.editEvent(event)}
                                   onRemove={(event) => this.removeEvent(event)}
                                   onAdd={(event) => this.addEvent(event)} />
-
-                    <EventList events={this.state.events}/>
-
+                    <div  className="container">
+                        <EventList events={this.state.events}/>
+                    </div>
                 </div>
     }
 }

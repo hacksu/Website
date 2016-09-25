@@ -209,6 +209,18 @@ code {
     height: 24px;
 }
 
+.event-view {
+    box-shadow: 2px 2px 10px;
+    padding: 25px;
+}
+
+.event-view  .date {
+    font-weight: bold;
+}
+
+.event-view  .content {
+}
+
 
 /* Extra small devices (phones, up to 480px) */
 

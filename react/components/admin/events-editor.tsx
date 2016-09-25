@@ -30,22 +30,25 @@ export class EventsEditor extends React.Component<EventsEditorProps, {}> {
                             </div>
                 } else {
                     return  <div className="container" key={event.id}>
-                                <div className="row">
-                                    <h2 onClick={()=>this.setState({editing: i})}>{event.title}</h2>
-                                    <h3>{event.date.toString()}</h3>
-
-                                    <div>
-                                        <span dangerouslySetInnerHTML={{__html: event.content}} />
-                                    </div>
+                                <div className="row event-view">
+                                    <h2 className="title" onClick={()=>this.setState({editing: i})}>
+                                        {event.title} 
+                                        <span className="date"> ({event.date.toLocaleString()})</span>
+                                    </h2>
+                                    <span className="content" dangerouslySetInnerHTML={{__html: event.content}} />
                                 </div>
                                 <div className="row">
-                                    <Remove onClick = { () => this.props.onRemove(event)}/>
+                                    <p onClick = { () => this.props.onRemove(event)}> Remove this event: <Remove onClick = { () => this.props.onRemove(event)}/> </p>
                                 </div>
                             </div>
                 }
             }
         );
-        let top = <Add onClick = { () => this.setState({new: true})}/>
+        let top=<div className="container">
+                    <h3 onClick = { () => this.setState({new: true})}>
+                        Add a new event: <Add onClick = { () => this.setState({new: true})}/>
+                    </h3>
+                </div>
 
         if (this.state.new) {
             top =   <div className="container" key={-1}>

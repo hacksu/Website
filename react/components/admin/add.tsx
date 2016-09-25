@@ -3,10 +3,5 @@ interface AddProps {
 }
 
 export function Add(props: AddProps) {
-    return  <div onClick={props.onClick}>
-                <img src="/images/ic_add_black_24px.svg"  alt="add"/>
-            </div>
+    return  <img src="/images/ic_add_black_24px.svg" style={{display: "inline"}}  alt="add" onClick={props.onClick}/>
 }
-
-110876166819934794060
-110947483314315320479

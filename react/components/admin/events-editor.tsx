@@ -29,9 +29,9 @@ export class EventsEditor extends React.Component<EventsEditorProps, {}> {
 
                             </div>
                 } else {
-                    return  <div className="container" key={event.id}>
+                    return  <div className="container" key={event.id} onClick={()=>this.setState({editing: i})}>
                                 <div className="row event-view">
-                                    <h2 className="title" onClick={()=>this.setState({editing: i})}>
+                                    <h2 className="title">
                                         {event.title} 
                                         <span className="date"> ({event.date.toLocaleString()})</span>
                                     </h2>

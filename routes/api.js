@@ -15,22 +15,45 @@ mailingList.connect(function (success) {
     }
 })
 
-exports.authentication = function authentication (req, res, next) {
-    if (req.json) {
-        if (req.json.token) {
-            req.json.token
-            request({url:"https://www.googleapis.com/oauth2/v3/tokeninfo", qs: {access_token: req.json.token}}, (error, response, body) => {
+
+
+function authentication (req, res, next) {
+    const CLIENT_ID = "172522245692-jcibsu3m69hs8un6ib4hum10voulgs9c.apps.googleusercontent.com";
+
+    if (req.body) {
+        if (req.body.token) {
+            request({url:"https://www.googleapis.com/oauth2/v3/tokeninfo", qs: {access_token: req.body.token}}, (error, response, body) => {
                 var authentication_responce = JSON.parse(body);
-                authentication_responce.audience // should contain the application the request was intended for
-                authentication_responce.userid // the user id, the thing we need to checkagainst
+                if (authentication_responce.aud === CLIENT_ID) {
+                    if (config.users.includes(authentication_responce.sub)) {
+                        req.authenticated = true;
+                        req.userid = authentication_responce.sub;
+                    } else {
+                        req.authenticated = false;
+                        req.userid = authentication_responce.sub;
+                    }
+                } 
+                console.log(body)
+                next();
             });
+        } else {
+            console.log("json but no token" ,req.json)
+            next();
         }
-    }
+    } else {
+            console.log("no json", req.body)
+            next();
+        }
 }
+exports.authentication = authentication;
 
-exports.accountStatus = function(req, res) {
-
-}
+router.use("/status", authentication);
+router.post("/status", function(req, res) {
+    res.json({
+        "userid": req.userid,
+        "authorized": req.authenticated == true
+    });
+});
 
 
 exports.events = function(req, res){
@@ -121,3 +144,5 @@ exports.addToMailingList = function(req, res) {
     });
     res.redirect("/");
 }
+
+exports.router = router;

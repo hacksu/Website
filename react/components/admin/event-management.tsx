@@ -44,22 +44,59 @@ export class EventManagement extends React.Component<EventManagementProps, {}> {
             dataType: 'json',
             success: data  => {
                 if (data.events)
-                    this.setState({events: data.events});
+                    this.setState({events: data.events.map(
+                     (event: any) => {
+                         event.date = new Date(event.date);
+                         return event;
+                     })});
                 console.log(data);
             },
             error:  function( data ) {
                 console.log(data);
             }
         });
-        //this.setState({events: this.state.events.concat(event)})
     }
 
     removeEvent(event: Event) {
-        this.setState({events: this.state.events.filter(e=>e.id != event.id)});
+        $.ajax({
+            type: 'DELETE',
+            url: '/api/event',
+            data: JSON.stringify({token: this.props.token, event: event}),
+            contentType: "application/json",
+            dataType: 'json',
+            success: data  => {
+                if (data.events)
+                    this.setState({events: data.events.map(
+                     (event: any) => {
+                         event.date = new Date(event.date);
+                         return event;
+                     })});                console.log(data);
+            },
+            error:  function( data ) {
+                console.log(data);
+            }
+        });
     }
 
     editEvent(event: Event) {
-        this.setState({events: this.state.events.map(e=>(e.id == event.id)?event:e)});
+        $.ajax({
+            type: 'PATCH',
+            url: '/api/event',
+            data: JSON.stringify({token: this.props.token, event: event}),
+            contentType: "application/json",
+            dataType: 'json',
+            success: data  => {
+                if (data.events)
+                    this.setState({events: data.events.map(
+                     (event: any) => {
+                         event.date = new Date(event.date);
+                         return event;
+                     })});                console.log(data);
+            },
+            error:  function( data ) {
+                console.log(data);
+            }
+        });    
     }
 
     render() {

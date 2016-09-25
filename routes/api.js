@@ -2,7 +2,9 @@ var fs = require("fs")
 var MailingList = require("../email/list");
 var config = require("../config")
 var request = require('request');
-var MongoClient = require('mongodb').MongoClient
+var mongodb =  require('mongodb');
+var MongoClient = mongodb.MongoClient
+
 
 var express = require('express');
 var router = express.Router();
@@ -92,6 +94,34 @@ MongoClient.connect(config.mongodbUrl, function(err, db) {
                 get_events(req, res);
             }
             console.log("tried to add",err)
+        });
+    });
+
+    router.delete("/event", function(req, res){
+        if (!req.authenticated) {
+            res.status(403).json({error: "Not authorized"});
+        }
+        events.remove({_id: new mongodb.ObjectID(req.body.event.id)}, function(err, result) {
+            if (err === null) {
+                get_events(req, res);
+            } else {
+                get_events(req, res);
+            }
+            console.log("tried to remove",err)
+        });
+    });
+
+    router.patch("/event", function(req, res){
+        if (!req.authenticated) {
+            res.status(403).json({error: "Not authorized"});
+        }
+        events.updateOne({_id: new mongodb.ObjectID(req.body.event.id)}, req.body.event, function(err, result) {
+            if (err === null) {
+                get_events(req, res);
+            } else {
+                get_events(req, res);
+            }
+            console.log("tried to modify",err)
         });
     });
 });

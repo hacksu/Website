@@ -38,7 +38,7 @@ export class Home extends React.Component<HomeProps, {}> {
                             </p>
                         </PicInfo>
 
-                        <WhatWeTeach img="/images/1.jpg"/>
+                        <WhatWeTeach img="/images/1.jpg" id="events"/>
                         <PicInfo
                         img="/images/3.jpg">
                             <h2> How do I get involved? </h2>

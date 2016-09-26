@@ -35,7 +35,7 @@ export class WhatWeTeach extends React.Component<WhatWeTeachProps, {}> {
                         </div>
                     </div>
         } else {
-            return  <div className="row">
+            return  <div className="row" id={this.props.id}>
                         <div className="col-md-7">
                             {content}
                         </div>

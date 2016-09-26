@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Footer} from "./footer";
 import {Navbar} from "./navbar";
-
+import {NextEvent} from "../next-event"
 
 export interface LayoutProps { }
 
@@ -9,7 +9,7 @@ export class Layout extends React.Component<LayoutProps, {}> {
     render() {
         return  <div>
                     <Navbar>
-                        <div id="nextup"/>
+                        <NextEvent src="api/events"/>
                         <a href="https://khe.io"> Kent Hack Enough </a>
                         <a href="/contact"> Contact </a>
                         <a className="social-item" href="https://www.facebook.com/groups/hacksu/">

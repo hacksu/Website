@@ -9,14 +9,7 @@ var MongoClient = mongodb.MongoClient
 var express = require('express');
 var router = express.Router();
 
-var mailingList = new MailingList(config.mailingList.url, config.mailingList.list, config.mailingList.password, false)
-mailingList.connect(function (success) {
-    if (success) {
-        console.log("Connected to MailingList");
-    } else {
-        console.log("failed to login");
-    }
-})
+var mailingList = new MailingList(config.mailingList.api_key, config.mailingList.list_id, config.mailingList.sender_id)
 
 
 
@@ -71,7 +64,8 @@ MongoClient.connect(config.mongodbUrl, function(err, db) {
                     title: event.title,
                     date: event.date,
                     content: event.content,
-                    id: event._id
+                    id: event._id,
+                    sendgrid_id: event.sendgrid_id
                 }
                 result.push(normalized);
             } else {
@@ -87,12 +81,16 @@ MongoClient.connect(config.mongodbUrl, function(err, db) {
         if (!req.authenticated) {
             res.status(403).json({error: "Not authorized"});
         }
-        events.insertOne(req.body.event, function(err, result) {
-            if (err === null) {
-                get_events(req, res);
-            } else {
-                get_events(req, res); // right now down't provide an error when something goes wrong
-            }
+        mailingList.scheduleEmail(req.body.event.title, req.body.event.content, req.body.event.date, function(id) {
+            req.body.event.sendgrid_id = id;
+            console.log(id, req.body.event)
+            events.insertOne(req.body.event, function(err, result) {
+                if (err === null) {
+                    get_events(req, res);
+                } else {
+                    get_events(req, res); // right now down't provide an error when something goes wrong
+                }
+            });
         });
     });
 
@@ -100,6 +98,7 @@ MongoClient.connect(config.mongodbUrl, function(err, db) {
         if (!req.authenticated) {
             res.status(403).json({error: "Not authorized"});
         }
+        mailingList.removeEmail(req.body.event.sendgrid_id, function(){});
         events.remove({_id: new mongodb.ObjectID(req.body.event.id)}, function(err, result) {
             if (err === null) {
                 get_events(req, res);
@@ -113,6 +112,7 @@ MongoClient.connect(config.mongodbUrl, function(err, db) {
         if (!req.authenticated) {
             res.status(403).json({error: "Not authorized"});
         }
+        mailingList.updateEmail(req.body.event.sendgrid_id, req.body.event.title, req.body.event.content, req.body.event.date, function(){});
         events.updateOne({_id: new mongodb.ObjectID(req.body.event.id)}, req.body.event, function(err, result) {
             if (err === null) {
                 get_events(req, res);
@@ -121,21 +121,16 @@ MongoClient.connect(config.mongodbUrl, function(err, db) {
             }
         });
     });
+
 });
 
 
 exports.addToMailingList = function(req, res) {
     mailingList.add(req.body.email, function (success) {
         if (!success) {
-            mailingList.connect(function (success) {
-                mailingList.add(req.body.email, function (success) {
-                    console.log("failed again on the second time for", req.body.email);
-                });
-            });
-            console.log("failed to add", req.body.email)
+            console.err("failed to add", req.body.email)
         }
     });
     res.redirect("/");
 }
-
 exports.router = router;

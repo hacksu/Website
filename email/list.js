@@ -1,81 +1,91 @@
-var request = require('request');
+var sendgrid_login = require('sendgrid');
 
 
 module.exports = class MailingList{
-    constructor(url, list, password, secure) {
-        this.session = request.defaults({jar: true}); // we want to have a seperate set of cookies for each instance
-        this.url = url;
-        this.list = list;
-        this.password = password;
-        this.secure = secure;
-        this.logged_in = false;
-    }
-
-    connect(callback) {
-        this.session.post(
-            {
-                url: this.url + this.list,
-                form: {adminpw: this.password, dmlogin: "Let+me+in..."},
-                agentOptions: {rejectUnauthorized: this.secure}},
-                function (error, response, body) {
-                    if (callback) {
-                        if (!error && response.statusCode == 200 && !body.includes("Authorization\nfailed.")) {
-                            callback(true);
-                            this.logged_in = true;
-                        } else {
-                            callback(false)
-                            this.logged_in = false;
-                        }
-                    }
-                }
-        );
-    }
-
-    connected(callback) {
-        var self = this;
-        this.session.get(
-            {
-                url: this.url + this.list,
-                agentOptions: {rejectUnauthorized: this.secure}},
-                function (error, response, body) {
-                    if (callback) {
-                        if (!error && response.statusCode == 200 && body.includes("General Options Section")) {
-                            callback(true);
-                            self.logged_in = true;
-                        } else {
-                            callback(false)
-                            self.logged_in = false;
-                        }
-                    }
-                }
-        );
+    constructor(api_key, list_id, sender_id) {
+        this.sg = sendgrid_login(api_key);
+        this.sender_id = sender_id;
+        this.list_id = list_id;
     }
 
     add(email, callback) {
-        var form_data  = {
-            subscribe_or_invite: 0,
-            send_welcome_msg_to_this_batch: 1,
-            send_notifications_to_list_owner: 1,
-            subscribees: [email],
-        }
-        console.log(this.url + this.list + '/members/add')
-        this.session.post(
+        var request = this.sg.emptyRequest()
+        request.body = [
             {
-                url: this.url + this.list + '/members/add',
-                formData: form_data,
-                agentOptions: {rejectUnauthorized: this.secure}
-             },
-             function (error, response, body) {
-                if (callback) {
-                    if (!error && response.statusCode == 200 && !body.includes("Administrator Authentication")) {
+                "email": email, 
+            }
+        ];
+        request.method = 'POST'
+        request.path = '/v3/contactdb/recipients'
+        this.sg.API(request, function (error, response) {
+            if (!error && response.statusCode == 201) {
+                var request = this.sg.emptyRequest()
+                request.method = 'POST'
+                request.path = '/v3/contactdb/lists/'+this.list_id+'/recipients/'+response.body.persisted_recipients[0]
+                this.sg.API(request, function (error, response) {
+                    if (!error && response.statusCode == 201) {
                         callback(true);
                     } else {
-                        console.log(email, "couldn't be added")
                         callback(false);
+                        console.log(response.statusCode)
+                        console.log(response.body)
+                        console.log(response.headers)
                     }
-                }
-             }
-         );
+                })
+            } else {
+                callback(false);
+                console.log(response.statusCode)
+                console.log(response.body)
+                console.log(response.headers)
+            }
+        }.bind(this))
+    }
+    scheduleEmail(title, description, date, callback) {
+        console.log(title, description, date)
+        var request = this.sg.emptyRequest()
+        request.body = {
+        "categories": [
+            "event"
+        ], 
+        "custom_unsubscribe_url": "", 
+        "html_content": "<html><head><title></title></head><body>"+description+"</body></html>", 
+        "list_ids": [
+            this.list_id, 
+        ], 
+        "plain_content": description, 
+        "sender_id": this.sender_id, 
+        "subject": title, 
+        "title": title
+        };
+        request.method = 'POST'
+        request.path = '/v3/campaigns'
+
+        this.sg.API(request, function (error, response) {
+            callback(response.body.id)
+        })
+    }
+    removeEmail(id, callback) {
+        
+    }
+
+    updateEmail(id, title, description, date, callback) {
+        var updateRequest = this.sg.emptyRequest();
+        updateRequest.body = {
+            "html_content": "<html><head><title></title></head><body>"+description+"</body></html>",
+            "plain_content": description,
+        }
+        updateRequest.method = 'PATCH'
+        updateRequest.path = '/v3/campaigns/'+id
+        this.sg.API(updateRequest, function (error, response) {
+            if (!error && response.statusCode == 200) {
+                callback(true);
+            } else {
+                callback(false);
+                console.log(response.statusCode)
+                console.log(response.body)
+                console.log(response.headers)
+            }
+        })
     }
 }
 

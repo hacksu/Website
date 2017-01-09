@@ -1,7 +1,7 @@
 exports.mailingList = {
-        url: "https://listmail.cs.kent.edu/mailman/admin/",
-        list: "hacksu-list",
-        password: ""
+        api_key: "",
+        list_id: 0,
+        sender_id: 0
 }
 
 exports.mongodbUrl = "mongodb://localhost:27017/hacksu"

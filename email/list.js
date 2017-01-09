@@ -65,7 +65,20 @@ module.exports = class MailingList{
         })
     }
     removeEmail(id, callback) {
-        
+        var removeRequest = this.sg.emptyRequest();
+        removeRequest.method = "DELETE";
+        removeRequest.path = '/v3/campaigns/' + id;
+        this.sg.API(removeRequest, function (error, response) {
+            if (!error && response.statusCode == 200) {
+                callback(true);
+            } else {
+                callback(false);
+                console.log(response.statusCode)
+                console.log(response.body)
+                console.log(response.headers)
+            }
+        });
+
     }
 
     updateEmail(id, title, description, date, callback) {

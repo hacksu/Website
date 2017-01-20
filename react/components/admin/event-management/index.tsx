@@ -1,8 +1,8 @@
 import * as React from "react";
-import {EventList} from "../event-list";
+import {EventList} from "../../event-list";
 import {EventsEditor} from "./events-editor";
-import {EventFetch} from "../event-fetch";
-import {Event} from "../../event";
+import {EventFetch} from "../../event-fetch";
+import {Event} from "../../../event";
 export interface EventManagementProps {src: string, token: string}
 
 export class EventManagement extends React.Component<EventManagementProps, {}> {

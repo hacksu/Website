@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Event} from "../../event";
+import {Event} from "../../../event";
 import {EventEditor} from "./event-editor"
 import {Add} from "./add"
 import {Remove} from "./remove"

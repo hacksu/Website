@@ -225,6 +225,15 @@ code {
 .event-view  .content {
 }
 
+input {
+    margin: 5px;
+    display: inline-block;
+}
+
+textarea {
+    margin: 5px;
+}
+
 
 /* Extra small devices (phones, up to 480px) */
 

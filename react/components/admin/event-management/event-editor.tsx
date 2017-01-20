@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Event} from "../../event";
+import {Event} from "../../../event";
 
 export interface EventEditorProps {event: Event, onChange: (event: Event) => void}
 
@@ -28,8 +28,6 @@ export class EventEditor extends React.Component<EventEditorProps, {}> {
                 }}>
                     <div className="row">
                         <input type="text" value={this.state.title} onChange={e => this.setState({title: (e.target as any).value})}/>
-                    </div>
-                    <div className="row">
                         <input type="datetime" value={this.state.date} onChange={e => this.setState({date: (e.target as any).value})}/>
                     </div>
                     <div className="row">

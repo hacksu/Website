@@ -46,12 +46,10 @@ export class Home extends React.Component<HomeProps, {}> {
                                 We recommend coming to our weekly meetings,
                                 held during the semester, on Tuesdays at
                                 the Honors College in Room 060 at 7:00pm.
-                                You can also join our
-                                <a href="http://www.facebook.com/groups/hacksu">
+                                You can also join our <a href="http://www.facebook.com/groups/hacksu">
                                     Facebook page
                                 </a>
-                                and follow us on
-                                <a href="http://www.twitter.com/_hacksu">
+                                and follow us on <a href="http://www.twitter.com/_hacksu">
                                     Twitter
                                 </a>
                                 to see what we are up to!

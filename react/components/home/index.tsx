@@ -52,7 +52,7 @@ export class Home extends React.Component<HomeProps, {}> {
                                 </a>
                                  and follow us on 
                                 <a href="http://www.twitter.com/_hacksu">
-                                     Twitter
+                                     Twitter 
                                 </a>
                                 to see what we are up to!
                             </p>

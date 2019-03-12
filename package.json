@@ -8,7 +8,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "errorhandler": "^1.4.3",
-    "express": "4.14.0",
+    "express": "^4.16.4",
     "mongodb": "^2.2.10",
     "morgan": "^1.7.0",
     "react-router": "^2.8.1",
@@ -17,7 +17,12 @@
     "source-map-loader": "^0.1.5"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.29",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "@types/react-router": "^2.0.55",
     "gulp": "^3.9.1",
-    "ts-loader": "^0.8.2"
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3333"
   }
 }

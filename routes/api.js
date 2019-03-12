@@ -128,7 +128,7 @@ MongoClient.connect(config.mongodbUrl, function(err, db) {
 exports.addToMailingList = function(req, res) {
     mailingList.add(req.body.email, function (success) {
         if (!success) {
-            console.err("failed to add", req.body.email)
+            console.error("failed to add", req.body.email)
         }
     });
     res.redirect("/");

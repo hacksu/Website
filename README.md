@@ -1,4 +1,4 @@
-##hacksu Website 
+## hacksu Website 
 
 This repo houses all the code for the [hacksu website](http://hacksu.cs.kent.edu).
 
